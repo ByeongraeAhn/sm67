@@ -46,6 +46,7 @@ public class PageController {
     
     HashMap<String,Object> responseData = new HashMap<String,Object>();
     responseData.put("status", "success");
+    responseData.put("data", swagUserVo);
     
     
     return responseData;

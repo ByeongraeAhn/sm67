@@ -57,7 +57,7 @@ function render() {
     }
     googleajax(obj);
 
-    console.log(obj);   // 전체 개체를 검사하려면 주석을 해제합니다.
+    //console.log(obj);   // 전체 개체를 검사하려면 주석을 해제합니다.
 
     el.innerHTML = email;
     toggleElement('email');
@@ -73,6 +73,9 @@ function render() {
  			},
  			success: function(result) {
  				console.log("ajax성공");
+ /*				var testtest = result.data;
+ 				console.log(testtest.email);
+ 				console.log(testtest.username);*/
  				location.replace("http://localhost:9999/sm67/main/main.html");
  			},
  			error: function(xhr, textStatus, errorThrown) {
