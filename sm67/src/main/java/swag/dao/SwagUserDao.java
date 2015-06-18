@@ -10,7 +10,9 @@ public interface SwagUserDao {
   
   int insert(Map<String,Object> paramMap);
   
-  SwagUserVo selectOne(String email);
+  SwagUserVo validationUser(String email);
+  
+  SwagUserVo selectOne(String email); 
 
 }
 

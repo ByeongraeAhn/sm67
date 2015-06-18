@@ -12,8 +12,19 @@
       VALUES (#{email},#{username},now(),"aaa","bbbb",4)
   </insert>
   
-  <select id="selectOne" parameterType="String" resultType="SwagUserVo">
+  <select id="validationUser" parameterType="String" resultType="SwagUserVo">
       SELECT count(1) as count 
+      FROM user 
+      WHERE email=#{email}
+  </select>
+  
+  <select id="selectOne" parameterType="String" resultType="SwagUserVo">
+      SELECT email
+      		,username
+      		,birthday
+      		,theme
+      		,language
+      		,countmod
       FROM user 
       WHERE email=#{email}
   </select>

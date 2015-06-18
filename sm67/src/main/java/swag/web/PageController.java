@@ -30,14 +30,15 @@ public class PageController {
     sqlParams.put("email", email);
     sqlParams.put("username", name);
     
-    SwagUserVo swagUserVo = swagUserDao.selectOne(email);
+    SwagUserVo validation = swagUserDao.validationUser(email);
     
-    if(swagUserVo.getCount() == 1) {
+    if(validation.getCount() == 1) {
       System.out.println("이미 등록되어있음");
     } else {
       swagUserDao.insert(sqlParams);
-      swagUserVo = swagUserDao.selectOne(email);
     }
+    
+    SwagUserVo swagUserVo = swagUserDao.selectOne(email);
     
     HashMap<String,Object> responseData = new HashMap<String,Object>();
     responseData.put("status", "success");
