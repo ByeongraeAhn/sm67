@@ -2,6 +2,8 @@ package swag.web;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -24,7 +26,7 @@ public class PageController {
   SwagUserDao swagUserDao;
   
   @RequestMapping("/login")
-  public ResponseEntity<String> list(String email, String name) throws Exception {
+  public Object list(String email, String name, HttpSession session) throws Exception {
     
     HashMap<String,Object> sqlParams = new HashMap<String,Object>();
     sqlParams.put("email", email);
@@ -40,17 +42,13 @@ public class PageController {
     
     SwagUserVo swagUserVo = swagUserDao.selectOne(email);
     
+    session.setAttribute("user", swagUserVo);
+    
     HashMap<String,Object> responseData = new HashMap<String,Object>();
     responseData.put("status", "success");
     
-    HttpHeaders headers = new HttpHeaders();
-    headers.add("Content-Type", "text/plain;charset=UTF-8");
-    headers.add("Access-Control-Allow-Origin", "*");
     
-    return new ResponseEntity<String>(
-        new Gson().toJson(responseData),
-        headers,
-        HttpStatus.OK);
+    return responseData;
   }
 }
 

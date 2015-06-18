@@ -66,6 +66,7 @@ function render() {
  	function googleajax(obj) {
  		$.ajax('http://localhost:9999/sm67/page/login.do', {
  			method: 'POST',
+ 			dataType: 'json',
  			data: {
  				name: obj['name'],
  				email: obj['email']

@@ -70,6 +70,8 @@ dependencies {
   // JSON 입/출력 관련 의존 라이브러리
   compile 'com.google.code.gson:gson:2.3.1' // www.mvnrepository.com에서 gson 검색.
   
+  // 스프링에서 JSON 출력할 때 사용하는 의존 라이브러리
+  compile 'com.fasterxml.jackson.core:jackson-databind:2.5.4' // www.mvnrepository.com에서 jackson 검색.
   
 }
 

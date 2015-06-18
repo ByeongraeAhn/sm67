@@ -20,12 +20,31 @@
   <mvc:annotation-driven />
 
   <!-- View Resolver 설정하기 -->
-  <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-    <!-- 다음은 페이지 컨트롤러가 리턴한 JSP URL 앞, 뒤로 붙이는 값이다. -->
-    <property name="prefix" value="/WEB-INF/views/"/>
-    <property name="suffix" value=".jsp"/>
-  </bean>
+  <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+	    <property name="mediaTypes">
+	        <map>
+	            <entry key="atom" value="application/atom+xml"/>
+	            <entry key="html" value="text/html"/>
+	            <entry key="json" value="application/json"/>
+	        </map>
+	    </property>
+	    <property name="viewResolvers">
+	        <list>
+	            <bean class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+	            <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	            <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+	                <property name="prefix" value="/WEB-INF/views/"/>
+	                <property name="suffix" value=".jsp"/>
+	            </bean>
+	        </list>
+	    </property>
+	    <property name="defaultViews">
+	        <list>
+	        	<!-- 페이지 컨트롤러가 리턴하는 객체를 JSON 문자열로 만들어 클라이언트로 보낸다. -->
+	            <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+	        </list>
+	    </property>
+	</bean>
   
   <!-- 멀티파트 데이터를 처리하는 객체 설정하기 -->
   <bean id="multipartResolver"
