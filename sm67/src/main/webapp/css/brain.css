@@ -29,7 +29,7 @@ body,html
 	transition-timing-function:ease-in-out;
 	-webkit-transform:translate(-50%,-50%) scale(0,0);
 	-webkit-transition-delay:0s;
-	-webkit-transition-duration:2s;
+	-webkit-transition-duration:6s;
 	-webkit-transition-property:transform,opacity;
 	-webkit-transition-timing-function:ease-in-out;
 	-moz-transform:translate(-50%,-50%) scale(0,0);
@@ -91,11 +91,11 @@ body,html
 .brain-front .image-1
 {
 	opacity:0;
-	animation:brain-front-1 10s ease-in-out forwards 1s;
-	-webkit-animation:brain-front-1 10s ease-in-out forwards 1s;
-	-moz-animation:brain-front-1 10s ease-in-out forwards 1s;
-	-o-animation:brain-front-1 10s ease-in-out forwards 1s;
-	-ms-animation:brain-front-1 10s ease-in-out forwards 1s
+	animation:brain-front-1 10s ease-in-out forwards 0s;
+	-webkit-animation:brain-front-1 10s ease-in-out forwards 0s;
+	-moz-animation:brain-front-1 10s ease-in-out forwards 0s;
+	-o-animation:brain-front-1 10s ease-in-out forwards 0s;
+	-ms-animation:brain-front-1 10s ease-in-out forwards 0s
 }
 	@keyframes brain-front-1
 {
@@ -160,11 +160,11 @@ body,html
 .brain-front .image-2
 {
 	opacity:.2;
-	animation:brain-front-21 5s ease-in-out infinite 8s;
-	-webkit-animation:brain-front-21 5s ease-in-out infinite 8s;
-	-moz-animation:brain-front-21 5s ease-in-out infinite 8s;
-	-o-animation:brain-front-21 5s ease-in-out infinite 8s;
-	-ms-animation:brain-front-21 5s ease-in-out infinite 8s
+	animation:brain-front-21 3s ease-in-out infinite 6s;
+	-webkit-animation:brain-front-21 3s ease-in-out infinite 6s;
+	-moz-animation:brain-front-21 3s ease-in-out infinite 6s;
+	-o-animation:brain-front-21 3s ease-in-out infinite 6s;
+	-ms-animation:brain-front-21 3s ease-in-out infinite 6s
 }
 	@keyframes brain-front-21
 {
@@ -249,11 +249,11 @@ body,html
 .brain-front .image-3
 {
 	opacity:.2;
-	animation:brain-front-31 6s ease-in-out infinite 10s;
-	-webkit-animation:brain-front-31 6s ease-in-out infinite 10s;
-	-moz-animation:brain-front-31 6s ease-in-out infinite 10s;
-	-o-animation:brain-front-31 6s ease-in-out infinite 10s;
-	-ms-animation:brain-front-31 6s ease-in-out infinite 10s
+	animation:brain-front-31 4s ease-in-out infinite 8s;
+	-webkit-animation:brain-front-31 4s ease-in-out infinite 8s;
+	-moz-animation:brain-front-31 4s ease-in-out infinite 8s;
+	-o-animation:brain-front-31 4s ease-in-out infinite 8s;
+	-ms-animation:brain-front-31 4s ease-in-out infinite 8s
 }
 	@keyframes brain-front-31
 {
@@ -338,11 +338,11 @@ body,html
 .brain-front .image-4
 {
 	opacity:.2;
-	animation:brain-front-41 7s ease-in-out infinite 11s;
-	-webkit-animation:brain-front-41 7s ease-in-out infinite 11s;
-	-moz-animation:brain-front-41 7s ease-in-out infinite 11s;
-	-o-animation:brain-front-41 7s ease-in-out infinite 11s;
-	-ms-animation:brain-front-41 7s ease-in-out infinite 11s
+	animation:brain-front-41 5s ease-in-out infinite 9s;
+	-webkit-animation:brain-front-41 5s ease-in-out infinite 9s;
+	-moz-animation:brain-front-41 5s ease-in-out infinite 9s;
+	-o-animation:brain-front-41 5s ease-in-out infinite 9s;
+	-ms-animation:brain-front-41 5s ease-in-out infinite 9s
 }
 	@keyframes brain-front-41
 {
@@ -427,11 +427,11 @@ body,html
 .brain-front .image-5
 {
 	opacity:.15;
-	animation:brain-front-51 4s ease-in-out infinite 8s;
-	-webkit-animation:brain-front-51 4s ease-in-out infinite 8s;
-	-moz-animation:brain-front-51 4s ease-in-out infinite 8s;
-	-o-animation:brain-front-51 4s ease-in-out infinite 8s;
-	-ms-animation:brain-front-51 4s ease-in-out infinite 8s
+	animation:brain-front-51 2s ease-in-out infinite 6s;
+	-webkit-animation:brain-front-51 2s ease-in-out infinite 6s;
+	-moz-animation:brain-front-51 2s ease-in-out infinite 6s;
+	-o-animation:brain-front-51 2s ease-in-out infinite 6s;
+	-ms-animation:brain-front-51 2s ease-in-out infinite 6s
 }
 	@keyframes brain-front-51
 {
@@ -516,11 +516,11 @@ body,html
 .brain-front .image-6
 {
 	opacity:.1;
-	animation:brain-front-61 3.5s ease-out infinite 9.5s;
-	-webkit-animation:brain-front-61 3.5s ease-out infinite 9.5s;
-	-moz-animation:brain-front-61 3.5s ease-out infinite 9.5s;
-	-ms-animation:brain-front-61 3.5s ease-out infinite 9.5s;
-	-o-animation:brain-front-61 3.5s ease-out infinite 9.5s
+	animation:brain-front-61 2s ease-out infinite 8s;
+	-webkit-animation:brain-front-61 2s ease-out infinite 8s;
+	-moz-animation:brain-front-61 2s ease-out infinite 8s;
+	-ms-animation:brain-front-61 2s ease-out infinite 8s;
+	-o-animation:brain-front-61 2s ease-out infinite 8s
 }
 	@keyframes brain-front-61
 {
@@ -605,11 +605,11 @@ body,html
 .brain-front .image-7
 {
 	opacity:.25;
-	animation:brain-front-71 4s ease-out infinite 11s;
-	-webkit-animation:brain-front-71 4s ease-out infinite 11s;
-	-moz-animation:brain-front-71 4s ease-out infinite 11s;
-	-o-animation:brain-front-71 4s ease-out infinite 11s;
-	-ms-animation:brain-front-71 4s ease-out infinite 11s
+	animation:brain-front-71 2s ease-out infinite 9s;
+	-webkit-animation:brain-front-71 2s ease-out infinite 9s;
+	-moz-animation:brain-front-71 2s ease-out infinite 9s;
+	-o-animation:brain-front-71 2s ease-out infinite 9s;
+	-ms-animation:brain-front-71 2s ease-out infinite 9s
 }
 	@keyframes brain-front-71
 {
@@ -694,11 +694,11 @@ body,html
 .brain-front .image-8
 {
 	opacity:.1;
-	animation:brain-front-81 5s ease-out infinite 8s;
-	-webkit-animation:brain-front-81 5s ease-out infinite 8s;
-	-moz-animation:brain-front-81 5s ease-out infinite 8s;
-	-o-animation:brain-front-81 5s ease-out infinite 8s;
-	-ms-animation:brain-front-81 5s ease-out infinite 8s
+	animation:brain-front-81 3s ease-out infinite 6s;
+	-webkit-animation:brain-front-81 3s ease-out infinite 6s;
+	-moz-animation:brain-front-81 3s ease-out infinite 6s;
+	-o-animation:brain-front-81 3s ease-out infinite 6s;
+	-ms-animation:brain-front-81 3s ease-out infinite 6s
 }
 	@keyframes brain-front-81
 {
@@ -783,11 +783,11 @@ body,html
 .brain-front .image-9
 {
 	opacity:.1;
-	animation:brain-front-91 5s ease-out infinite 8s;
-	-webkit-animation:brain-front-91 5s ease-out infinite 8s;
-	-moz-animation:brain-front-91 5s ease-out infinite 8s;
-	-o-animation:brain-front-91 5s ease-out infinite 8s;
-	-ms-animation:brain-front-91 5s ease-out infinite 8s
+	animation:brain-front-91 3s ease-out infinite 6s;
+	-webkit-animation:brain-front-91 3s ease-out infinite 6s;
+	-moz-animation:brain-front-91 3s ease-out infinite 6s;
+	-o-animation:brain-front-91 3s ease-out infinite 6s;
+	-ms-animation:brain-front-91 3s ease-out infinite 6s
 }
 	@keyframes brain-front-91
 {
@@ -872,11 +872,11 @@ body,html
 .brain-front .image-10
 {
 	opacity:.1;
-	animation:brain-front-101 5s ease-out infinite 8s;
-	-webkit-animation:brain-front-101 5s ease-out infinite 8s;
-	-moz-animation:brain-front-101 5s ease-out infinite 8s;
-	-o-animation:brain-front-101 5s ease-out infinite 8s;
-	-ms-animation:brain-front-101 5s ease-out infinite 8s
+	animation:brain-front-101 3s ease-out infinite 6s;
+	-webkit-animation:brain-front-101 3s ease-out infinite 6s;
+	-moz-animation:brain-front-101 3s ease-out infinite 6s;
+	-o-animation:brain-front-101 3s ease-out infinite 6s;
+	-ms-animation:brain-front-101 3s ease-out infinite 6s
 }
 	@keyframes brain-front-101
 {
@@ -961,11 +961,11 @@ body,html
 .brain-front .image-11
 {
 	opacity:.3;
-	animation:brain-front-111 3s ease-out infinite 10s;
-	-webkit-animation:brain-front-111 3s ease-out infinite 10s;
-	-moz-animation:brain-front-111 3s ease-out infinite 10s;
-	-o-animation:brain-front-111 3s ease-out infinite 10s;
-	-ms-animation:brain-front-111 3s ease-out infinite 10s
+	animation:brain-front-111 1s ease-out infinite 8s;
+	-webkit-animation:brain-front-111 1s ease-out infinite 8s;
+	-moz-animation:brain-front-111 1s ease-out infinite 8s;
+	-o-animation:brain-front-111 1s ease-out infinite 8s;
+	-ms-animation:brain-front-111 1s ease-out infinite 8s
 }
 	@keyframes brain-front-111
 {
@@ -1050,11 +1050,11 @@ body,html
 .brain-front .image-12
 {
 	opacity:.3;
-	animation:brain-front-121 3s ease-out infinite 10.5s;
-	-webkit-animation:brain-front-121 3s ease-out infinite 10.5s;
-	-ms-animation:brain-front-121 3s ease-out infinite 10.5s;
-	-moz-animation:brain-front-121 3s ease-out infinite 10.5s;
-	-o-animation:brain-front-121 3s ease-out infinite 10.5s
+	animation:brain-front-121 1s ease-out infinite 9s;
+	-webkit-animation:brain-front-121 1s ease-out infinite 9s;
+	-ms-animation:brain-front-121 1s ease-out infinite 9s;
+	-moz-animation:brain-front-121 1s ease-out infinite 9s;
+	-o-animation:brain-front-121 1s ease-out infinite 9s
 }
 	@keyframes brain-front-121
 {
@@ -1139,11 +1139,11 @@ body,html
 .brain-front .image-13
 {
 	opacity:.1;
-	animation:brain-front-131 4s ease-out infinite 8s;
-	-webkit-animation:brain-front-131 4s ease-out infinite 8s;
-	-moz-animation:brain-front-131 4s ease-out infinite 8s;
-	-o-animation:brain-front-131 4s ease-out infinite 8s;
-	-ms-animation:brain-front-131 4s ease-out infinite 8s
+	animation:brain-front-131 2s ease-out infinite 6s;
+	-webkit-animation:brain-front-131 2s ease-out infinite 6s;
+	-moz-animation:brain-front-131 2s ease-out infinite 6s;
+	-o-animation:brain-front-131 2s ease-out infinite 6s;
+	-ms-animation:brain-front-131 2s ease-out infinite 6s
 }
 	@keyframes brain-front-131
 {
@@ -1226,61 +1226,6 @@ body,html
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .app-title
 {
 	opacity:0;
@@ -1292,16 +1237,16 @@ body,html
 	-webkit-transition-duration:4s;
 	-webkit-transition-property:font-size,opacity;
 	-webkit-transition-timing-function:ease;
-	-moz-transition-delay:4s;
-	-moz-transition-duration:4s;
+	-moz-transition-delay:2s;
+	-moz-transition-duration:2s;
 	-moz-transition-property:font-size,opacity;
 	-moz-transition-timing-function:ease;
-	-o-transition-delay:4s;
-	-o-transition-duration:4s;
+	-o-transition-delay:2s;
+	-o-transition-duration:2s;
 	-o-transition-property:font-size,opacity;
 	-o-transition-timing-function:ease;
-	-ms-transition-delay:4s;
-	-ms-transition-duration:4s;
+	-ms-transition-delay:2s;
+	-ms-transition-duration:2s;
 	-ms-transition-property:font-size,opacity;
 	-ms-transition-timing-function:ease
 }
@@ -1992,7 +1937,7 @@ body,html
 	font-size:1em;
 	z-index:1;
 	font-weight:300;
-	color:#000000
+	color:#fff
 }
 	#loader div
 {
