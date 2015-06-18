@@ -36,12 +36,11 @@ public class PageController {
       System.out.println("이미 등록되어있음");
     } else {
       swagUserDao.insert(sqlParams);
+      swagUserVo = swagUserDao.selectOne(email);
     }
     
     HashMap<String,Object> responseData = new HashMap<String,Object>();
     responseData.put("status", "success");
-    responseData.put("email", email);
-    responseData.put("username", name);
     
     HttpHeaders headers = new HttpHeaders();
     headers.add("Content-Type", "text/plain;charset=UTF-8");
