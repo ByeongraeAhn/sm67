@@ -5,7 +5,11 @@
 <title> 미니 자비스1</title>
 <link href='../css/main.css' rel='stylesheet' type='text/css'>
 <script charset="utf-8" src="../js/main.js"></script>
+
+<link href='./kTest/kStyle.css' rel='stylesheet' type='text/css'>
+<script charset="utf-8" src="./kTest/kJs.js"></script>
 <script type="text/javascript">
+
 var msg = '엄진영님 어서오세요.
 오늘 102번째 방문이십니다.
 진영님을 위한 정보를 준비해 봤습니다.
@@ -19,6 +23,11 @@ window.speechSynthesis.speak(msg);
 </head>
 
 <body>
+<video autoplay poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+  <source src="./kTest/videoplayback.mp4" type="video/webm">
+    <source src="./kTest/videoplayback.mp4" type="video/mp4">
+</video>
 	<div id="left">
 		<div id="left_top" class="box">
 		<span>
