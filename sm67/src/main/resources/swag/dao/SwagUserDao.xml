@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="swag.dao.SwagUserDao">
+  
+  
+  <insert id="insert" parameterType="map">
+      INSERT INTO user (email,username,birthday,theme,language,countmod) 
+      VALUES (#{email},#{username},now(),"aaa","bbbb",4)
+  </insert>
+  
+  <select id="selectOne" parameterType="String" resultType="SwagUserVo">
+      SELECT count(1) as count 
+      FROM user 
+      WHERE email=#{email}
+  </select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
