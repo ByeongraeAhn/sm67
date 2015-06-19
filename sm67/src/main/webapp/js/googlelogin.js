@@ -72,7 +72,6 @@ function render() {
  				email: obj['email']
  			},
  			success: function(result) {
- 				console.log("ajax성공");
  /*				var testtest = result.data;
  				console.log(testtest.email);
  				console.log(testtest.username);*/

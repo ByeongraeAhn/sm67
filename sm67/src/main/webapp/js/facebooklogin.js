@@ -37,9 +37,32 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-      console.log(JSON.stringify(response))
-      console.log('Successful login for: ' + response.name);
-      console.log('Successful login for: ' + response.email);
+/*      console.log(JSON.stringify(response))
+        console.log('Successful login for: ' + response.name);
+        console.log('Successful login for: ' + response.email);*/
+    	$.ajax('http://localhost:9999/sm67/page/login.do', {
+ 			method: 'POST',
+ 			dataType: 'json',
+ 			data: {
+ 				name: response.name,
+ 				email: response.email
+ 			},
+ 			success: function(result) {
+ 				var validation = result.data;
+ 				console.log(validation.count);
+ 				if(validation.count == 0){
+ 					alert("새로운 회원입니다.")
+ 				} else {
+ 					alert("기존 회원입니다.")
+ 				}
+ 				location.replace("http://localhost:9999/sm67/main/main.html");
+ 			},
+ 			error: function(xhr, textStatus, errorThrown) {
+ 				alert('작업을 완료할 수 없습니다.\n' + 
+ 					  '잠시 후 다시 시도하세요.\n' +
+ 					  '계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
+ 			}
+ 		});
     });
   }
 

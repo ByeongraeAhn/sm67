@@ -92,8 +92,14 @@ function naverajax(a) {
 				email: a._response.responseJSON.response["email"]
 			},
 			success: function(result) {
-				console.log("ajax성공");
-				location.replace("http://localhost:9999/web4test/main/main.html");
+				var validation = result.data;
+ 				console.log(validation.count);
+ 				if(validation.count == 0){
+ 					alert("새로운 회원입니다.")
+ 				} else {
+ 					alert("기존 회원입니다.")
+ 				}
+ 				location.replace("http://localhost:9999/sm67/main/main.html");
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				alert('작업을 완료할 수 없습니다.\n' + 
@@ -101,5 +107,4 @@ function naverajax(a) {
 					  '계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
 			}
 		});
-		console.log(a._response.responseJSON.response["nickname"]);
 }
