@@ -63,15 +63,3 @@ body
 	resize: none;
 }
 
-#circle1{
-position: relative;
-top: -470px;
-margin:0 auto;
-border:5px white dotted;
-width: 310px;
-height: 310px;
--webkit-border-radius:310px;
--moz-border-radius:310px;
-z-index: -1;
-}
-

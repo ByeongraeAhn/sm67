@@ -62,6 +62,19 @@ public class PageController {
     
     return responseData;
   }
+  
+  @RequestMapping("/getSwagVo")
+  public Object getSwagVo(HttpSession session) throws Exception {
+    System.out.println("getSwagVo 컨트롤러 들어옴22");
+
+    SwagUserVo swagUserVo = (SwagUserVo)session.getAttribute("user");
+    HashMap<String,Object> responseData = new HashMap<String,Object>();
+    responseData.put("status", "success");
+    responseData.put("data", swagUserVo);
+
+    
+    return responseData;
+  }
 
 }
 
