@@ -76,7 +76,9 @@ function render() {
  /*				var testtest = result.data;
  				console.log(testtest.email);
  				console.log(testtest.username);*/
- 				location.replace("http://localhost:9999/sm67/main/main.html");
+ 				var validation = result.data;
+ 				console.log(validation.count);
+ 				/*location.replace("http://localhost:9999/sm67/main/main.html");*/
  			},
  			error: function(xhr, textStatus, errorThrown) {
  				alert('작업을 완료할 수 없습니다.\n' + 

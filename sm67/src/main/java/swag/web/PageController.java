@@ -46,7 +46,8 @@ public class PageController {
     
     HashMap<String,Object> responseData = new HashMap<String,Object>();
     responseData.put("status", "success");
-    responseData.put("data", swagUserVo);
+    /*responseData.put("data", swagUserVo);*/
+    responseData.put("data", validation);
     
     
     return responseData;
@@ -54,8 +55,6 @@ public class PageController {
   
   @RequestMapping("/loginOut")
   public Object list2(HttpSession session) throws Exception {
-    System.out.println("로그아웃 컨트롤러 들어옴22");
-
     session.invalidate();
     
     HashMap<String,Object> responseData = new HashMap<String,Object>();
