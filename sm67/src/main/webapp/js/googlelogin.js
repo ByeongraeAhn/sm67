@@ -78,7 +78,12 @@ function render() {
  				console.log(testtest.username);*/
  				var validation = result.data;
  				console.log(validation.count);
- 				/*location.replace("http://localhost:9999/sm67/main/main.html");*/
+ 				if(validation.count == 0){
+ 					alert("새로운 회원입니다.")
+ 				} else {
+ 					alert("기존 회원입니다.")
+ 				}
+ 				location.replace("http://localhost:9999/sm67/main/main.html");
  			},
  			error: function(xhr, textStatus, errorThrown) {
  				alert('작업을 완료할 수 없습니다.\n' + 
