@@ -26,7 +26,7 @@ public class PageController {
   SwagUserDao swagUserDao;
   
   @RequestMapping("/login")
-  public Object list(String email, String name, HttpSession session) throws Exception {
+  public ResponseEntity<String> list(String email, String name, HttpSession session) throws Exception {
     
     HashMap<String,Object> sqlParams = new HashMap<String,Object>();
     sqlParams.put("email", email);
@@ -50,7 +50,15 @@ public class PageController {
     responseData.put("data", validation);
     
     
-    return responseData;
+    /*return responseData;*/
+    HttpHeaders headers = new HttpHeaders();
+    headers.add("Content-Type", "text/plain;charset=UTF-8");
+    headers.add("Access-Control-Allow-Origin", "*");
+    
+    return new ResponseEntity<String>(
+                new Gson().toJson(responseData),
+                headers,
+                HttpStatus.OK);
   }
   
   @RequestMapping("/loginOut")
