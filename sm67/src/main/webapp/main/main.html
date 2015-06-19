@@ -8,6 +8,12 @@
 
 <link href='./kTest/kStyle.css' rel='stylesheet' type='text/css'>
 <script charset="utf-8" src="./kTest/kJs.js"></script>
+<script src="../js/jquery-1.11.2.js"></script>
+<script src="../js/logout.js"></script>
+
+
+
+
 <script type="text/javascript">
 
 var msg = '엄진영님 어서오세요.
@@ -17,9 +23,14 @@ var msg = '엄진영님 어서오세요.
 var Smsg = new SpeechSynthesisUtterance(msg);
 window.speechSynthesis.speak(msg);
 
-
-
 </script>
+
+<style type="text/css">
+.abab { /* global button class */
+    cursor: pointer;
+}
+</style>
+
 </head>
 
 <body>
@@ -44,6 +55,9 @@ window.speechSynthesis.speak(msg);
 오늘 102번째 방문이십니다.
 진영님을 위한 정보를 준비해 봤습니다.
 원하시는 정보가 있으시면 분석해드리겠습니다.</textarea>
+
+<a class="abab" id="loglog" onclick="logout()">로그아웃마지막</a>
+		
 		<div class="canvas"><canvas class="background"></canvas></div>
 		<div class="title">JARVIS</div>
 		<div id="circle1"></div>
@@ -60,6 +74,7 @@ window.speechSynthesis.speak(msg);
 		<iframe src="../news/news.html" width="100%" height="100%">
 		</div>
 	</div>
+	
 
 
 </body>

@@ -84,8 +84,9 @@ $("#NaverIdLoginBTN").click(function() {
 });
 
 function naverajax(a) {
-		$.ajax('http://localhost:9999/web4test/board/ajax/test.do', {
+		$.ajax('http://localhost:9999/sm67/page/login.do', {
 			method: 'POST',
+			dataType: 'json',
 			data: {
 				name: a._response.responseJSON.response["nickname"],
 				email: a._response.responseJSON.response["email"]
