@@ -1,4 +1,5 @@
 window.onload = getSwagVo;
+var userName;
 
 function getSwagVo() {
 		$.ajax('http://localhost:9999/sm67/page/getSwagVo.do', {
@@ -7,9 +8,8 @@ function getSwagVo() {
 			data: {
 			},
 			success: function(result) {
-	/*			console.log("ajax성공");
-				console.log(result);
-				console.log(result.data.username);*/
+				userName = result.data.username;
+				setWelcome();
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				alert('작업을 완료할 수 없습니다.\n' + 
@@ -18,3 +18,9 @@ function getSwagVo() {
 			}
 		});
 	}
+
+function setWelcome(){
+	$('#welcome').val(' ' +userName + '님 어서오세요.\n'
+	+'지금 제가 분석 해본 정보가 여기 있습니다.\n 더 자세한 정보를 원하 신다면 원하시는 정보를 클릭 해 보세요. ');
+	
+}
