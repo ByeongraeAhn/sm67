@@ -35,7 +35,6 @@ public class PageController {
     SwagUserVo validation = swagUserDao.validationUser(email);
     
     if(validation.getCount() == 1) {
-      System.out.println("이미 등록되어있음");
     } else {
       swagUserDao.insert(sqlParams);
     }
