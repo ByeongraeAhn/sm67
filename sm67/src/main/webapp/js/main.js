@@ -7,9 +7,9 @@ function getSwagVo() {
 			data: {
 			},
 			success: function(result) {
-				console.log("ajax성공");
+	/*			console.log("ajax성공");
 				console.log(result);
-				console.log(result.data.username);
+				console.log(result.data.username);*/
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				alert('작업을 완료할 수 없습니다.\n' + 
