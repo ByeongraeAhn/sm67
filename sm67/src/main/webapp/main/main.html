@@ -6,24 +6,8 @@
 <link href='../css/main.css' rel='stylesheet' type='text/css'>
 
 <link href='./kTest/kStyle.css' rel='stylesheet' type='text/css'>
-<script charset="utf-8" src="./kTest/kJs.js"></script>
-<script src="../js/jquery-1.11.2.js"></script>
-<script src="../js/logout.js"></script>
-<script charset="utf-8" src="../js/main.js"></script>
 
 
-
-
-<script type="text/javascript">
-
-var msg = '엄진영님 어서오세요.
-오늘 102번째 방문이십니다.
-진영님을 위한 정보를 준비해 봤습니다.
-원하시는 정보가 있으시면 분석해드리겠습니다.';
-var Smsg = new SpeechSynthesisUtterance(msg);
-window.speechSynthesis.speak(msg);
-
-</script>
 
 <style type="text/css">
 .abab { /* global button class */
@@ -82,15 +66,21 @@ window.speechSynthesis.speak(msg);
 
 	<div id="right">
 		<div id="right_top" class="box">
-		<span>
-		<img src="weatherJarvis.PNG" width="100%" height="100%" onclick="location.href='../weather/weather.html'"></span>
 		</div>
 		<div id="right_bottom" class="box">
-		<iframe src="../news/news.html" width="100%" height="100%">
+		<!-- <iframe src="../news/news.html" width="100%" height="100%"> -->
 		</div>
 	</div>
-	
 
+<script src="../js/jquery-1.11.2.js"></script>
+<script src="../js/logout.js"></script>
+<script charset="utf-8" src="../js/main.js"></script>
+<script charset="utf-8" src="./kTest/kJs.js"></script>	
+<script>
+ $("#right_top").load("../module/weather/w2.html#weather");
+
+
+</script>
 
 </body>
 </html>

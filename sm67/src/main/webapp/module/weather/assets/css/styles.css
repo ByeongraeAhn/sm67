@@ -41,7 +41,7 @@ section, footer, header{
 	The Header
 -----------------------------*/
 
-
+/*
 header h1{
 	text-align:center;
 	font: normal 52px 'Playball', cursive;
@@ -49,7 +49,7 @@ header h1{
 	padding-top:60px;
 	text-shadow:1px 1px 1px rgba(0,0,0,0.1);
 }
-
+*/
 
 /*----------------------------
 	The Weather Div
@@ -58,9 +58,9 @@ header h1{
 
 #weather{
 	position:relative;
-	width:494px;
-	height:407px;
-	margin: 50px auto 25px;
+	width:400px;
+	height:300px;
+	margin: 0px auto 25px;
 	overflow:hidden;
 }
 

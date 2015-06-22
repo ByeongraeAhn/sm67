@@ -91,7 +91,7 @@ $(function(){
 	function addWeather(icon, day, condition){
 
 		var markup = '<li>'+
-			'<img src="assets/img/icons/'+ icon +'.png" />'+
+			'<img src="../module/weather/assets/img/icons/'+ icon +'.png" />'+
 			' <p class="day">'+ day +'</p> <p class="cond">'+ condition +
 			'</p></li>';
 
