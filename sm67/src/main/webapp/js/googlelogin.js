@@ -64,7 +64,7 @@ function render() {
   }
  	
  	function googleajax(obj) {
- 		$.ajax('http://localhost:9999/sm67/page/login.do', {
+ 		$.ajax('../page/login.do', {
  			method: 'POST',
  			dataType: 'json',
  			data: {
@@ -82,7 +82,7 @@ function render() {
  				} else {
  					alert("기존 회원입니다.")
  				}
- 				location.replace("http://localhost:9999/sm67/main/main.html");
+ 				location.replace("../main/main.html");
  			},
  			error: function(xhr, textStatus, errorThrown) {
  				alert('작업을 완료할 수 없습니다.\n' + 

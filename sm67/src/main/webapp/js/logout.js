@@ -1,14 +1,12 @@
 
 function logout() {
-	console.log("들어와라좀");
-	$.ajax('http://localhost:9999/sm67/page/loginOut.do', {
+	$.ajax('../page/loginOut.do', {
 		method: 'POST',
 		dataType: 'json',
 		data: {
 		},
 		success: function(result) {
-			console.log("ajax성공");
-			location.replace("http://localhost:9999/sm67/login/login.html");
+			location.replace("../login/login.html");
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert('작업을 완료할 수 없습니다.\n' + 

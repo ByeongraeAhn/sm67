@@ -2,7 +2,7 @@ window.onload = getSwagVo;
 var userName;
 
 function getSwagVo() {
-		$.ajax('http://localhost:9999/sm67/page/getSwagVo.do', {
+		$.ajax('../page/getSwagVo.do', {
 			method: 'POST',
 			dataType: 'json',
 			data: {
