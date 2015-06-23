@@ -6,17 +6,12 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import swag.dao.SwagUserDao;
 import swag.domain.SwagUserVo;
 
-import com.google.gson.Gson;
-
-/* 실습 목표: JSON 데이터 출력 */
 
 @Controller("/page")
 @RequestMapping("/page")
@@ -52,10 +47,6 @@ public class PageController {
     headers.add("Content-Type", "text/plain;charset=UTF-8");
     headers.add("Access-Control-Allow-Origin", "*");
     
-   /* return new ResponseEntity<String>(
-                new Gson().toJson(responseData),
-                headers,
-                HttpStatus.OK);*/
     return responseData;
   }
   

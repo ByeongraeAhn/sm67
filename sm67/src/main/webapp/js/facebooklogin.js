@@ -55,7 +55,7 @@
  				} else {
  					alert("기존 회원입니다.")
  				}
- 				location.replace("../main/main.html");
+ 				location.replace("../main/nicolas.html");
  			},
  			error: function(xhr, textStatus, errorThrown) {
  				alert('작업을 완료할 수 없습니다.\n' + 
