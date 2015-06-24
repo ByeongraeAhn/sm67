@@ -1,5 +1,8 @@
 package swag.web;
 
+import java.sql.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -21,18 +24,23 @@ public class PageController {
   SwagUserDao swagUserDao;
   
   @RequestMapping("/login")
-  public Object list(String email, String name, HttpSession session) throws Exception {
+  public Object list(String email, String name, String birthday, HttpSession session) throws Exception {
     
     HashMap<String,Object> sqlParams = new HashMap<String,Object>();
     sqlParams.put("email", email);
     sqlParams.put("username", name);
+    birthday="20100101";
+    sqlParams.put("birthday", birthday);
     
+    //기존의 등록된 유저인지 확인한다.
     SwagUserVo validation = swagUserDao.validationUser(email);
     
+    //새로운 유저이면 유저정보를 등록한다.
     if(validation.getCount() == 1) {
     } else {
       swagUserDao.insert(sqlParams);
     }
+    
     
     SwagUserVo swagUserVo = swagUserDao.selectOne(email);
     
@@ -68,6 +76,31 @@ public class PageController {
     responseData.put("status", "success");
     responseData.put("data", swagUserVo);
 
+    
+    return responseData;
+  }
+  
+  @RequestMapping("/getBirth")
+  public Object getBirth(HttpSession session) throws Exception {
+    
+    SwagUserVo swagUserVo = (SwagUserVo)session.getAttribute("user");
+    
+    SwagUserVo birthvalidation = null;
+    String day = null;
+    //생일정보가 있는지 확인한다
+    try {
+      birthvalidation = swagUserDao.birthdayValidationUser(swagUserVo.getEmail()); 
+      Date aa = birthvalidation.getBirthday();
+      DateFormat sdFormat = new SimpleDateFormat("yyyy-MM-dd");
+      day = sdFormat.format(aa);
+    } catch (Exception ex) {
+      day = null;
+    }
+    
+    HashMap<String,Object> responseData = new HashMap<String,Object>();
+    responseData.put("status", "success");
+    responseData.put("birthday", day);
+    
     
     return responseData;
   }

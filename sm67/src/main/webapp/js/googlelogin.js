@@ -69,7 +69,7 @@ function render() {
  			dataType: 'json',
  			data: {
  				name: obj['name'],
- 				email: obj['email']
+ 				email: obj['email'],
  			},
  			success: function(result) {
  /*				var testtest = result.data;

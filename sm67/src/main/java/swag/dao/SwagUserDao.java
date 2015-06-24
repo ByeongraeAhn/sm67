@@ -13,6 +13,8 @@ public interface SwagUserDao {
   SwagUserVo validationUser(String email);
   
   SwagUserVo selectOne(String email); 
+  
+  SwagUserVo birthdayValidationUser(String email);
 
 }
 
