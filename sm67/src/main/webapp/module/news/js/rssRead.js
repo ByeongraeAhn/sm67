@@ -90,12 +90,11 @@ if (this.feedsfetched==this.feedurls.length) //if all feeds fetched
 this._displayresult(this.feeds) //display results
 }
 
-
 gfeedfetcher.prototype._displayresult=function(feeds){
 var rssoutput=(this.itemcontainer=="<li>")? "<ul>\n" : ""
 gfeedfetcher._sortarray(feeds, this.sortstring)
 for (var i=0; i<feeds.length; i++){
-var itemtitle="<a href=\"" + feeds[i].link + "\" target=\"" + this.linktarget + "\" class=\"titlefield\">" + feeds[i].title + "</a>"
+var itemtitle="<a href=\"" + feeds[i].link + "\" target=\"" + this.linktarget + "|_blank" + "\" class=\"titlefield\">" + feeds[i].title + "</a>"
 var itemlabel=/label/i.test(this.showoptions)? '<span class="labelfield">['+this.feeds[i].ddlabel+']</span>' : " "
 var itemdate=gfeedfetcher._formatdate(feeds[i].publishedDate, this.showoptions)
 var itemdescription=/description/i.test(this.showoptions)? "<br />"+feeds[i].content : /snippet/i.test(this.showoptions)? "<br />"+feeds[i].contentSnippet  : ""

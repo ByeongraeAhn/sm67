@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>타이틀</title>
+<title>NEWS</title>
 
 <style type="text/css">
 .labelfield { /*CSS for label field in general*/
@@ -35,9 +35,6 @@
 	margin-bottom: 2px;
 }
 
-code { /*CSS for insructions*/
-	color: red;
-}
 </style>
 </head>
 <body>
@@ -46,20 +43,15 @@ code { /*CSS for insructions*/
   src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
 <script src="./js/rssRead.js"></script>
 
-
-	<b>Example 1: (Single RSS feed, 10 entries, "<code>date</code>"
-		field enabled, sort by <code>title</code>)
-	</b>
-	<p>
-		<a href="javascript:cssfeed.init()"><B>본 항목을 새로고침</B></a>
+		<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
 
 		<script type="text/javascript">
 			var cssfeed = new gfeedfetcher("example1", "example1class", "")
-			cssfeed.addFeed("경향신문",
-					"http://www.khan.co.kr/rss/rssdata/politic_news.xml") //RSS주소 및 제목
+			cssfeed.addFeed("경향신문-전체기사",
+					"http://www.khan.co.kr/rss/rssdata/total_news.xml") //RSS주소 및 제목
 			cssfeed.displayoptions("date") //날짜 필드 보여주기
 			cssfeed.setentrycontainer("li") //정렬은 Li태그로
-			cssfeed.filterfeed(20, "title") //목록은 10개
+			cssfeed.filterfeed(10, "title") //목록은 10개
 			cssfeed.init() //Always call this last
 		</script>
 
