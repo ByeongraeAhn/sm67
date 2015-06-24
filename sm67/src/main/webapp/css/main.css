@@ -63,3 +63,10 @@ body
 	resize: none;
 }
 
+#newsFrame {
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	white-space:nowrap;
+}
+

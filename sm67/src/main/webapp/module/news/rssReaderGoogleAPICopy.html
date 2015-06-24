@@ -1,16 +1,57 @@
-		<link href='../../css/news.css' rel='stylesheet' type='text/css'>
-		<script
+<html>
+<head>
+<title>NEWS</title>
+
+<style type="text/css">
+.labelfield { /*CSS for label field in general*/
+	color: brown;
+	font-size: 90%;
+}
+
+.datefield { /*CSS for date field in general*/
+	color: gray;
+	font-size: 90%;
+}
+
+#example1 li { /*CSS specific to demo 1*/
+	margin-bottom: 4px;
+}
+
+#example2 div { /*CSS specific to demo 2*/
+	margin-bottom: 5px;
+}
+
+#example2 div a { /*CSS specific to demo 2*/
+	text-decoration: none;
+}
+
+#example3 a { /*CSS specific to demo 3*/
+	color: #D80101;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+#example3 p { /*CSS specific to demo 3*/
+	margin-bottom: 2px;
+}
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript"
   src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
-<script src="./js/rssRead.js"></script>  
+<script src="./js/rssRead.js"></script>
+
 		<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
 
-		<script>
+		<script type="text/javascript">
 			var cssfeed = new gfeedfetcher("example1", "example1class", "")
 			cssfeed.addFeed("경향신문-전체기사",
 					"http://www.khan.co.kr/rss/rssdata/total_news.xml") //RSS주소 및 제목
 			cssfeed.displayoptions("date") //날짜 필드 보여주기
 			cssfeed.setentrycontainer("li") //정렬은 Li태그로
-			cssfeed.filterfeed(50, "title") //목록은 10개
+			cssfeed.filterfeed(10, "title") //목록은 10개
 			cssfeed.init() //Always call this last
 		</script>
 
@@ -49,3 +90,5 @@
 		newsfeed.init() //Always call this last
 	</script>
 	 -->
+</body>
+</html>
