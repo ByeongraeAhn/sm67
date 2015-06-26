@@ -65,7 +65,6 @@ function checkLoginState() {
 /*					console.log(a._response.responseJSON.response["email"]);
 					console.log(a._response.responseJSON.response["nickname"]);*/
 					 getBirth(a,naverajax);
-					/*naverajax(a);*/
 				})
 			})
 
@@ -96,9 +95,9 @@ var naverajax = function(a) {
 			success: function(result) {
 				var validation = result.data;
  				if(validation.count == 0){
- 					alert("새로운 회원입니다.")
+ 					/*alert("새로운 회원입니다.")*/
  				} else {
- 					alert("기존 회원입니다.")
+ 					/*alert("기존 회원입니다.")*/
  				}
  				location.replace("../main/nicolas.html");
 			},
