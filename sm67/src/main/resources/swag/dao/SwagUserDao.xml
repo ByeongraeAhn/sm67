@@ -29,12 +29,6 @@
       FROM user 
       WHERE email=#{email}
   </select>
-  
-  <select id="birthdayValidationUser" parameterType="String" resultType="SwagUserVo">
-      SELECT birthday 
-      FROM user 
-      WHERE email=#{email}
-  </select>
 
 </mapper>
 

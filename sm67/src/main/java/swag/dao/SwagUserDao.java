@@ -14,7 +14,6 @@ public interface SwagUserDao {
   
   SwagUserVo selectOne(String email); 
   
-  SwagUserVo birthdayValidationUser(String email);
 
 }
 

@@ -64,7 +64,8 @@ function checkLoginState() {
 					/*console.log("my info Object : ", a)*/
 /*					console.log(a._response.responseJSON.response["email"]);
 					console.log(a._response.responseJSON.response["nickname"]);*/
-					naverajax(a);
+					 getBirth(a,naverajax);
+					/*naverajax(a);*/
 				})
 			})
 
@@ -83,13 +84,14 @@ $("#NaverIdLoginBTN").click(function() {
 	naver.login(state);
 });
 
-function naverajax(a) {
+var naverajax = function(a) {
 		$.ajax('../page/login.do', {
 			method: 'POST',
 			dataType: 'json',
 			data: {
 				name: a._response.responseJSON.response["nickname"],
-				email: a._response.responseJSON.response["email"]
+				email: a._response.responseJSON.response["email"],
+				birthday: birth
 			},
 			success: function(result) {
 				var validation = result.data;
