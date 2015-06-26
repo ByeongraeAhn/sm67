@@ -34,7 +34,8 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
-  var testAPI() = function(b) {
+  function testAPI() {
+    console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
 /*      console.log(JSON.stringify(response))
         console.log('Successful login for: ' + response.name);
@@ -44,8 +45,7 @@
  			dataType: 'json',
  			data: {
  				name: response.name,
- 				email: response.email,
- 				birthday: birth
+ 				email: response.email
  			},
  			success: function(result) {
  				var validation = result.data;
@@ -69,10 +69,12 @@
 function littleBoy(){
   FB.login(function(response) {
 	  if (response.status === 'connected') {
-		  var b = null;
-		  getBirth(b,testAPI);
+		  console.log("aaa");
+		  testAPI();
 	  } else if (response.status === 'not_authorized') {
+		  console.log("bbb");
 	  } else {
+		  console.log("ccc");
 	  }
 	});
 }
