@@ -37,9 +37,12 @@
   function testAPI() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
-/*      console.log(JSON.stringify(response))
-        console.log('Successful login for: ' + response.name);
+      console.log(JSON.stringify(response))
+/*        console.log('Successful login for: ' + response.name);
         console.log('Successful login for: ' + response.email);*/
+      var birthToken = response.birthday.split('/');
+      var birthday =(birthToken[2].concat(birthToken[0])).concat(birthToken[1]);
+      console.log('birthday : ' + birthday);
     	$.ajax('../page/login.do', {
  			method: 'POST',
  			dataType: 'json',
@@ -76,5 +79,5 @@ function littleBoy(){
 	  } else {
 		  console.log("ccc");
 	  }
-	});
+	}, {scope: 'email,user_birthday,user_location'});
 }
