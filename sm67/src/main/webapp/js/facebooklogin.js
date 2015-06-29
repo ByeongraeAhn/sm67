@@ -49,7 +49,7 @@
  			data: {
  				name: response.name,
  				email: response.email,
- 				birthday: birthday;
+ 				birthday: birthday
  			},
  			success: function(result) {
  				location.replace("../main/nicolas.html");
