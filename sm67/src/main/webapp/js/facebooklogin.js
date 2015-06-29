@@ -48,16 +48,10 @@
  			dataType: 'json',
  			data: {
  				name: response.name,
- 				email: response.email
+ 				email: response.email,
+ 				birthday: birthday;
  			},
  			success: function(result) {
- 				var validation = result.data;
- 				console.log(validation.count);
- 				if(validation.count == 0){
- 					alert("새로운 회원입니다.")
- 				} else {
- 					alert("기존 회원입니다.")
- 				}
  				location.replace("../main/nicolas.html");
  			},
  			error: function(xhr, textStatus, errorThrown) {
