@@ -7,6 +7,7 @@ $(function(){
     var weatherDiv = $('#weather'),
         scroller = $('#scroller'),
         location = $('p.location');
+    	wt_analyze = $('#wt_analyze');
 
     // Does this browser support geolocation?
     if (navigator.geolocation) {
@@ -53,6 +54,7 @@ $(function(){
 
                 // Add the location to the page
                 location.html(city+', <b>'+country+'</b>');
+                
 
                 weatherDiv.addClass('loaded');
 
@@ -91,11 +93,12 @@ $(function(){
     function addWeather(icon, day, condition){
 
         var markup = '<li>'+
-            '<img src="http://openweathermap.org/img/w/'+ icon +'.png" />'+
-            ' <p class="day">'+ day +'</p> <p class="cond">'+ condition +
-            '</p></li>';
+            '<img src="../module/weather/assets/img/icons/'+ icon +'.png" />'+ '</li>';
 
         scroller.append(markup);
+        wt_analyze.append(icon);
+        
+        
     }
 
     /* Handling the previous / next arrows */

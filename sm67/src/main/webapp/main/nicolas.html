@@ -208,6 +208,8 @@
                                     <h2>Today's<br>Weather</h2>
                                     <span class="caption">We will analyze weather today</span>
                                     <span class="arrow"><span class="inner"></span></span>
+                                    <div class="caption" id="wt_analyze"></div>
+                                    
                                 </a>
                             </div>
                         </div>
@@ -354,7 +356,7 @@
             	<div class="illustration-inner to-load" style="background-color:#f7f7f7;"> <div id="graph"></div></div>
             </div>
             <div class="illustration">
-            	<div class="illustration-inner to-load" style="background-color:#f7f7f7;" data-image-url="./weather.JPG"></div>
+            	<div class="illustration-inner to-load" style="background-color:#f7f7f7;"><div id="wt" style="width:100%;height:100%"></div></div>
             </div>
             <div class="illustration">
             	<div class="illustration-inner to-load" style="background-color:#f7f7f7;" data-image-url="http://nicolas-bussiere.fr/src/medias/projects/bnp/home.jpg"></div>
@@ -389,11 +391,12 @@
     <script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 	<script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 	<script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
+
     
 	
-<!-- 	<script>
-	$("#right_top").load("../module/weather/w2.html#weather");
-	</script> -->
+<script>
+	$("#wt").load("../module/weather/w2.html");
+	</script>
 
 </body>
 </html>
