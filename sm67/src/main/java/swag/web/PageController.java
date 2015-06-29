@@ -1,5 +1,6 @@
 package swag.web;
 
+import java.sql.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -73,6 +74,29 @@ public class PageController {
     responseData.put("data", swagUserVo);
 
     
+    return responseData;
+  }
+  
+  @RequestMapping("/updateBirth")
+  public Object updateBirth(HttpSession session, String birthday) throws Exception {
+
+    SwagUserVo swagUserVo = (SwagUserVo)session.getAttribute("user");
+    
+    //생일정보를 업데이트하기 위해 해쉬맵에 세팅한다.
+    HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+    sqlParams.put("email", swagUserVo.getEmail());
+    sqlParams.put("birthday", birthday);
+    
+    //생일정보를 업데이트한다.
+    swagUserDao.update(sqlParams);
+    
+    //생일정보가 추가된 유저정보를 세션에 넣는다.
+    swagUserVo = swagUserDao.selectOne(swagUserVo.getEmail());
+    session.setAttribute("user", swagUserVo);
+    
+    HashMap<String,Object> responseData = new HashMap<String,Object>();
+    responseData.put("status", "success");
+
     return responseData;
   }
 

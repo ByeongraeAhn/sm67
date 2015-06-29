@@ -29,6 +29,12 @@
       FROM user 
       WHERE email=#{email}
   </select>
+  
+  <update id="update" parameterType="map">
+		UPDATE user
+		SET birthday  = #{birthday}
+       WHERE email   = #{email}
+  </update>
 
 </mapper>
 

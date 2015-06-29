@@ -64,7 +64,7 @@ function checkLoginState() {
 					/*console.log("my info Object : ", a)*/
 /*					console.log(a._response.responseJSON.response["email"]);
 					console.log(a._response.responseJSON.response["nickname"]);*/
-					 getBirth(a,naverajax);
+					naverajax(a);
 				})
 			})
 
@@ -83,23 +83,21 @@ $("#NaverIdLoginBTN").click(function() {
 	naver.login(state);
 });
 
-var naverajax = function(a) {
+function naverajax(a) {
 		$.ajax('../page/login.do', {
 			method: 'POST',
 			dataType: 'json',
 			data: {
 				name: a._response.responseJSON.response["nickname"],
 				email: a._response.responseJSON.response["email"],
-				birthday: birth
 			},
 			success: function(result) {
 				var validation = result.data;
- 				if(validation.count == 0){
- 					/*alert("새로운 회원입니다.")*/
- 				} else {
- 					/*alert("기존 회원입니다.")*/
- 				}
- 				location.replace("../main/nicolas.html");
+				if(validation.count == 0){
+					getBirth();
+				} else {
+					location.replace("../main/nicolas.html");
+				} 
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				alert('작업을 완료할 수 없습니다.\n' + 

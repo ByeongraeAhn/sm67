@@ -59,32 +59,28 @@ function render() {
     }
     
 
-    getBirth(obj,googleajax);
-//    googleajax(obj);
-
+    googleajax(obj);
     //console.log(obj);   // 전체 개체를 검사하려면 주석을 해제합니다.
 
     el.innerHTML = email;
     toggleElement('email');
   }
 
- var googleajax = function (obj) {
+ function googleajax (obj) {
 		$.ajax('../page/login.do', {
 			method: 'POST',
 			dataType: 'json',
 			data: {
 				name: obj['name'],
 				email: obj['email'],
-				birthday: birth
 			},
 			success: function(result) {
 				var validation = result.data;
 				if(validation.count == 0){
-					/*alert("새로운 회원입니다.")*/
+					getBirth();
 				} else {
-					/*alert("기존 회원입니다.")*/
-				}
-				location.replace("../main/nicolas.html");
+					location.replace("../main/nicolas.html");
+				} 
 			},
 			error: function(xhr, textStatus, errorThrown) {
 				alert('작업을 완료할 수 없습니다.\n' + 
@@ -92,11 +88,5 @@ function render() {
 					  '계속 창이 뜬다면, 관리자에 문의하세요.(사내번호:1112)');
 			}
 		});
-	}
- 
-
-
- 	
-
- 	
+}
  	
