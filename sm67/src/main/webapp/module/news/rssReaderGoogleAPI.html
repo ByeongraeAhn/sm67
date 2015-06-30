@@ -47,7 +47,11 @@
 	<script type="text/javascript">
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
 		newsfeed.addFeed("조선일보-전체",
-				"http://myhome.chosun.com/rss/www_section_rss.xml") //Specify "label" plus URL to RSS feed
+				"http://myhome.chosun.com/rss/www_section_rss.xml")
+				newsfeed.addFeed("오마이뉴스-전체",
+        "http://rss.ohmynews.com/rss/ohmynews.xml")
+        newsfeed.addFeed("한국경제신문-전체",
+        "http://rss.hankyung.com/new/news_main.xml")//Specify "label" plus URL to RSS feed
 		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
