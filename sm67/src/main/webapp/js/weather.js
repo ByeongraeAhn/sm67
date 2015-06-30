@@ -55,7 +55,7 @@ $(function(){
                 // Set the slider to the first slide
                 
                 showSlide(0);
-            	wt_analyze.append("오늘은 날씨가 그럭저럭이네요. 집에서 쉬시던가요");
+            	wt_analyze.append("오늘은 날씨가 별로네요. <br> 야외 활동하기에는 큰 무리가 없을 것 같네요. <br>");
                 
 
             }
