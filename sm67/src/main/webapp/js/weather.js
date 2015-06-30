@@ -7,7 +7,7 @@ $(function(){
     var weatherDiv = $('#weather'),
         scroller = $('#scroller'),
         location = $('p.location');
-    	wt_analyze = $('#wt_analyze');
+    	var wt_analyze = $('#wt_analyze');
 
     // Does this browser support geolocation?
     if (navigator.geolocation) {
@@ -36,10 +36,10 @@ $(function(){
                 var offset = d.getTimezoneOffset()*60*1000;
                 var city = cache.data.city.name;
                 var country = cache.data.city.country;
+                var i=1;
 
                 $.each(cache.data.list, function(){
                     // "this" holds a forecast object
-
                     // Get the local time of this forecast (the api returns it in utc)
                     var localTime = new Date(this.dt*1000 - offset);
 
@@ -49,17 +49,14 @@ $(function(){
                         this.weather[0].main + ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG +
                                                 ' / ' + convertTemperature(this.main.temp_max) + '°' + DEG+'</b>'
                     );
-
                 });
-
-                // Add the location to the page
-                location.html(city+', <b>'+country+'</b>');
-                
-
                 weatherDiv.addClass('loaded');
 
                 // Set the slider to the first slide
+                
                 showSlide(0);
+            	wt_analyze.append("오늘은 날씨가 그럭저럭이네요. 집에서 쉬시던가요");
+                
 
             }
 
@@ -94,10 +91,7 @@ $(function(){
 
         var markup = '<li>'+
             '<img src="../module/weather/assets/img/icons/'+ icon +'.png" />'+ '</li>';
-
         scroller.append(markup);
-        wt_analyze.append(icon);
-        
         
     }
 
