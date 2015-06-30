@@ -3,9 +3,8 @@
 	src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
 <script src="./js/rssRead.js"></script>
 <script src="../../js/jquery-1.11.2.js"></script>
-<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
-<button id='btn1'>test</button>
 <!-- 
+<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
 <script>
 			var cssfeed = new gfeedfetcher("example1", "example1class", "")
 			cssfeed.addFeed("경향신문-전체기사",
@@ -42,25 +41,22 @@
 		socialfeed.init() //Always call this last
 	</script>
 -->
-	<b>Example 3: (Three RSS feeds, 8 entries, "<code>datetime</code>"
-		and "<code>snippet</code>" fields enabled, sort by <code>date</code>)
-	</b>
 <p>
 	<a href="javascript:newsfeed.init()"><B>본 항목을 새로고침</B></a>
 
 	<script type="text/javascript">
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-		newsfeed.addFeed("오마이뉴스",
-				"http://rss.ohmynews.com/rss/ohmynews.xml") //Specify "label" plus URL to RSS feed
-		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
-		newsfeed.setentrycontainer("p") //Display each entry as a paragraph
-		newsfeed.filterfeed(5, "date") //Show 8 entries, sort by date
+		newsfeed.addFeed("조선일보-전체",
+				"http://myhome.chosun.com/rss/www_section_rss.xml") //Specify "label" plus URL to RSS feed
+		newsfeed.displayoptions("label datetime") //show the specified additional fields
+		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
+		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
 		$('#btn1').on("click", function(event) {
 	        console.log(newsfeed.feeds[0]);
 	      })
 	</script>
-
+<!-- 
 RSS Description for <b>1st</b> RSS Entry:
 <div id="desc1"></div>
 
@@ -69,3 +65,4 @@ RSS Description for <b>2nd</b> RSS Entry:
 
 RSS Description for <b>3rd</b> RSS Entry:
 <div id="desc3"></div>
+ -->

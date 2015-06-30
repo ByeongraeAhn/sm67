@@ -111,7 +111,7 @@
                         <span class="name">Château<br>d'Yquem</span>
                     </a>
                     <a data-direction="from-right" href="http://nicolas-bussiere.fr/projects/bnp-paribas-lbc" class="project even">
-                    	<span class="illustration"><span class="image to-load" style="background-color:" data-image-url="http://nicolas-bussiere.fr/src/medias/projects/bnp/preview.jpg"></span></span>
+                    	<span class="illustration"><span class="image to-load" style="background-color:" data-image-url="./newsImage.png"></span></span>
                         <span class="name">BNP Paribas<br>Les bons comptes</span>
                     </a>
                     <a data-direction="from-right" href="http://nicolas-bussiere.fr/projects/hermes-sur-mesure" class="project odd">
@@ -223,9 +223,10 @@
                         <div class="container">
                             <div class="content">
                                 <a class="ajax" data-direction="from-right" href="http://nicolas-bussiere.fr/projects/bnp-paribas-lbc" data-project="bnp-paribas-lbc">
-                                    <h2>BNP Paribas<br>Les bons comptes</h2>
-                                    <span class="caption">mobile website</span>
+                                    <h2>News</h2>
+                                    <span class="caption">We will deliver news</span>
                                     <span class="arrow"><span class="inner"></span></span>
+                                    <div class="caption" id="newsFeed"></div>
                                 </a>
                             </div>
                         </div>
@@ -359,7 +360,9 @@
             	<div class="illustration-inner to-load" style="background-color:#f7f7f7;"><div id="wt" style="width:100%;height:100%"></div></div>
             </div>
             <div class="illustration">
-            	<div class="illustration-inner to-load" style="background-color:#f7f7f7;" data-image-url="http://nicolas-bussiere.fr/src/medias/projects/bnp/home.jpg"></div>
+            	<div style="background-color:#f7f7f7;">
+            	  <iframe id="newsFrame" src="../module/news/rssReaderGoogleAPI.html"></iframe>
+            	</div>
             </div>
             <div class="illustration">
             	<div class="illustration-inner to-load" style="background-color:#f7f7f7;" data-image-url="http://nicolas-bussiere.fr/src/medias/projects/hermes/home.jpg"></div>
@@ -382,21 +385,19 @@
 
     <script src="../js/nicolas.js"></script><!-- 메인js -->
     <script>
-        var app = new APP.CORE.App( {
+        var app = new APP.CORE.App({
             page : 'home'
-        } );
+        });
         app.start();
     </script>
     <script type="text/javascript" src="../js/jquery-1.11.2.js"></script><!-- 제이쿼리 -->
     <script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 	<script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 	<script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
-
-    
 	
 <script>
 	$("#wt").load("../module/weather/w2.html");
-	</script>
+</script>
 
 </body>
 </html>
