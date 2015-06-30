@@ -91,15 +91,22 @@ this._displayresult(this.feeds) //display results
 }
 
 gfeedfetcher.prototype._displayresult=function(feeds){
-var rssoutput=(this.itemcontainer=="<li>")? "<ul>\n" : ""
-gfeedfetcher._sortarray(feeds, this.sortstring)
-for (var i=0; i<feeds.length; i++){
-var itemtitle="<a href=\"" + feeds[i].link + "\" target=\"" + this.linktarget + "|_blank" + "\" class=\"titlefield\">" + feeds[i].title + "</a>"
-var itemlabel=/label/i.test(this.showoptions)? '<span class="labelfield">['+this.feeds[i].ddlabel+']</span>' : " "
-var itemdate=gfeedfetcher._formatdate(feeds[i].publishedDate, this.showoptions)
-var itemdescription=/description/i.test(this.showoptions)? "<br />"+feeds[i].content : /snippet/i.test(this.showoptions)? "<br />"+feeds[i].contentSnippet  : ""
-rssoutput+=this.itemcontainer + itemtitle + " " + itemlabel + " " + itemdate + "\n" + itemdescription + this.itemcontainer.replace("<", "</") + "\n\n"
+	var descs=['desc1', 'desc2', 'desc3']
+	var rssoutput=(this.itemcontainer=="<li>")? "<ul>\n" : ""
+	gfeedfetcher._sortarray(feeds, this.sortstring)
+	for (var i=0; i<feeds.length; i++){
+		var itemtitle="<a href=\"" + feeds[i].link + "\" target=\"" + this.linktarget + "\" class=\"titlefield\">" + feeds[i].title + "</a>"
+		var itemlabel=/label/i.test(this.showoptions)? '<span class="labelfield">['+this.feeds[i].ddlabel+']</span>' : " "
+		var itemdate=gfeedfetcher._formatdate(feeds[i].publishedDate, this.showoptions)
+		var itemdescription=/description/i.test(this.showoptions)? "<br />"+feeds[i].content : /snippet/i.test(this.showoptions)? "<br />"+feeds[i].contentSnippet  : ""
+		rssoutput+=this.itemcontainer + itemtitle + " " + itemlabel + " " + itemdate + "\n" + itemdescription + this.itemcontainer.replace("<", "</") + "\n\n"
+	}
+	rssoutput+=(this.itemcontainer=="<li>")? "</ul>" : ""
+	this.feedcontainer.innerHTML=rssoutput
+	for (var i=0; i<descs.length; i++){
+		var entryindex=parseInt(descs[i].match(/\d+$/i).shift())-1
+		document.getElementById(descs[i]).innerHTML=feeds[entryindex].content
+	}
+
 }
-rssoutput+=(this.itemcontainer=="<li>")? "</ul>" : ""
-this.feedcontainer.innerHTML=rssoutput
-}
+
