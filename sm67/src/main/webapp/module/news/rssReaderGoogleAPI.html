@@ -48,7 +48,7 @@
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
 		newsfeed.addFeed("조선일보-전체",
 				"http://myhome.chosun.com/rss/www_section_rss.xml") //Specify "label" plus URL to RSS feed
-		newsfeed.displayoptions("label datetime") //show the specified additional fields
+		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
