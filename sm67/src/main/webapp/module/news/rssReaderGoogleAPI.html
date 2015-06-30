@@ -1,20 +1,29 @@
-		<link href='../../css/news.css' rel='stylesheet' type='text/css'>
-		<script
-  src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
-<script src="./js/rssRead.js"></script>  
-		<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
-
-		<script>
+<link href='../../css/news.css' rel='stylesheet' type='text/css'>
+<script
+	src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
+<script src="./js/rssRead.js"></script>
+<script src="../../js/jquery-1.11.2.js"></script>
+<a href="javascript:cssfeed.init()"><B>새로고침</B></a>
+<button id='btn1'>test</button>
+<!-- 
+<script>
 			var cssfeed = new gfeedfetcher("example1", "example1class", "")
 			cssfeed.addFeed("경향신문-전체기사",
-					"http://myhome.chosun.com/rss/www_section_rss.xml") //RSS주소 및 제목
-			cssfeed.displayoptions("date") //날짜 필드 보여주기
+					"http://www.khan.co.kr/rss/rssdata/total_news.xml")//RSS주소 및 제목
+			cssfeed.displayoptions("time datetime snippet label")
+			//cssfeed.displayoptions("datetime")
 			cssfeed.setentrycontainer("li") //정렬은 Li태그로
-			cssfeed.filterfeed(50, "title") //목록은 10개
+			cssfeed.filterfeed(50, "title") //목록
+			//console.log(JSON.stringify(cssfeed))
 			cssfeed.init() //Always call this last
+			
+			$('#btn1').on("click", function(event) {
+				console.log(cssfeed.feeds[0]);
+			})
+			
 		</script>
-
-		<!-- 
+ -->
+<!-- 
 	<b>Example 2: (Two RSS feeds, 6 entries, "<code>label"</code>, "<code>datetime</code>",
 		and "<code>snippet</code>" fields enabled, sort by <code>label</code>)
 	</b>
@@ -32,7 +41,7 @@
 		socialfeed.filterfeed(6, "label") //Show 6 entries, sort by label
 		socialfeed.init() //Always call this last
 	</script>
-
+-->
 	<b>Example 3: (Three RSS feeds, 8 entries, "<code>datetime</code>"
 		and "<code>snippet</code>" fields enabled, sort by <code>date</code>)
 	</b>
@@ -41,11 +50,22 @@
 
 	<script type="text/javascript">
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-		newsfeed.addFeed("경향신문",
-				"http://www.khan.co.kr/rss/rssdata/total_news.xml") //Specify "label" plus URL to RSS feed
-		newsfeed.displayoptions("datetime snippet") //show the specified additional fields
+		newsfeed.addFeed("오마이뉴스",
+				"http://rss.ohmynews.com/rss/ohmynews.xml") //Specify "label" plus URL to RSS feed
+		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("p") //Display each entry as a paragraph
-		newsfeed.filterfeed(8, "date") //Show 8 entries, sort by date
+		newsfeed.filterfeed(5, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
+		$('#btn1').on("click", function(event) {
+	        console.log(newsfeed.feeds[0]);
+	      })
 	</script>
-	 -->
+
+RSS Description for <b>1st</b> RSS Entry:
+<div id="desc1"></div>
+
+RSS Description for <b>2nd</b> RSS Entry:
+<div id="desc2"></div>
+
+RSS Description for <b>3rd</b> RSS Entry:
+<div id="desc3"></div>
