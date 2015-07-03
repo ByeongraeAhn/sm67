@@ -53,8 +53,12 @@ feedpointer.load(function(r){displayer._fetch_data_as_array(r)}) //call Feed.loa
 
 gfeedfetcher._formatdate=function(datestr, showoptions){
 var itemdate=new Date(datestr)
-var parseddate=(showoptions.indexOf("datetime")!=-1)? itemdate.toLocaleString() : (showoptions.indexOf("date")!=-1)? itemdate.toLocaleDateString() : (showoptions.indexOf("time")!=-1)? itemdate.toLocaleTimeString() : ""
-return "<span class='datefield'>"+parseddate+"</span>"
+var months = Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+var toTimestamp = itemdate.valueOf();
+var date2 = $.timeago(toTimestamp);
+
+//var parseddate=(showoptions.indexOf("datetime")!=-1)? itemdate.toLocaleString() : (showoptions.indexOf("date")!=-1)? itemdate.toLocaleDateString() : (showoptions.indexOf("time")!=-1)? itemdate.toLocaleTimeString() : ""
+return "<span class='datefield'>"+date2+"</span>"
 }
 
 gfeedfetcher._sortarray=function(arr, sortstr){
@@ -90,7 +94,7 @@ if (this.feedsfetched==this.feedurls.length) //if all feeds fetched
 this._displayresult(this.feeds) //display results
 }
 
-gfeedfetcher.prototype._displayresult=function(feeds){
+gfeedfetcher.prototype._displayresult=function(feeds) {
 	var descs=['desc1', 'desc2', 'desc3']
 	var rssoutput=(this.itemcontainer=="<li>")? "<ul>\n" : ""
 	gfeedfetcher._sortarray(feeds, this.sortstring)
@@ -107,6 +111,6 @@ gfeedfetcher.prototype._displayresult=function(feeds){
 		var entryindex=parseInt(descs[i].match(/\d+$/i).shift())-1
 		document.getElementById(descs[i]).innerHTML=feeds[entryindex].content
 	}
-
+	
 }
 

@@ -1,8 +1,9 @@
 <link href='../../css/news.css' rel='stylesheet' type='text/css'>
-<script
-	src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
-<script src="./js/rssRead.js"></script>
+<script src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
 <script src="../../js/jquery-1.11.2.js"></script>
+<script type='text/javascript' src='./js/timeago.js'></script>
+<script src="./js/rssRead.js"></script>
+
 <!-- 
 <a href="javascript:cssfeed.init()"><B>새로고침</B></a>
 <script>
@@ -42,16 +43,12 @@
 	</script>
 -->
 <p>
-	<a href="javascript:newsfeed.init()"><B>본 항목을 새로고침</B></a>
-
 	<script type="text/javascript">
+	  setInterval(function(){ newsfeed.init() }, 10000);
+	
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-		newsfeed.addFeed("조선일보-전체",
-				"http://myhome.chosun.com/rss/www_section_rss.xml")
-				newsfeed.addFeed("오마이뉴스-전체",
-        "http://rss.ohmynews.com/rss/ohmynews.xml")
-        newsfeed.addFeed("한국경제신문-전체",
-        "http://rss.hankyung.com/new/news_main.xml")//Specify "label" plus URL to RSS feed
+		newsfeed.addFeed("조선일보-속보",
+				"http://www.chosun.com/site/data/rss/rss.xml")
 		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
@@ -60,13 +57,12 @@
 	        console.log(newsfeed.feeds[0]);
 	      })
 	</script>
-<!-- 
+	
 RSS Description for <b>1st</b> RSS Entry:
-<div id="desc1"></div>
+<div id="desc1"><a name="desc1"></a></div>
 
 RSS Description for <b>2nd</b> RSS Entry:
-<div id="desc2"></div>
+<div id="desc2"><a name="desc2"></a></div>
 
 RSS Description for <b>3rd</b> RSS Entry:
-<div id="desc3"></div>
- -->
+<div id="desc3"><a name="desc3"></a></div>
