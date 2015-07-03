@@ -70,24 +70,24 @@ input {
 
 @font-face {
 	font-family:aperculight;
-	src:url(../fonts/apercu-light-webfont.eot);
-	src:url(../fonts/apercu-light-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/apercu-light-webfont.woff2) format('woff2'), url(../fonts/apercu-light-webfont.woff) format('woff'), url(../fonts/apercu-light-webfont.ttf) format('truetype'), url(../fonts/apercu-light-webfont.svg#aperculight) format('svg');
+	src:url(../fonts/nicolas/apercu-light-webfont.eot);
+	src:url(../fonts/nicolas/apercu-light-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/nicolas/apercu-light-webfont.woff2) format('woff2'), url(../fonts/nicolas/apercu-light-webfont.woff) format('woff'), url(../fonts/nicolas/apercu-light-webfont.ttf) format('truetype'), url(../fonts/nicolas/apercu-light-webfont.svg#aperculight) format('svg');
 	font-weight:400;
 	font-style:normal;
 }
 
 @font-face {
 	font-family:apercuitalic;
-	src:url(../fonts/apercu-italic-webfont.eot);
-	src:url(../fonts/apercu-italic-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/apercu-italic-webfont.woff2) format('woff2'), url(../fonts/apercu-italic-webfont.woff) format('woff'), url(../fonts/apercu-italic-webfont.ttf) format('truetype'), url(../fonts/apercu-italic-webfont.svg#apercuitalic) format('svg');
+	src:url(../fonts/nicolas/apercu-italic-webfont.eot);
+	src:url(../fonts/nicolas/apercu-italic-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/nicolas/apercu-italic-webfont.woff2) format('woff2'), url(../fonts/nicolas/apercu-italic-webfont.woff) format('woff'), url(../fonts/nicolas/apercu-italic-webfont.ttf) format('truetype'), url(../fonts/nicolas/apercu-italic-webfont.svg#apercuitalic) format('svg');
 	font-weight:400;
 	font-style:normal;
 }
 
 @font-face {
 	font-family:apercuregular;
-	src:url(../fonts/apercu-regular-webfont.eot);
-	src:url(../fonts/apercu-regular-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/apercu-regular-webfont.woff2) format('woff2'), url(../fonts/apercu-regular-webfont.woff) format('woff'), url(../fonts/apercu-regular-webfont.ttf) format('truetype'), url(../fonts/apercu-regular-webfont.svg#apercuregular) format('svg');
+	src:url(../fonts/nicolas/apercu-regular-webfont.eot);
+	src:url(../fonts/nicolas/apercu-regular-webfont.eot?#iefix) format('embedded-opentype'), url(../fonts/nicolas/apercu-regular-webfont.woff2) format('woff2'), url(../fonts/nicolas/apercu-regular-webfont.woff) format('woff'), url(../fonts/nicolas/apercu-regular-webfont.ttf) format('truetype'), url(../fonts/nicolas/apercu-regular-webfont.svg#apercuregular) format('svg');
 	font-weight:400;
 	font-style:normal;
 }
@@ -3009,12 +3009,12 @@ header .links a.twitter:after {
 }
 
 .not-found .content a:after, .not-found a.close:after, .page.home .line.clients .right ul li a:after, .page.home .project .left .content .arrow .inner, .page.home a.to-top:after, .page.project .intro .left .content .arrow span:after, .page.project .links a.close:after, .page.project .links a.to-top:after, .password a.close:after, .password form input[type=submit], a.toggle-header:after, header .links a:after, header .menu a.toggle-header:after {
-	background-image:url(../img/sprite.png);
+	background-image:url(../images/nicolas/sprite.png);
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio:1.5), only screen and (min--moz-device-pixel-ratio:1.5), only screen and (-o-min-device-pixel-ratio:3/2), only screen and (min-device-pixel-ratio:1.5), only screen and (min-resolution:192dppx) {
 	.not-found .content a:after, .not-found a.close:after, .page.home .line.clients .right ul li a:after, .page.home .project .left .content .arrow .inner, .page.home a.to-top:after, .page.project .intro .left .content .arrow span:after, .page.project .links a.close:after, .page.project .links a.to-top:after, .password a.close:after, .password form input[type=submit], a.toggle-header:after, header .links a:after, header .menu a.toggle-header:after {
-	background-image:url(../img/sprite@2x.png);
+	background-image:url(../images/nicolas/sprite@2x.png);
 	-o-background-size:40px 200px;
 	background-size:40px 200px;
 }
@@ -3513,74 +3513,4 @@ header .right.hidden {
 	display:block;
 }
 
-}@media only screen and (max-width:540px), only screen and (max-height:600px) {
-	html {
-	width:auto;
-	height:auto;
-	overflow:auto;
-}
-
-body {
-	width:auto;
-	height:auto;
-	overflow:auto;
-	background:#141618;
-	color:#6D6E6F;
-}
-
-.columns, a.toggle-header {
-	display:none;
-}
-
-header {
-	display:block!important;
-	position:relative!important;
-	opacity:1!important;
-	width:auto;
-	height:auto;
-}
-
-header .menu nav.internal {
-	display:none;
-}
-
-header .left {
-	position:relative;
-	display:block;
-	left:0;
-	top:0;
-	padding:100px 45px 40px;
-	opacity:1;
-}
-
-header .left .description {
-	padding:0;
-}
-
-header .menu a.contact, header .menu a.projects, header .right {
-	display:none;
-}
-
-header .menu a.toggle-header {
-	padding-left:30px;
-}
-
-header .menu a.toggle-header .icon, header .menu a.toggle-header:after {
-	display:none;
-}
-
-header .left .links {
-	top:0;
-}
-
-header .left .links p {
-	display:block;
-}
-
-}
-
-#newsFrame {
-	width: 100%;
-	height: 675px;
-	
 }
