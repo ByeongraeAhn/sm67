@@ -14,14 +14,6 @@
 --------------------------*/
 
 
-html{
-	background:url('../module/weather/assets/img/bg.jpg') repeat #e1f0f6;
-}
-
-
-body{
-	font:14px/1.3 'Open Sans Condensed', sans-serif;
-}
 
 a, a:visited {
 	outline:none;
