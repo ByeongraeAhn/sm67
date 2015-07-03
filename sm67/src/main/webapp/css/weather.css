@@ -126,7 +126,7 @@ header h1{
 }
 
 #weather.loaded #scroller,
-#weather.loaded .arrow{
+#weather.loaded .wt_arrow{
 	display:block
 }
 
@@ -199,7 +199,7 @@ header h1{
 	text-transform:uppercase;
 }
 
-#scroller, .arrow{
+#scroller, .wt_arrow{
 	display:none;
 }
 
@@ -209,7 +209,7 @@ header h1{
 -------------------------------*/
 
 
-.arrow{
+.wt_arrow{
 	background:url('../module/weather/assets/img/arrows.png') no-repeat;
 	width:34px;
 	height:45px;
@@ -221,15 +221,15 @@ header h1{
 	text-indent:-99999px;
 }
 
-.arrow:hover{
+.wt_arrow:hover{
 	opacity:1;
 }
 
-.arrow.previous{
+.wt_arrow.previous{
 	left:20px;
 }
 
-.arrow.next{
+.wt_arrow.next{
 	background-position:top right;
 	right:20px;
 }
