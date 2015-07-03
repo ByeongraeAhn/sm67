@@ -1,15 +1,91 @@
+/*-------------------------
+	Simple reset
+--------------------------*/
+
+
+*{
+	margin:0;
+	padding:0;
+}
+
 
 /*-------------------------
 	General Styles
 --------------------------*/
 
 
+html{
+	background:url('../module/weather/assets/img/bg.jpg') repeat #e1f0f6;
+}
+
+
+body{
+	font:14px/1.3 'Open Sans Condensed', sans-serif;
+}
+
+a, a:visited {
+	outline:none;
+	color:#1c4f64;
+}
 
 a:hover{
 	text-decoration:none;
 }
 
+section, footer, header{
+	display: block;
+}
 
+
+/*----------------------------
+	The Header
+-----------------------------*/
+
+
+header h1{
+	text-align:center;
+	font: normal 52px 'Playball', cursive;
+	color:#518191;
+	padding-top:60px;
+	text-shadow:1px 1px 1px rgba(0,0,0,0.1);
+}
+
+
+/*----------------------------
+	The Cloud Background
+-----------------------------*/
+
+
+#clouds{
+	background:url('../module/weather/assets/img/cloud1.png') no-repeat;
+	height: 145px;
+	left: 50%;
+	position: absolute;
+	top: 250px;
+	margin-left: -542px;
+	width: 222px;
+	z-index: -1;
+}
+
+#clouds:before{
+	content:'';
+	background:url('../module/weather/assets/img/cloud2.png') no-repeat;
+	height: 102px;
+	right: -710px;
+	position: absolute;
+	top: -125px;
+	width: 156px;
+}
+
+#clouds:after{
+	content:'';
+	background:url('../module/weather/assets/img/cloud3.png') no-repeat;
+	height: 74px;
+	right: -750px;
+	position: absolute;
+	top: 325px;
+	width: 114px;
+}
 
 
 /*----------------------------
@@ -19,14 +95,14 @@ a:hover{
 
 #weather{
 	position:relative;
-	width:600px;
-	height:400px;
-	margin: 200px auto 25px;
+	width:494px;
+	height:407px;
+	margin: 50px auto 25px;
 	overflow:hidden;
 }
 
 #weather:before{
-	background:#1b8eb6;
+	background: url("../module/weather/assets/img/preloader.gif") no-repeat center center #111;
 	border: 1px solid #000;
 	border-radius: 50% 50% 50% 50%;
 	box-shadow: 0 1px 2px #444;
@@ -50,7 +126,7 @@ a:hover{
 }
 
 #weather.loaded #scroller,
-#weather.loaded .arrow_w{
+#weather.loaded .arrow{
 	display:block
 }
 
@@ -60,7 +136,7 @@ a:hover{
 
 #weather.loaded{
 	border-radius:3px;
-	background:#1b8eb6;
+	background:url('../module/weather/assets/img/weather_bg.jpg') no-repeat;
 	box-shadow:0 0 5px rgba(0,0,0,0.15);
 }
 
@@ -76,11 +152,10 @@ a:hover{
 
 
 #scroller{
-	background:#1b8eb6;
 	position:absolute;
 	list-style:none;
 	width:100%;
-	height: 400px;
+	height: 336px;
 	white-space:nowrap;
 	top:0;
 	left:0;
@@ -124,7 +199,7 @@ a:hover{
 	text-transform:uppercase;
 }
 
-#scroller, .arrow_w{
+#scroller, .arrow{
 	display:none;
 }
 
@@ -134,7 +209,7 @@ a:hover{
 -------------------------------*/
 
 
-.arrow_w{
+.arrow{
 	background:url('../module/weather/assets/img/arrows.png') no-repeat;
 	width:34px;
 	height:45px;
@@ -146,15 +221,15 @@ a:hover{
 	text-indent:-99999px;
 }
 
-.arrow_w:hover{
+.arrow:hover{
 	opacity:1;
 }
 
-.arrow_w.previous{
+.arrow.previous{
 	left:20px;
 }
 
-.arrow_w.next{
+.arrow.next{
 	background-position:top right;
 	right:20px;
 }
