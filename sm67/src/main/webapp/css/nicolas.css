@@ -3514,3 +3514,9 @@ header .right.hidden {
 }
 
 }
+
+#newsFrame {
+	width: 100%;
+	height: 675px;
+	overflow: scroll;
+}
