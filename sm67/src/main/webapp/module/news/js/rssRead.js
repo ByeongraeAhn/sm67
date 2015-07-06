@@ -98,6 +98,8 @@ gfeedfetcher.prototype._displayresult=function(feeds) {
 	var descs=['desc1', 'desc2', 'desc3']
 	var rssoutput=(this.itemcontainer=="<li>")? "<ul>\n" : ""
 	gfeedfetcher._sortarray(feeds, this.sortstring)
+	var button =
+	
 	for (var i=0; i<feeds.length; i++){
 		var itemtitle="<a href=\"" + feeds[i].link + "\" target=\"" + this.linktarget + "\" class=\"titlefield\">" + feeds[i].title + "</a>"
 		var itemlabel=/label/i.test(this.showoptions)? '<span class="labelfield">['+this.feeds[i].ddlabel+']</span>' : " "
@@ -107,6 +109,7 @@ gfeedfetcher.prototype._displayresult=function(feeds) {
 	}
 	rssoutput+=(this.itemcontainer=="<li>")? "</ul>" : ""
 	this.feedcontainer.innerHTML=rssoutput
+	
 	for (var i=0; i<descs.length; i++){
 		var entryindex=parseInt(descs[i].match(/\d+$/i).shift())-1
 		document.getElementById(descs[i]).innerHTML=feeds[entryindex].content

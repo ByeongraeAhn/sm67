@@ -1,8 +1,18 @@
 <link href='../../css/news.css' rel='stylesheet' type='text/css'>
-<script src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
+<script
+	src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
 <script src="../../js/jquery-1.11.2.js"></script>
 <script type='text/javascript' src='./js/timeago.js'></script>
 <script src="./js/rssRead.js"></script>
+
+
+<body onload = "init(this.form);">  
+  <form name="form">
+    <select id="first" style="width:70px;" onchange="itemChange(this.form);" ></select>
+    <select id="second" style="width:70px;" ></select>
+  </form>
+</body>
+
 
 <!-- 
 <a href="javascript:cssfeed.init()"><B>새로고침</B></a>
@@ -42,27 +52,88 @@
 		socialfeed.init() //Always call this last
 	</script>
 -->
-<p>
-	<script type="text/javascript">
-	  setInterval(function(){ newsfeed.init() }, 10000);
-	
+<input type="text" id="rssInput" placeholder="RSS 주소를 입력하세요">
+<button onclick="rssField()">RSS 가져오기</button>
+
+<script type="text/javascript">
+function rssField() {
+	  var rssAddr = $('#rssInput').val();
+	  setInterval(function(){ newsfeed.init() }, 10000); // page reroad
+		  
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-		newsfeed.addFeed("조선일보-속보",
-				"http://www.chosun.com/site/data/rss/rss.xml")
+			newsfeed.addFeed("조선일보-속보", rssAddr);
 		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
+	  
+	  /*
 		$('#btn1').on("click", function(event) {
 	        console.log(newsfeed.feeds[0]);
 	      })
+	      */
+	      
+	      }
 	</script>
 	
-RSS Description for <b>1st</b> RSS Entry:
-<div id="desc1"><a name="desc1"></a></div>
+	<script>
+	 var f_selbox = new Array('조선일보', '오마이뉴스', '경향신문' , '중앙일보');
 
-RSS Description for <b>2nd</b> RSS Entry:
-<div id="desc2"><a name="desc2"></a></div>
+	  var s_selbox = new Array();
+	  s_selbox[0] = new Array('정치', '경제', '속보', '문화', '사회');
+	  s_selbox[1] = new Array('F', 'G', 'H');
+	  s_selbox[2] = new Array('J', 'K', '문어구이');
+	  s_selbox[3] = new Array('스테이크', '캐비어', '푸아그라', '파스타');
 
-RSS Description for <b>3rd</b> RSS Entry:
-<div id="desc3"><a name="desc3"></a></div>
+	  function init(f){
+	    var f_sel = f.first;
+	    var s_sel = f.second;
+
+	    f_sel.options[0] = new Option("선택", "");
+	    s_sel.options[0] = new Option("선택", "");
+
+	    for(var i =0; i<f_selbox.length; i++){
+	      f_sel.options[i+1] = new Option(f_selbox[i], f_selbox[i]);
+	    }
+	  }
+
+	  function itemChange(f){
+	    var f_sel = f.first;
+	    var s_sel = f.second;
+
+	    var sel = f_sel.selectedIndex;
+	    for(var i=s_sel.length; i>=0; i--){
+	      s_sel.options[i] = null;
+	    }
+
+	    s_sel.options[0] = new Option("선택", "");
+
+	    if(sel != 0){
+	      for(var i=0; i<s_selbox[sel-1].length; i++){
+	        s_sel.options[i+1] = new Option(s_selbox[sel-1][i], s_selbox[sel-1][i]);
+	      }
+	    }
+	  }
+	</script>
+
+<br>
+RSS Description for
+<b>1st</b>
+RSS Entry:
+<div id="desc1">
+	<a name="desc1"></a>
+</div>
+
+RSS Description for
+<b>2nd</b>
+RSS Entry:
+<div id="desc2">
+	<a name="desc2"></a>
+</div>
+
+RSS Description for
+<b>3rd</b>
+RSS Entry:
+<div id="desc3">
+	<a name="desc3"></a>
+</div>
