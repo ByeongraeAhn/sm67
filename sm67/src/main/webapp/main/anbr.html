@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+.button3 {
+    margin: 10px;
+    text-decoration: none;
+    font: bold 1.5em 'Trebuchet MS',Arial, Helvetica; /*Change the em value to scale the button*/
+    display: inline-block;
+    text-align: center;
+    color: #fff;    
+    border: 1px solid #9c9c9c; /* Fallback style */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);    
+    box-shadow: 0 0 .05em rgba(0,0,0,0.4);   
+}
+.button-blue3 {
+    background: #4477a1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#81a8cb), to(#4477a1) );
+    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#81a8cb', endColorstr='#4477a1');
+}
+/* #graph {
+	margin-top: 80px; width : 450px;
+	height: 300px;
+	margin: 20px auto;
+	float: left;
+	width: 450px;
+} */
+#graph {
+	height: 300px;
+	width: 450px;
+}
+
+</style>
+</head>
+
+<body>
+<a class="button3 button-blue3" id="anbr">
+    <span>바이오리듬</span>
+</a>
+
+<a class="button3 button-blue3" id="anbr2">
+    <span>운세</span>
+</a>
+
+
+		<div id="graph"></div>
+		<div id="swagMsg">
+		</div>
+
+<script src="../js/jquery-1.11.2.js"></script>
+<script type="text/javascript">
+$('#anbr').click(function(){
+	getSwagVo();
+});
+</script>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+
+<script>
+$('#anbr2').click(function(){
+
+	$.getScript("hello2.js", function() {
+	});
+});
+
+
+</script>
+
+
+
+<script type="text/javascript" src="../module/bio/BRbioPagetest.js"></script><!-- 바이오리듬js -->
+<script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
+
+<!-- <script language="JavaScript" src="hello2.js"></script> -->
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
