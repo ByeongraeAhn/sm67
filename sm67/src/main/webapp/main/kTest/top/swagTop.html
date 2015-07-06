@@ -1,7 +1,5 @@
 <style>
-#topdiv {
-	background-color: black;
-}
+
 #topMenu a {
 	display:block; /* a태그의 display속성을 block으로 설정 */	
 	padding:10px 10px 15px 10px; /* 내부여백 padding값 순서대로 top right bottom left */
@@ -17,33 +15,30 @@
 #topMenu a:hover {
 	padding-bottom:10px; /* 왼쪽 여백을 기존 15px에서 10px으로 줄여준다. */
 	border-bottom:5px solid #ff9900; /* 줄어든 여백만큼 border로 5px을 지정해 준다. */
-	color:red; /* 폰트 색상 */
+	color: red; /* 폰트 색상 */
 }
 
 #topDiv {
-	border : 0px solid black;
+	border : 1px solid black;
 	display : none;
 }
 
 
 </style>
 
-</head>
 
 	<div id='topDiv'>
-		<img alt="" src="img_top.png">
+		<img src="img_top.png">
 		<span id='topMenu'>
 			<a href="#">Settings</a> 
 			<a href="#">Contact</a>
 			<a href="#">Moudule</a> 
 			<a href="#">Logout</a>
 		</span>
-
-
 	</div>
 	
 
 
 <script>
-$( "#topDiv" ).show( "fold", 1000 );
+$( "#topDiv" ).show( "fold", 2000 );
 </script>
