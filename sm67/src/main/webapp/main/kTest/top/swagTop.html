@@ -1,26 +1,28 @@
 <style>
+#topDiv {
+	display : none;
+	background-image: url("img_top.png");
+	background-repeat: no-repeat;
+	height : 65px;
+	border : 1px solid black;
+}
 
-#topMenu a {
-	display:block; /* a태그의 display속성을 block으로 설정 */	
-	padding:10px 10px 15px 10px; /* 내부여백 padding값 순서대로 top right bottom left */
+
+#aBox a {
+	padding:0px 10px 15px 10px; /* 내부여백 padding값 순서대로 top right bottom left */
 	margin-right:1px; /* 오른쪽 외부여백 1px */	
 	color:#BBB; /* 글자색 */	
-	font:12px Verdana; /* 폰트 속성 순서대로 크기 글꼴 */	
+	font:14px Verdana; /* 폰트 속성 순서대로 크기 글꼴 */	
 	text-transform:uppercase; /* 폰트를 대문자로 바꿔준다. */
 	float:right;
 	text-decoration:none;
 }
 
 
-#topMenu a:hover {
+#aBox a:hover {
 	padding-bottom:10px; /* 왼쪽 여백을 기존 15px에서 10px으로 줄여준다. */
 	border-bottom:5px solid #ff9900; /* 줄어든 여백만큼 border로 5px을 지정해 준다. */
 	color: red; /* 폰트 색상 */
-}
-
-#topDiv {
-	border : 1px solid black;
-	display : none;
 }
 
 
@@ -28,13 +30,12 @@
 
 
 	<div id='topDiv'>
-		<img src="img_top.png">
-		<span id='topMenu'>
-			<a href="#">Settings</a> 
-			<a href="#">Contact</a>
-			<a href="#">Moudule</a> 
-			<a href="#">Logout</a>
-		</span>
+		<div id='aBox'>
+		<a href="#">Settings</a> 
+		<a href="#">Contact</a>
+		<a href="#">Moudule</a> 
+		<a href="#">Logout</a>
+		</div>
 	</div>
 	
 

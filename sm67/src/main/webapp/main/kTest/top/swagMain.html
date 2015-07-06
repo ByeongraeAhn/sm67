@@ -3,19 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <title>Smart Web Application like Genius</title>
+
 <style>
 #moduleArea {
 	float : right;
 	border : 1px solid black;
+	margin-top: 15%;
+	width : 90%;
+	height : 90%;
+}
+#leftArea {
+	float : left;
+	margin-top: 15%;
 }
 a {
 	margin-top: 30px;
 }
+
+#swagArea {
+	border : 1px solid black;
+	display : none;
+}
+
+#swagImg {
+	height :55px;
+	width : 55px;
+	
+}
+
+#swagImg{
+  border-radius: 50em;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out; 
+  -o-transition: all 0.3s ease-in-out; 
+  -ms-transition: all 0.3s ease-in-out; 
+  transition: all 0.3s ease-in-out; 
+}
+#swagImg:hover {
+  -webkit-transform: rotate(180deg); 
+  -moz-transform: rotate(180deg); 
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+} 
 </style>
 </head>
 <body>
 	<div id ='topArea'>
 		<!-- swagTop.html  import area -->
+	</div>
+	
+	<div id='swagArea'>
+		<img id='swagImg' src='swag.png'>
+		this is swagArea;
 	</div>
 
 	<div id = 'leftArea'>
@@ -33,9 +73,14 @@ a {
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
 <script> 
+
     $(function(){
       $("#topArea").load("swagTop.html"); 
+      $("#swagArea").show( "fold", 2000 ); 
       $("#leftArea").load("swagLeft.html"); 
     });
+    
+
+
     </script> 
 </html>
