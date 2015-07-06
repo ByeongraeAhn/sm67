@@ -26,26 +26,14 @@ a {
 }
 
 #swagImg {
-	height :55px;
-	width : 55px;
-	
+	height :65px;
+	width : 65px;
+	margin-left: 40%;
 }
 
-#swagImg{
-  border-radius: 50em;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out; 
-  -o-transition: all 0.3s ease-in-out; 
-  -ms-transition: all 0.3s ease-in-out; 
-  transition: all 0.3s ease-in-out; 
+sMsg {
+	margin-left: 40%;
 }
-#swagImg:hover {
-  -webkit-transform: rotate(180deg); 
-  -moz-transform: rotate(180deg); 
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-} 
 </style>
 </head>
 <body>
@@ -54,8 +42,13 @@ a {
 	</div>
 	
 	<div id='swagArea'>
-		<img id='swagImg' src='swag.png'>
-		this is swagArea;
+		<img id='swagImg' src='swag.png'><br>
+		
+		<sMsg>Hey bro ! what's up ?<br></sMsg>
+		<sMsg>I don't know who you are<br></sMsg>
+		<sMsg>but i'll find you<br></sMsg>
+		<sMsg>and i kill you!<br></sMsg>
+		
 	</div>
 
 	<div id = 'leftArea'>
@@ -67,8 +60,6 @@ a {
 		this is moduleArea
 	</div>
 </body>
-
-
 <script src="//code.jquery.com/jquery-1.11.2.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
@@ -80,7 +71,31 @@ a {
       $("#leftArea").load("swagLeft.html"); 
     });
     
+    var deg = 0;
+    var time = 0;
+    var rolling;
+    var countdown;
+    function timer() {
+        time += 1;
+    }
 
+
+
+    function roll() {
+        if(time >= 3600) { // 초 설정 
+            clearInterval(rolling);
+            clearInterval(countdown);
+        }
+        deg += 10; // 회전 각도 정 
+        $("#swagImg").css("transform", "rotate(" + deg + "deg)");
+    }
+
+    $(document).ready(function() {
+        rolling = setInterval(roll, 14);
+        countdown = setInterval(timer, 1000);
+    });
+    
+    
 
     </script> 
 </html>
