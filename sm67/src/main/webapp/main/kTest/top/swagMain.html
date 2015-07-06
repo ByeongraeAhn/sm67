@@ -5,22 +5,39 @@
 <title>Smart Web Application like Genius</title>
 
 <style>
+
+#topArea {
+	display : none;
+	background-image: url("img_top.png");
+	background-repeat: no-repeat;
+	height : 65px;
+	border : 1px solid black;
+}
+
 #moduleArea {
+	display : none;
 	float : right;
 	border : 1px solid black;
-	margin-top: 15%;
-	width : 90%;
+	margin-top: 3%;
+	margin-right : 5%;
+	width : 80%;
+	min-height: 300px;
 	height : 90%;
 }
+
 #leftArea {
+display : none;
 	float : left;
-	margin-top: 15%;
+	margin-top: 3%;
+	min-height: 300px;
+ 	border : 1px solid black;
 }
 a {
 	margin-top: 30px;
 }
 
 #swagArea {
+	margin-top: 2.5%;
 	border : 1px solid black;
 	display : none;
 }
@@ -32,7 +49,8 @@ a {
 }
 
 sMsg {
-	margin-left: 40%;
+	margin-top: 5%;
+	margin-left: 38%;
 }
 </style>
 </head>
@@ -67,8 +85,11 @@ sMsg {
 
     $(function(){
       $("#topArea").load("swagTop.html"); 
-      $("#swagArea").show( "fold", 2000 ); 
       $("#leftArea").load("swagLeft.html"); 
+      $("#topArea").show( "fold", 2000 );
+      $("#swagArea").show( "fold", 2000 ); 
+      $("#leftArea").show( "fold", 3000 ); 
+      $("#moduleArea").show( "fold", 3000 ); 
     });
     
     var deg = 0;
