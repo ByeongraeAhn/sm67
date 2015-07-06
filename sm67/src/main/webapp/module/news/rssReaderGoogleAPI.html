@@ -58,7 +58,7 @@
 <script type="text/javascript">
 function rssField() {
 	  var rssAddr = $('#rssInput').val();
-	  setInterval(function(){ newsfeed.init() }, 10000); // page reroad
+	  setInterval(function(){ newsfeed.init() }, 5000); // page reroad
 		  
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
 			newsfeed.addFeed("조선일보-속보", rssAddr);
