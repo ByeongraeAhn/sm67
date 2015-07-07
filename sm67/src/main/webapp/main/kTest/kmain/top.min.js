@@ -1,0 +1,320 @@
+window.Modernizr = function(e, n, t) {
+    function r(e) {
+        y.cssText = e
+    }
+
+    function o(e, n) {
+        return typeof e === n
+    }
+
+    function i(e, n) {
+        return !!~("" + e).indexOf(n)
+    }
+
+    function a(e, n) {
+        for (var r in e) {
+            var o = e[r];
+            if (!i(o, "-") && y[o] !== t) return "pfx" == n ? o : !0
+        }
+        return !1
+    }
+
+    function s(e, n, r) {
+        for (var i in e) {
+            var a = n[e[i]];
+            if (a !== t) return r === !1 ? e[i] : o(a, "function") ? a.bind(r || n) : a
+        }
+        return !1
+    }
+
+    function c(e, n, t) {
+        var r = e.charAt(0).toUpperCase() + e.slice(1),
+            i = (e + " " + x.join(r + " ") + r).split(" ");
+        return o(n, "string") || o(n, "undefined") ? a(i, n) : (i = (e + " " + k.join(r + " ") + r).split(" "), s(i, n, t))
+    }
+    var d, l, m, p = "2.7.1",
+        u = {}, f = !0,
+        g = n.documentElement,
+        h = "modernizr",
+        v = n.createElement(h),
+        y = v.style,
+        w = ({}.toString, " -webkit- -moz- -o- -ms- ".split(" ")),
+        b = "Webkit Moz O ms",
+        x = b.split(" "),
+        k = b.toLowerCase().split(" "),
+        E = {}, S = [],
+        j = S.slice,
+        T = function(e, t, r, o) {
+            var i, a, s, c, d = n.createElement("div"),
+                l = n.body,
+                m = l || n.createElement("body");
+            if (parseInt(r, 10))
+                for (; r--;) s = n.createElement("div"), s.id = o ? o[r] : h + (r + 1), d.appendChild(s);
+            return i = ["&#173;", '<style id="s', h, '">', e, "</style>"].join(""), d.id = h, (l ? d : m).innerHTML += i, m.appendChild(d), l || (m.style.background = "", m.style.overflow = "hidden", c = g.style.overflow, g.style.overflow = "hidden", g.appendChild(m)), a = t(d, e), l ? d.parentNode.removeChild(d) : (m.parentNode.removeChild(m), g.style.overflow = c), !! a
+        }, C = {}.hasOwnProperty;
+    m = o(C, "undefined") || o(C.call, "undefined") ? function(e, n) {
+        return n in e && o(e.constructor.prototype[n], "undefined")
+    } : function(e, n) {
+        return C.call(e, n)
+    }, Function.prototype.bind || (Function.prototype.bind = function(e) {
+        var n = this;
+        if ("function" != typeof n) throw new TypeError;
+        var t = j.call(arguments, 1),
+            r = function() {
+                if (this instanceof r) {
+                    var o = function() {};
+                    o.prototype = n.prototype;
+                    var i = new o,
+                        a = n.apply(i, t.concat(j.call(arguments)));
+                    return Object(a) === a ? a : i
+                }
+                return n.apply(e, t.concat(j.call(arguments)))
+            };
+        return r
+    }), E.touch = function() {
+        var t;
+        return "ontouchstart" in e || e.DocumentTouch && n instanceof DocumentTouch ? t = !0 : T(["@media (", w.join("touch-enabled),("), h, ")", "{#modernizr{top:9px;position:absolute}}"].join(""), function(e) {
+            t = 9 === e.offsetTop
+        }), t
+    }, E.history = function() {
+        return !!e.history && !! history.pushState
+    }, E.csstransforms = function() {
+        return !!c("transform")
+    }, E.csstransforms3d = function() {
+        var e = !! c("perspective");
+        return e && "webkitPerspective" in g.style && T("@media (transform-3d),(-webkit-transform-3d){#modernizr{left:9px;position:absolute;height:3px;}}", function(n) {
+            e = 9 === n.offsetLeft && 3 === n.offsetHeight
+        }), e
+    }, E.video = function() {
+        var e = n.createElement("video"),
+            t = !1;
+        try {
+            (t = !! e.canPlayType) && (t = new Boolean(t), t.ogg = e.canPlayType('video/ogg; codecs="theora"').replace(/^no$/, ""), t.h264 = e.canPlayType('video/mp4; codecs="avc1.42E01E"').replace(/^no$/, ""), t.webm = e.canPlayType('video/webm; codecs="vp8, vorbis"').replace(/^no$/, ""))
+        } catch (r) {}
+        return t
+    }, E.audio = function() {
+        var e = n.createElement("audio"),
+            t = !1;
+        try {
+            (t = !! e.canPlayType) && (t = new Boolean(t), t.ogg = e.canPlayType('audio/ogg; codecs="vorbis"').replace(/^no$/, ""), t.mp3 = e.canPlayType("audio/mpeg;").replace(/^no$/, ""), t.wav = e.canPlayType('audio/wav; codecs="1"').replace(/^no$/, ""), t.m4a = (e.canPlayType("audio/x-m4a;") || e.canPlayType("audio/aac;")).replace(/^no$/, ""))
+        } catch (r) {}
+        return t
+    };
+    for (var $ in E) m(E, $) && (l = $.toLowerCase(), u[l] = E[$](), S.push((u[l] ? "" : "no-") + l));
+    return u.addTest = function(e, n) {
+        if ("object" == typeof e)
+            for (var r in e) m(e, r) && u.addTest(r, e[r]);
+        else {
+            if (e = e.toLowerCase(), u[e] !== t) return u;
+            n = "function" == typeof n ? n() : n, "undefined" != typeof f && f && (g.className += " " + (n ? "" : "no-") + e), u[e] = n
+        }
+        return u
+    }, r(""), v = d = null,
+    function(e, n) {
+        function t(e, n) {
+            var t = e.createElement("p"),
+                r = e.getElementsByTagName("head")[0] || e.documentElement;
+            return t.innerHTML = "x<style>" + n + "</style>", r.insertBefore(t.lastChild, r.firstChild)
+        }
+
+        function r() {
+            var e = y.elements;
+            return "string" == typeof e ? e.split(" ") : e
+        }
+
+        function o(e) {
+            var n = v[e[g]];
+            return n || (n = {}, h++, e[g] = h, v[h] = n), n
+        }
+
+        function i(e, t, r) {
+            if (t || (t = n), l) return t.createElement(e);
+            r || (r = o(t));
+            var i;
+            return i = r.cache[e] ? r.cache[e].cloneNode() : f.test(e) ? (r.cache[e] = r.createElem(e)).cloneNode() : r.createElem(e), !i.canHaveChildren || u.test(e) || i.tagUrn ? i : r.frag.appendChild(i)
+        }
+
+        function a(e, t) {
+            if (e || (e = n), l) return e.createDocumentFragment();
+            t = t || o(e);
+            for (var i = t.frag.cloneNode(), a = 0, s = r(), c = s.length; c > a; a++) i.createElement(s[a]);
+            return i
+        }
+
+        function s(e, n) {
+            n.cache || (n.cache = {}, n.createElem = e.createElement, n.createFrag = e.createDocumentFragment, n.frag = n.createFrag()), e.createElement = function(t) {
+                return y.shivMethods ? i(t, e, n) : n.createElem(t)
+            }, e.createDocumentFragment = Function("h,f", "return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&(" + r().join().replace(/[\w\-]+/g, function(e) {
+                return n.createElem(e), n.frag.createElement(e), 'c("' + e + '")'
+            }) + ");return n}")(y, n.frag)
+        }
+
+        function c(e) {
+            e || (e = n);
+            var r = o(e);
+            return y.shivCSS && !d && !r.hasCSS && (r.hasCSS = !! t(e, "article,aside,dialog,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}mark{background:#FF0;color:#000}template{display:none}")), l || s(e, r), e
+        }
+        var d, l, m = "3.7.0",
+            p = e.html5 || {}, u = /^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,
+            f = /^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,
+            g = "_html5shiv",
+            h = 0,
+            v = {};
+        ! function() {
+            try {
+                var e = n.createElement("a");
+                e.innerHTML = "<xyz></xyz>", d = "hidden" in e, l = 1 == e.childNodes.length || function() {
+                    n.createElement("a");
+                    var e = n.createDocumentFragment();
+                    return "undefined" == typeof e.cloneNode || "undefined" == typeof e.createDocumentFragment || "undefined" == typeof e.createElement
+                }()
+            } catch (t) {
+                d = !0, l = !0
+            }
+        }();
+        var y = {
+            elements: p.elements || "abbr article aside audio bdi canvas data datalist details dialog figcaption figure footer header hgroup main mark meter nav output progress section summary template time video",
+            version: m,
+            shivCSS: p.shivCSS !== !1,
+            supportsUnknownElements: l,
+            shivMethods: p.shivMethods !== !1,
+            type: "default",
+            shivDocument: c,
+            createElement: i,
+            createDocumentFragment: a
+        };
+        e.html5 = y, c(n)
+    }(this, n), u._version = p, u._prefixes = w, u._domPrefixes = k, u._cssomPrefixes = x, u.testProp = function(e) {
+        return a([e])
+    }, u.testAllProps = c, u.testStyles = T, g.className = g.className.replace(/(^|\s)no-js(\s|$)/, "$1$2") + (f ? " js " + S.join(" ") : ""), u
+}(this, this.document), window.Detectizr = function(e, n, t, r) {
+    function o(e, n) {
+        var t, r, i;
+        if (arguments.length > 2)
+            for (t = 1, r = arguments.length; r > t; t += 1) o(e, arguments[t]);
+        else
+            for (i in n) n.hasOwnProperty(i) && (e[i] = n[i]);
+        return e
+    }
+
+    function i(e) {
+        return y.browser.userAgent.indexOf(e) > -1
+    }
+
+    function a(e) {
+        return e.test(y.browser.userAgent)
+    }
+
+    function s(e) {
+        return e.exec(y.browser.userAgent)
+    }
+
+    function c(e) {
+        return e.replace(/^\s+|\s+$/g, "")
+    }
+
+    function d(e) {
+        return null === e || e === r ? "" : String(e).replace(/((\s|\-|\.)+[a-z0-9])/g, function(e) {
+            return e.toUpperCase().replace(/(\s|\-|\.)/g, "")
+        })
+    }
+
+    function l(e, n) {
+        var t = n || "",
+            r = 1 === e.nodeType && (e.className ? (" " + e.className + " ").replace(E, " ") : "");
+        if (r) {
+            for (; r.indexOf(" " + t + " ") >= 0;) r = r.replace(" " + t + " ", " ");
+            e.className = n ? c(r) : ""
+        }
+    }
+
+    function m(e, n, t) {
+        e && (e = d(e), n && (n = d(n), u(e + n, !0), t && u(e + n + "_" + t, !0)))
+    }
+
+    function p() {
+        e.clearTimeout(h), h = e.setTimeout(function() {
+            v = y.device.orientation, y.device.orientation = e.innerHeight > e.innerWidth ? "portrait" : "landscape", u(y.device.orientation, !0), v !== y.device.orientation && u(v, !1)
+        }, 10)
+    }
+
+    function u(e, n) {
+        e && w && (x.addAllFeaturesAsClass ? w.addTest(e, n) : (n = "function" == typeof n ? n() : n, n ? w.addTest(e, !0) : (delete w[e], l(S, e))))
+    }
+
+    function f(e, n) {
+        e.version = n;
+        var t = n.split(".");
+        t.length > 0 ? (t = t.reverse(), e.major = t.pop(), t.length > 0 ? (e.minor = t.pop(), t.length > 0 ? (t = t.reverse(), e.patch = t.join(".")) : e.patch = "0") : e.minor = "0") : e.major = "0"
+    }
+
+    function g(r) {
+        var c, l, g, h, v, E, S, j, T = this;
+        if (x = o({}, x, r || {}), x.detectDevice) {
+            for (y.device = {
+                type: "",
+                model: "",
+                orientation: ""
+            }, h = y.device, a(/googletv|smarttv|internet.tv|netcast|nettv|appletv|boxee|kylo|roku|dlnadoc|ce\-html/) ? (h.type = b[0], h.model = "smartTv") : a(/xbox|playstation.3|wii/) ? (h.type = b[0], h.model = "gameConsole") : a(/ip(a|ro)d/) ? (h.type = b[1], h.model = "ipad") : a(/tablet/) && !a(/rx-34/) || a(/folio/) ? (h.type = b[1], h.model = String(s(/playbook/) || "")) : a(/linux/) && a(/android/) && !a(/fennec|mobi|htc.magic|htcX06ht|nexus.one|sc-02b|fone.945/) ? (h.type = b[1], h.model = "android") : a(/kindle/) || a(/mac.os/) && a(/silk/) ? (h.type = b[1], h.model = "kindle") : a(/gt-p10|sc-01c|shw-m180s|sgh-t849|sch-i800|shw-m180l|sph-p100|sgh-i987|zt180|htc(.flyer|\_flyer)|sprint.atp51|viewpad7|pandigital(sprnova|nova)|ideos.s7|dell.streak.7|advent.vega|a101it|a70bht|mid7015|next2|nook/) || a(/mb511/) && a(/rutem/) ? (h.type = b[1], h.model = "android") : a(/bb10/) ? (h.type = b[1], h.model = "blackberry") : (h.model = s(/iphone|ipod|android|blackberry|opera mini|opera mobi|skyfire|maemo|windows phone|palm|iemobile|symbian|symbianos|fennec|j2me/), null !== h.model ? (h.type = b[2], h.model = String(h.model)) : (h.model = "", a(/bolt|fennec|iris|maemo|minimo|mobi|mowser|netfront|novarra|prism|rx-34|skyfire|tear|xv6875|xv6975|google.wireless.transcoder/) ? h.type = b[2] : a(/opera/) && a(/windows.nt.5/) && a(/htc|xda|mini|vario|samsung\-gt\-i8000|samsung\-sgh\-i9/) ? h.type = b[2] : a(/windows.(nt|xp|me|9)/) && !a(/phone/) || a(/win(9|.9|nt)/) || a(/\(windows 8\)/) ? h.type = b[3] : a(/macintosh|powerpc/) && !a(/silk/) ? (h.type = b[3], h.model = "mac") : a(/linux/) && a(/x11/) ? h.type = b[3] : a(/solaris|sunos|bsd/) ? h.type = b[3] : a(/bot|crawler|spider|yahoo|ia_archiver|covario-ids|findlinks|dataparksearch|larbin|mediapartners-google|ng-search|snappy|teoma|jeeves|tineye/) && !a(/mobile/) ? (h.type = b[3], h.model = "crawler") : h.type = b[2])), c = 0, l = b.length; l > c; c += 1) u(b[c], h.type === b[c]);
+            x.detectDeviceModel && u(d(h.model), !0)
+        }
+        if (x.detectScreen && (w && w.mq && (u("smallScreen", w.mq("only screen and (max-width: 480px)")), u("verySmallScreen", w.mq("only screen and (max-width: 320px)")), u("veryVerySmallScreen", w.mq("only screen and (max-width: 240px)"))), h.type === b[1] || h.type === b[2] ? (e.onresize = function(e) {
+            p(e)
+        }, p()) : (h.orientation = "landscape", u(h.orientation, !0))), x.detectOS && (y.os = {}, v = y.os, "" !== h.model && ("ipad" === h.model || "iphone" === h.model || "ipod" === h.model ? (v.name = "ios", f(v, (a(/os\s([\d_]+)/) ? RegExp.$1 : "").replace(/_/g, "."))) : "android" === h.model ? (v.name = "android", f(v, a(/android\s([\d\.]+)/) ? RegExp.$1 : "")) : "blackberry" === h.model ? (v.name = "blackberry", f(v, a(/version\/([^\s]+)/) ? RegExp.$1 : "")) : "playbook" === h.model && (v.name = "blackberry", f(v, a(/os ([^\s]+)/) ? RegExp.$1.replace(";", "") : ""))), v.name || (i("win") || i("16bit") ? (v.name = "windows", i("windows nt 6.3") ? f(v, "8.1") : i("windows nt 6.2") || a(/\(windows 8\)/) ? f(v, "8") : i("windows nt 6.1") ? f(v, "7") : i("windows nt 6.0") ? f(v, "vista") : i("windows nt 5.2") || i("windows nt 5.1") || i("windows xp") ? f(v, "xp") : i("windows nt 5.0") || i("windows 2000") ? f(v, "2k") : i("winnt") || i("windows nt") ? f(v, "nt") : i("win98") || i("windows 98") ? f(v, "98") : (i("win95") || i("windows 95")) && f(v, "95")) : i("mac") || i("darwin") ? (v.name = "mac os", i("68k") || i("68000") ? f(v, "68k") : i("ppc") || i("powerpc") ? f(v, "ppc") : i("os x") && f(v, (a(/os\sx\s([\d_]+)/) ? RegExp.$1 : "os x").replace(/_/g, "."))) : i("webtv") ? v.name = "webtv" : i("x11") || i("inux") ? v.name = "linux" : i("sunos") ? v.name = "sun" : i("irix") ? v.name = "irix" : i("freebsd") ? v.name = "freebsd" : i("bsd") && (v.name = "bsd")), v.name && (u(v.name, !0), v.major && (m(v.name, v.major), v.minor && m(v.name, v.major, v.minor))), v.addressRegisterSize = a(/\sx64|\sx86|\swin64|\swow64|\samd64/) ? "64bit" : "32bit", u(v.addressRegisterSize, !0)), x.detectBrowser && (E = y.browser, a(/opera|webtv/) || !a(/msie\s([\d\w\.]+)/) && !i("trident") ? i("firefox") ? (E.engine = "gecko", E.name = "firefox", f(E, a(/firefox\/([\d\w\.]+)/) ? RegExp.$1 : "")) : i("gecko/") ? E.engine = "gecko" : i("opera") ? (E.name = "opera", E.engine = "presto", f(E, a(/version\/([\d\.]+)/) ? RegExp.$1 : a(/opera(\s|\/)([\d\.]+)/) ? RegExp.$2 : "")) : i("konqueror") ? E.name = "konqueror" : i("chrome") ? (E.engine = "webkit", E.name = "chrome", f(E, a(/chrome\/([\d\.]+)/) ? RegExp.$1 : "")) : i("iron") ? (E.engine = "webkit", E.name = "iron") : i("crios") ? (E.name = "chrome", E.engine = "webkit", f(E, a(/crios\/([\d\.]+)/) ? RegExp.$1 : "")) : i("applewebkit/") ? (E.name = "safari", E.engine = "webkit", f(E, a(/version\/([\d\.]+)/) ? RegExp.$1 : "")) : i("mozilla/") && (E.engine = "gecko") : (E.engine = "trident", E.name = "ie", !e.addEventListener && t.documentMode && 7 === t.documentMode ? f(E, "8.compat") : a(/trident.*rv[ :](\d+)\./) ? f(E, RegExp.$1) : f(E, a(/trident\/4\.0/) ? "8" : RegExp.$1)), E.name && (u(E.name, !0), E.major && (m(E.name, E.major), E.minor && m(E.name, E.major, E.minor))), u(E.engine, !0), E.language = n.userLanguage || n.language, u(E.language, !0)), x.detectPlugins) {
+            for (E.plugins = [], T.detectPlugin = function(e) {
+                var t, r, o, i = n.plugins;
+                for (l = i.length - 1; l >= 0; l--) {
+                    for (t = i[l], r = t.name + t.description, o = 0, g = e.length; g >= 0; g--) - 1 !== r.indexOf(e[g]) && (o += 1);
+                    if (o === e.length) return !0
+                }
+                return !1
+            }, T.detectObject = function(e) {
+                for (l = e.length - 1; l >= 0; l--) try {
+                    new ActiveXObject(e[l])
+                } catch (n) {}
+                return !1
+            }, c = k.length - 1; c >= 0; c--) S = k[c], j = !1, e.ActiveXObject ? j = T.detectObject(S.progIds) : n.plugins && (j = T.detectPlugin(S.substrs)), j && (E.plugins.push(S.name), u(S.name, !0));
+            n.javaEnabled() && (E.plugins.push("java"), u("java", !0))
+        }
+    }
+    var h, v, y = {}, w = e.Modernizr,
+        b = ["tv", "tablet", "mobile", "desktop"],
+        x = {
+            addAllFeaturesAsClass: !1,
+            detectDevice: !0,
+            detectDeviceModel: !0,
+            detectScreen: !0,
+            detectOS: !0,
+            detectBrowser: !0,
+            detectPlugins: !0
+        }, k = [{
+            name: "adobereader",
+            substrs: ["Adobe", "Acrobat"],
+            progIds: ["AcroPDF.PDF", "PDF.PDFCtrl.5"]
+        }, {
+            name: "flash",
+            substrs: ["Shockwave Flash"],
+            progIds: ["ShockwaveFlash.ShockwaveFlash.1"]
+        }, {
+            name: "wmplayer",
+            substrs: ["Windows Media"],
+            progIds: ["wmplayer.ocx"]
+        }, {
+            name: "silverlight",
+            substrs: ["Silverlight"],
+            progIds: ["AgControl.AgControl"]
+        }, {
+            name: "quicktime",
+            substrs: ["QuickTime"],
+            progIds: ["QuickTime.QuickTime"]
+        }],
+        E = /[\t\r\n]/g,
+        S = t.documentElement;
+    return y.detect = function(e) {
+        return g(e)
+    }, y.init = function() {
+        y !== r && (y.browser = {
+            userAgent: (n.userAgent || n.vendor || e.opera).toLowerCase()
+        }, y.detect())
+    }, y.init(), y
+}(this, this.navigator, this.document);
