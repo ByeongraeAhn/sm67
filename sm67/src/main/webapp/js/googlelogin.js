@@ -79,7 +79,7 @@ function render() {
 				if(validation.count == 0){
 					getBirth();
 				} else {
-					location.replace("../main/nicolas.html");
+					location.replace("../main/swagMain.html");
 				} 
 			},
 			error: function(xhr, textStatus, errorThrown) {

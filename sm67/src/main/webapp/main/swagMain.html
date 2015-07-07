@@ -19,10 +19,8 @@
 	float : right;
 	border : 1px solid black;
 	margin-top: 3%;
-	margin-right : 5%;
 	width : 80%;
 	min-height: 300px;
-	height : 90%;
 }
 
 #leftArea {
@@ -31,6 +29,9 @@ display : none;
 	margin-top: 3%;
 	min-height: 300px;
  	border : 1px solid black;
+ 	width: 10%;
+ 	min-width: 150px;
+ 	
 }
 a {
 	margin-top: 30px;
@@ -83,40 +84,42 @@ a {
 
 <script> 
 
-    $(function(){
-      $("#topArea").load("swagTop.html"); 
-      $("#leftArea").load("swagLeft.html"); 
-      $("#topArea").show( "fold", 2000 );
-      $("#swagArea").show( "fold", 2000 ); 
-      $("#leftArea").show( "fold", 3000 ); 
-      $("#moduleArea").show( "fold", 3000 ); 
-    });
-    
-    var deg = 0;
-    var time = 0;
-    var rolling;
-    var countdown;
-    function timer() {
-        time += 1;
+
+$(function(){
+  $("#topArea").load("swagTop.html"); 
+  $("#leftArea").load("swagLeft.html"); 
+  $("#topArea").show( "fold", 2000 );
+  $("#swagArea").show( "fold", 2000 ); 
+  $("#leftArea").show( "fold", 3000 ); 
+  $("#moduleArea").show( "fold", 3000 ); 
+});
+
+//스웩 아이콘 회전
+var deg = 0;
+var time = 0;
+var rolling;
+var countdown;
+function timer() {
+    time += 1;
+}
+
+
+
+function roll() {
+    if(time >= 3600) { // 초 설정 
+        clearInterval(rolling);
+        clearInterval(countdown);
     }
+    deg += 10; // 회전 각도 정 
+    $("#swagImg").css("transform", "rotate(" + deg + "deg)");
+}
 
+$(document).ready(function() {
+    rolling = setInterval(roll, 14);
+    countdown = setInterval(timer, 1000);
+});
+</script>
 
+<script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
 
-    function roll() {
-        if(time >= 3600) { // 초 설정 
-            clearInterval(rolling);
-            clearInterval(countdown);
-        }
-        deg += 10; // 회전 각도 정 
-        $("#swagImg").css("transform", "rotate(" + deg + "deg)");
-    }
-
-    $(document).ready(function() {
-        rolling = setInterval(roll, 14);
-        countdown = setInterval(timer, 1000);
-    });
-    
-    
-
-    </script> 
 </html>
