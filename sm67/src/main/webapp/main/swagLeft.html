@@ -1,9 +1,34 @@
+<style>
 
-	<div id='leftDiv'>
-	<ul>
-		<li>Biorhythm </li>
-		<li>Weather </li>
-		<li>News </li>
-	</ul>
+#bBox {
+padding : 20px;
+}
+
+#bBox span {
+	display : block;
+	padding-bottom: 10px;
+	color:#BBB; /* 글자색 */	
+	font:14px Verdana; /* 폰트 속성 순서대로 크기 글꼴 */	
+	text-transform:uppercase; /* 폰트를 대문자로 바꿔준다. */
+	text-decoration:none;
+	cursor: pointer;
+}
+
+#bBox span:hover {
+	padding-bottom:10px; /* 왼쪽 여백을 기존 15px에서 10px으로 줄여준다. */
+	border-bottom:5px solid #0054FF; /* 줄어든 여백만큼 border로 5px을 지정해 준다. */
+	color: #0054FF; /* 폰트 색상 */
+}
+</style>
+
+<div id=bBox>
+	<span>Biorhythm</span>
+	<span>Weather</span>
+	<span>News</span>
 	
-	</div>
+<!-- <ul>
+	<li><a>Biorhythm22</a></li>
+	<li><a>Weather</a> </li>
+	<li><a>News</a></li>
+</ul> -->
+</div>
