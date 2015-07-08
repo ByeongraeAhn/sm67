@@ -18,7 +18,14 @@
 	float : right;
 	margin-top: 5%;
 	
+}	border-bottom : 3px ridge black;
+	border-bottom-width: 70%;
 }
+#sMsg {
+	float : right;
+	margin-top: 5%;
+	
+
 
 #moduleArea {
 	display : none;
@@ -63,9 +70,12 @@ a {
 	width: 80%;
 }
 
-#swagMsg {
-	border : 1px solid black;
-}
+/* #graph {
+ display: none;
+} */
+
+
+
 </style>
 </head>
 <body>
@@ -92,7 +102,8 @@ a {
 	</div>
 	
 	<div id = 'moduleArea'>
-		<!-- <div id="graph"> -->
+		<div id="graph"></div>
+		<div id="wt" style="width:100%;height:100%"></div>
 	</div>
 </body>
 <script src="//code.jquery.com/jquery-1.11.2.js"></script>
@@ -107,7 +118,8 @@ $(function(){
   $("#topArea").show( "fold", 2000 );
   $("#swagArea").show( "fold", 2000 ); 
   $("#leftArea").show( "fold", 3000 ); 
-  $("#moduleArea").show( "fold", 3000 ); 
+  $("#moduleArea").show( "fold", 3000 );
+  $("#moduleArea").children().hide();
 });
 
 //스웩 아이콘 회전
@@ -139,14 +151,34 @@ $(document).ready(function() {
 <script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
 <script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
+<script>
+	$("#wt").load("../module/weather/w.html");
+</script>
+
 <script type="text/javascript">
+/* function biobutton() {
+	if($("#graph").css("display") == "none"){   
+		 jQuery('#graph').show();  
+	} else {
+		jQuery('#graph').hide();
+	}  
+} */
+/* window.onload = tteesstt;
 
-function anbr() {
-	 var newDiv=document.createElement('DIV'); // DIV 객체 생성
-	    newDiv.setAttribute('id','graph'); // id 지정
-	$("#moduleArea").append(newDiv);
+function tteesstt() {
+	alert("adf")
+	jQuery('#wt').hide();
+	jQuery('#graph').show(); 
+} */
+
+function biobutton() {
+	jQuery('#moduleArea').children().hide();
+	jQuery('#graph').show();  
 }
-
+function weatherbutton() {
+	jQuery('#moduleArea').children().hide();
+	jQuery('#wt').show();  
+} 
 </script>
 
 </html>
