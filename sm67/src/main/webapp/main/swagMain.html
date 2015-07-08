@@ -55,6 +55,12 @@ a {
 	margin-top: 5%;
 	margin-right : 65%;
 }
+
+#graph {
+	height: 80%;
+	margin: 100px auto;
+	width: 80%;
+}
 </style>
 </head>
 <body>
@@ -65,12 +71,13 @@ a {
 	<div id='swagArea'>
 		
 		<img id='swagImg' src='../images/main/swag.png'>
-		<div id='sMsg'>
+<!-- 		<div id='sMsg'>
 		Hey bro ! what's up ?<br>
 		I don't know who you are<br>
 		but i'll find you<br>
 		and i will kill you!<br>
-		</div>
+		</div> -->
+		<div id="swagMsg"></div>
 	</div>
 
 	<div id = 'leftArea'>
@@ -78,8 +85,7 @@ a {
 	</div>
 	
 	<div id = 'moduleArea'>
-		<!-- Module import Area -->
-		this is moduleArea
+		<!-- <div id="graph"> -->
 	</div>
 </body>
 <script src="//code.jquery.com/jquery-1.11.2.js"></script>
@@ -124,5 +130,16 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
+<script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
+<script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
+<script type="text/javascript">
+
+function anbr() {
+	 var newDiv=document.createElement('DIV'); // DIV 객체 생성
+	    newDiv.setAttribute('id','graph'); // id 지정
+	$("#moduleArea").append(newDiv);
+}
+
+</script>
 
 </html>
