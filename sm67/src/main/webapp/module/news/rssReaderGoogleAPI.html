@@ -52,16 +52,14 @@
 		socialfeed.init() //Always call this last
 	</script>
 -->
-<input type="text" id="rssInput">
-<button onclick="rssField()">RSS 가져오기</button>
 
 <script type="text/javascript">
-function rssField() {
-	  var rssAddr = $('#rssInput').val();
+function rssField(xmlAddr) {
+	 var parentXmlAddr[] = xmlAddr;
 	  setInterval(function(){ newsfeed.init() }, 5000); // page reroad
 		  
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-			newsfeed.addFeed("조선일보-속보", rssAddr);
+			newsfeed.addFeed("조선일보-속보", parentXmlAddr);
 		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
@@ -73,7 +71,10 @@ function rssField() {
 	      })
 	      */
 	      
-	      }
+	  }
+	  
+	  //parent.callRssField = rssFiled;
+	      
 	</script>
 	
 	<script>
