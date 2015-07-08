@@ -85,7 +85,7 @@ a {
 	</div>
 	
 	<div id = 'moduleArea'>
-		<!-- <div id="graph"> -->
+		<div id="graph">
 	</div>
 </body>
 <script src="//code.jquery.com/jquery-1.11.2.js"></script>
@@ -132,14 +132,15 @@ $(document).ready(function() {
 <script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
 <script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
+
 <script type="text/javascript">
-
-function anbr() {
-	 var newDiv=document.createElement('DIV'); // DIV 객체 생성
-	    newDiv.setAttribute('id','graph'); // id 지정
-	$("#moduleArea").append(newDiv);
-}
-
+function biobutton() {
+	if($("#graph").css("display") == "none"){   
+		 jQuery('#graph').show();  
+	} else {
+		jQuery('#graph').hide();
+	}  
+} 
 </script>
 
 </html>
