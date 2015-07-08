@@ -11,21 +11,8 @@
 	background-image: url("../images/main/img_top.png");
 	background-repeat: no-repeat;
 	height : 65px;
-	border-bottom : 3px ridge black;
-	border-bottom-width: 70%;
+	border : 1px solid black;
 }
-#sMsg {
-	float : right;
-	margin-top: 5%;
-	
-}	border-bottom : 3px ridge black;
-	border-bottom-width: 70%;
-}
-#sMsg {
-	float : right;
-	margin-top: 5%;
-	
-
 
 #moduleArea {
 	display : none;
@@ -63,19 +50,17 @@ a {
 	margin: 3% 3% 3% 3%;
 }
 
+#sMsg {
+	float : right;
+	margin-top: 5%;
+	margin-right : 65%;
+}
 
 #graph {
 	height: 80%;
 	margin: 100px auto;
 	width: 80%;
 }
-
-/* #graph {
- display: none;
-} */
-
-
-
 </style>
 </head>
 <body>
@@ -92,9 +77,7 @@ a {
 		but i'll find you<br>
 		and i will kill you!<br>
 		</div> -->
-		<div id="sMsg">
-			<div id="swagMsg"></div>
-		</div>
+		<div id="swagMsg"></div>
 	</div>
 
 	<div id = 'leftArea'>
@@ -118,8 +101,7 @@ $(function(){
   $("#topArea").show( "fold", 2000 );
   $("#swagArea").show( "fold", 2000 ); 
   $("#leftArea").show( "fold", 3000 ); 
-  $("#moduleArea").show( "fold", 3000 );
-  $("#moduleArea").children().hide();
+  $("#moduleArea").show( "fold", 3000 ); 
 });
 
 //스웩 아이콘 회전
@@ -156,21 +138,6 @@ $(document).ready(function() {
 </script>
 
 <script type="text/javascript">
-/* function biobutton() {
-	if($("#graph").css("display") == "none"){   
-		 jQuery('#graph').show();  
-	} else {
-		jQuery('#graph').hide();
-	}  
-} */
-/* window.onload = tteesstt;
-
-function tteesstt() {
-	alert("adf")
-	jQuery('#wt').hide();
-	jQuery('#graph').show(); 
-} */
-
 function biobutton() {
 	jQuery('#moduleArea').children().hide();
 	jQuery('#graph').show();  
