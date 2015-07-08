@@ -139,22 +139,26 @@ $(function(){
         weatherDiv.addClass('error').html(msg);
     }
     
+    
+    
     function weatherExp(cond) {
     	switch(cond) {
+    	case "clear sky" :
+    		return clear_sky;
+    	case "few clouds" :
+    		return few_clouds;
+    	case "scattered clouds" :
+    		return scattered_clouds;
+    	case "broken_clouds" :
+    		return broken_clouds;
+    	case "shower_rain" :
+    		return shower_rain;
     	case "rain" :
-    		wt_exp.html('비온다');
-    	case "Tuesday" :
-    		wt_exp.html('비온다');
-    	case "Wednesday" :
-    		wt_exp.html('비온다');
-    	case "Thursday" :
-    		wt_exp.html('비온다');
-    	case "Friday" :
-    		wt_exp.html('비온다');
-    	case "Saturday" :
-    		wt_exp.html('비온다');
-    	case "Sunday" :
-    		wt_exp.html('비온다');
+    		return rain;
+    	case "thunderstorm" :
+    		return thunderstorm;
+    	case "snow" :
+    		return snow;
     	}
     	
     	
