@@ -1,12 +1,23 @@
 $(function(){
 
     /* Configuration */
+	var clear_sky = '오늘은 날씨가 매우 좋습니다 <br> 야외활동 하기 딱 좋은 날씨네요 <br> 자외선에 주의하세요 ';
+	var few_clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요';
+	var scattered_clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요 ';
+	var broken_clouds = '오늘은 구름이 많이 꼈네요. <br> 운전하실 때 주의해서 안전운행 하세요';
+	var shower_rain = '오늘은 비가 아주 많이 오고 있습니다. <br> 우산을 꼭 준비해서 나가세요. <br> 운전하실 때 주의해서 안전운행 하세요';
+	var rain = '오늘은 비가오고 있습니다 <br> 우산을 꼭 준비해서 나가세요. <br> 운전하실 때 주의해서 안전운행 하세요  ';
+	var thunderstorm = '지금은 천둥이 치고 있습니다. <br> 낙뢰에 주의하세요';
+	var snow = '오늘은 눈이 오네요 <br> 운전하실 때 주의해서 안전운행 하세요';
+	var mist = '오늘은 안개가 짙게 꼈네요 <br> 운전하실 때 주의해서 안전운행 하세요';
 
     var DEG = 'c';  // c for celsius, f for fahrenheit
 
     var weatherDiv = $('#weather'),
         scroller = $('#scroller'),
         location = $('p.location');
+    	day = $('p.day');
+    	wt_exp = $('#wt_exp');
 
     // Does this browser support geolocation?
     if (navigator.geolocation) {
@@ -35,6 +46,7 @@ $(function(){
                 var offset = d.getTimezoneOffset()*60*1000;
                 var city = cache.data.city.name;
                 var country = cache.data.city.country;
+                var cnt=1;
 
                 $.each(cache.data.list, function(){
                     // "this" holds a forecast object
@@ -44,20 +56,18 @@ $(function(){
 
                     addWeather(
                         this.weather[0].icon,
-                        moment(localTime).calendar(),   // We are using the moment.js library to format the date
-                        this.weather[0].main + ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG +
-                                                ' / ' + convertTemperature(this.main.temp_max) + '°' + DEG+'</b>'
+                        transferDayToKor(moment(localTime).format("dddd")),   // We are using the moment.js library to format the date
+                        '<span id="w_con'+cnt+'">'+ this.weather[0].main +'</span>'+ ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG + '</b>'
+                    
                     );
-
+                    cnt++;
                 });
 
                 // Add the location to the page
                 location.html(city+', <b>'+country+'</b>');
-
+                wt_exp.html(rain);
                 weatherDiv.addClass('loaded');
 
-                // Set the slider to the first slide
-                showSlide(0);
 
             }
 
@@ -91,59 +101,14 @@ $(function(){
     function addWeather(icon, day, condition){
 
         var markup = '<li>'+
-            '<img src="assets/img/icons/'+ icon +'.png" />'+
+            '<img src="assets/img/icons/'+ icon +'.png"/>'+
             ' <p class="day">'+ day +'</p> <p class="cond">'+ condition +
             '</p></li>';
 
         scroller.append(markup);
     }
 
-    /* Handling the previous / next arrows */
-
-    var currentSlide = 0;
-    weatherDiv.find('a.previous').click(function(e){
-        e.preventDefault();
-        showSlide(currentSlide-1);
-    });
-
-    weatherDiv.find('a.next').click(function(e){
-        e.preventDefault();
-        showSlide(currentSlide+1);
-    });
-
-    // listen for arrow keys
-
-    $(document).keydown(function(e){
-        switch(e.keyCode){
-            case 37: 
-                weatherDiv.find('a.previous').click();
-            break;
-            case 39:
-                weatherDiv.find('a.next').click();
-            break;
-        }
-    });
-
-    function showSlide(i){
-        var items = scroller.find('li');
-
-        if (i >= items.length || i < 0 || scroller.is(':animated')){
-            return false;
-        }
-
-        weatherDiv.removeClass('first last');
-
-        if(i == 0){
-            weatherDiv.addClass('first');
-        }
-        else if (i == items.length-1){
-            weatherDiv.addClass('last');
-        }
-
-        scroller.animate({left:(-i*100)+'%'}, function(){
-            currentSlide = i;
-        });
-    }
+  
 
     /* Error handling functions */
 
@@ -172,6 +137,48 @@ $(function(){
 
     function showError(msg){
         weatherDiv.addClass('error').html(msg);
+    }
+    
+    function weatherExp(cond) {
+    	switch(cond) {
+    	case "rain" :
+    		wt_exp.html('비온다');
+    	case "Tuesday" :
+    		wt_exp.html('비온다');
+    	case "Wednesday" :
+    		wt_exp.html('비온다');
+    	case "Thursday" :
+    		wt_exp.html('비온다');
+    	case "Friday" :
+    		wt_exp.html('비온다');
+    	case "Saturday" :
+    		wt_exp.html('비온다');
+    	case "Sunday" :
+    		wt_exp.html('비온다');
+    	}
+    	
+    	
+    	
+    }
+    
+    function transferDayToKor(day) {
+    	console.log(day);
+    	switch(day) {
+    	case "Monday" :
+    		return "월요일";
+    	case "Tuesday" :
+    		return "화요일";
+    	case "Wednesday" :
+    		return "수요일";
+    	case "Thursday" :
+    		return "목요일";
+    	case "Friday" :
+    		return "금요일";
+    	case "Saturday" :
+    		return "토요일";
+    	case "Sunday" :
+    		return "일요일";
+    	}
     }
 
 });
