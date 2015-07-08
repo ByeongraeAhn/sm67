@@ -1,20 +1,18 @@
-body {
-	padding: 0;
-	margin: 0;
-	background-color: #1b8eb6;
-	color: white;
-}
+
 
 img {
 	max-width: 100%;
 }
 
-#weather {
+#weather, #wt_exp{
 	width: 600px;
 	height: 550px;
 	padding: 0;
 	margin: 0 auto;
+	background-color: #1b8eb6;
+	color: white;
 }
+
 
 #wt_exp {
 	width: 600px;
