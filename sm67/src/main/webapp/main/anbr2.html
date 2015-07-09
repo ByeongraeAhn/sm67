@@ -21,6 +21,8 @@ var frName = "SinsuUnse";
 if (cWidth < 500) cWidth = 500;
 if (cHeight < 200) cHeight = 200;
 document.write("<iframe name=\"" + frName + "\" src=\"http://free.sinsu.net/contents/main.asp?uid=" + uID + "&domain=" + uDomain + "&edate=" + eDate + "&key=" + uKey + "&cw=" + cWidth + "&ch=" + cHeight + "&code=" + cCode + "&curl=" + escape(parent.location.href) + "\" id=\"SinsuUnse\" style=\"width: " + cWidth + "px; height: " + cHeight + "px;\" allowTransparency=\"true\" frameborder=\"0\" scrolling=\"no\"></iframe>");
+//$(".ad_head").css("display","none");
+document.getElementsByClassName("ad_head").style="display:none; height:0;width:0;"
 </script>
 
 

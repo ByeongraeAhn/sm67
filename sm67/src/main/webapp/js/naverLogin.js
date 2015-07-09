@@ -96,7 +96,8 @@ function naverajax(a) {
 				if(validation.count == 0){
 					getBirth();
 				} else {
-					location.replace("../main/swagMain.html");
+					/*location.replace("../main/swagMain.html");*/
+					location.replace("../home.html");
 				} 
 			},
 			error: function(xhr, textStatus, errorThrown) {
