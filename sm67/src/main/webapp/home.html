@@ -42,6 +42,12 @@
 		height: 700px;
 		width: 700px;
 	}
+	#modulecon2 {
+		margin-right: 100px;
+		float: right;
+		height: 700px;
+		width: 700px;
+	}
 	
 	</style>
 </head>
@@ -118,9 +124,25 @@
 					<div class="slide" data-type="cover">
 						<div class="img-wrap"><img src="assets/images/slides/webfire-touchscreen-apps.jpg" alt="webfire-touchscreen-apps"/></div>
 						<div class="slide-content">
+						<div id="testmessage">
 							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
 						</div>
-						<span class="slide-title">focus</span>
+							<div id="modulecon">
+							</div>
+						</div>
+						<span class="slide-title">News</span>
+					</div>
+					<!-- 다섯 슬라이드 -->
+					<div class="slide" data-type="cover">
+						<div class="img-wrap"><img src="assets/images/slides/webfire-touchscreen-apps.jpg" alt="webfire-touchscreen-apps"/></div>
+						<div class="slide-content">
+						<div id="testmessage">
+							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
+						</div>
+							<div id="modulecon2">
+							</div>
+						</div>
+						<span class="slide-title">News</span>
 					</div>
 					<!-- 마지막 슬라이드 -->
 					<div class="slide" data-content="contact-us" data-type="page">
@@ -149,7 +171,6 @@
 	 			<div class="content" data-content="page"></div>
 			</div>
 		</div>
-	</div>
 	
 	<div id="outdated">
 	  <h6>Your browser is out of date!</h6>
@@ -176,6 +197,9 @@
 <script type="text/javascript" src="module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 <script>
 	$("#wt").load("module/weather/w.html");
+</script>
+<script>
+	$("#modulecon2").load("module/calendar/calendar.html");
 </script>
 </body>
 </html>
