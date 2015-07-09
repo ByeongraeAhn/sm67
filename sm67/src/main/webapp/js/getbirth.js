@@ -37,7 +37,7 @@ function updateBirth() {
 			birthday: birth
 		},
 		success: function(result) {
-			location.replace("../main/swagMain.html");
+			location.replace("../home.html");
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert('작업을 완료할 수 없습니다.\n' + 
