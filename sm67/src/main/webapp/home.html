@@ -53,6 +53,13 @@
 		width: 700px;
 	}
 	
+	#newsFrame {
+	width: 100%;
+	height: 675px;
+	overflow: scroll;
+	background-color: white;
+}
+	
 	</style>
 </head>
 <body>
@@ -132,9 +139,8 @@
 							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
 						</div>
 							<div id="modulecon">
-							  <input type="text" id="rssInput" size="50px">
-                <button onclick="test0()">RSS 가져오기</button>
-                <iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
+			                  <button onclick="test0()">다른 뉴스보기</button>
+			                  <iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
 							</div>
 						</div>
 						<span class="slide-title">News</span>
@@ -212,9 +218,12 @@
 <script type="text/javascript">
   function test0() {
     var iframe = document.getElementById("newsFrame");
-    var xmlAddr = $("#rssInput").val();
+    var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
     iframe.contentWindow.rssField(xmlAddr);
   }
+</script>
+<script type="text/javascript">
+window.onload = test0;
 </script>
 </body>
 </html>
