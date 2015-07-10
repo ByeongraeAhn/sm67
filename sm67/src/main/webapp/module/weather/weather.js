@@ -1,15 +1,10 @@
 $(function(){
 
     /* Configuration */
-	var clear_sky = '오늘은 날씨가 매우 좋습니다 <br> 야외활동 하기 딱 좋은 날씨네요 <br> 자외선에 주의하세요 ';
-	var few_clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요';
-	var scattered_clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요 ';
-	var broken_clouds = '오늘은 구름이 많이 꼈네요. <br> 운전하실 때 주의해서 안전운행 하세요';
-	var shower_rain = '오늘은 비가 아주 많이 오고 있습니다. <br> 우산을 꼭 준비해서 나가세요. <br> 운전하실 때 주의해서 안전운행 하세요';
+	var clear = '오늘은 날씨가 매우 좋습니다 <br> 야외활동 하기 딱 좋은 날씨네요 <br> 자외선에 주의하세요 ';
+	var clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요';
 	var rain = '오늘은 비가오고 있습니다 <br> 우산을 꼭 준비해서 나가세요. <br> 운전하실 때 주의해서 안전운행 하세요  ';
-	var thunderstorm = '지금은 천둥이 치고 있습니다. <br> 낙뢰에 주의하세요';
 	var snow = '오늘은 눈이 오네요 <br> 운전하실 때 주의해서 안전운행 하세요';
-	var mist = '오늘은 안개가 짙게 꼈네요 <br> 운전하실 때 주의해서 안전운행 하세요';
 
     var DEG = 'c';  // c for celsius, f for fahrenheit
 
@@ -57,15 +52,22 @@ $(function(){
                     addWeather(
                         this.weather[0].icon,
                         transferDayToKor(moment(localTime).format("dddd")),   // We are using the moment.js library to format the date
-                        '<span id="w_con'+cnt+'">'+ this.weather[0].main +'</span>'+ ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG + '</b>'
+                        '<span id="w_con'+cnt+'">'+ transferWeatherToKor(this.weather[0].main) +'</span>'+ ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG + '</b>'
                     
                     );
+                    console.log(this.weather[0].main);
+                    if (cnt==1) {
+                    	wt_exp.html(weatherExp(this.weather[0].main));
+                    	
+                    	
+                    }
                     cnt++;
+                    
                 });
 
                 // Add the location to the page
                 location.html(city+', <b>'+country+'</b>');
-                wt_exp.html(rain);
+                //wt_exp.html(rain);
                 weatherDiv.addClass('loaded');
 
 
@@ -143,24 +145,30 @@ $(function(){
     
     function weatherExp(cond) {
     	switch(cond) {
-    	case "clear sky" :
-    		return clear_sky;
-    	case "few clouds" :
-    		return few_clouds;
-    	case "scattered clouds" :
-    		return scattered_clouds;
-    	case "broken_clouds" :
-    		return broken_clouds;
-    	case "shower_rain" :
-    		return shower_rain;
-    	case "rain" :
+    	case "Clear" :
+    		return clear;
+    	case "Clouds" :
+    		return clouds;
+    	case "Rain" :
     		return rain;
-    	case "thunderstorm" :
-    		return thunderstorm;
-    	case "snow" :
+    	case "Snow" :
     		return snow;
     	}
     	
+    	
+    }
+    
+    function transferWeatherToKor(cond) {
+    	switch(cond) {
+    	case "Clear" :
+    		return "맑음";
+    	case "Clouds" :
+    		return "구름";
+    	case "Rain" :
+    		return "비";
+    	case "Snow" :
+    		return "눈";
+    	}
     	
     	
     }
