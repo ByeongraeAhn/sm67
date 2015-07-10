@@ -9,7 +9,8 @@ var emotional;
 var mental;
 var intuitive;
 var msg;
-
+var smsg;
+var audio = new Audio();
 
 function getSwagVo() {
 		$.ajax('page/getSwagVo.do', {
@@ -92,9 +93,13 @@ function settingBio(){
 }
 
 function settingMsg(){
-	var arr = {};
+	var arr = new Array();
 	var status;
-	msg = '금일 '+userName+'님의 바이오 리듬 분석입니다.<br>';
+	
+	msg = '금일 '+userName+'님의 바이오 리듬 분석입니다.';
+	audio.src ='http://translate.google.com/translate_tts?tl=ko&q='+'"'+msg+'"';
+	audio.play();
+	msg = msg + '<br>'
 	var token;
 
 	status = getStatus(physical);
@@ -110,6 +115,11 @@ function settingMsg(){
 	token = setImsg(status);
 	
 	
+	
+	smsg = msg.replace( /<br>/gi, " ");
+	console.log("smsg : " + smsg);
+		audio.src ='http://translate.google.com/translate_tts?tl=ko&q='+'"'+smsg+'"';
+		audio.play();
 	$("#swagMsg").html(msg)
 	
 	
