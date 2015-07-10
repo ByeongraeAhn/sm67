@@ -360,6 +360,8 @@
             </div>
             <div class="illustration">
             	<div style="background-color:#f7f7f7;">
+            	  <input type="text" id="rssInput" size="50px">
+                <button onclick="test0()">RSS 가져오기</button>
             	  <iframe id="newsFrame" src="../module/news/rssReaderGoogleAPI.html"></iframe>
             	</div>
             </div>
@@ -380,9 +382,8 @@
 </div>
         </div>
     </div>
-    <!-- END COLUMNS -->
-
     
+    <!-- END COLUMNS -->
 
     <script src="../js/nicolas.js"></script><!-- 메인js -->
     <script>
@@ -398,6 +399,14 @@
 	
 <script>
 	$("#wt").load("../module/weather/weather.html");
+</script>
+
+<script type="text/javascript">
+  function test0() {
+	  var iframe = document.getElementById("newsFrame");
+	  var xmlAddr = $("#rssInput").val();
+	  iframe.contentWindow.rssField(xmlAddr);
+	}
 </script>
 
 </body>
