@@ -1,0 +1,81 @@
+.wt_img {
+	max-width: 100%;
+}
+
+#wt_exp {
+	width: 700px;
+	height: 200px;
+	padding: 0;
+	margin: 0 auto;
+	background-color: #1b8eb6;
+	color: white;
+}
+
+#weather {
+	width: 700px;
+	height: 500px;
+	padding: 0;
+	margin: 0 auto;
+	background-color: #1b8eb6;
+	color: white;
+}
+
+#scroller {
+	width: 700px;
+	height: 500px;
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	float: left;
+	background-color: #1b8eb6;
+}
+
+#scroller li {
+	padding: 0;
+	margin: 0 auto;
+	width: 175px;
+	height: 200px;
+	float: left;
+	display: none;
+	background-color: #1b8eb6;
+}
+
+#scroller li:first-child {
+	font-size: 50px;
+	width: 700px;
+	height: 250px;
+}
+
+#scroller li:first-child>img {
+	width: 350px;
+	height: 250px;
+	float: left;
+}
+
+#scroller li:first-child>p {
+	padding-top: 50px;
+	float: right;
+	width: 350px;
+	height: 125px;
+	margin: auto;
+}
+
+#scroller li:nth-child(8n+1) {
+	display: block;
+}
+
+span[id^=w_con] {
+	display: none;
+}
+
+p.day {
+	text-align: center;
+}
+
+p.cond {
+	text-align: center;
+}
+
+#w_con1 {
+	display: inline;
+}
