@@ -43,20 +43,21 @@
 #scroller li:first-child {
 	font-size: 50px;
 	width: 700px;
-	height: 250px;
+	height: 350px;
 }
 
 #scroller li:first-child>img {
 	width: 350px;
-	height: 250px;
+	height: 200px;
 	float: left;
+	margin: 75px 0 0 0 ;
 }
 
 #scroller li:first-child>p {
-	padding-top: 50px;
+	padding-top: 100px;
 	float: right;
 	width: 350px;
-	height: 125px;
+	height: 175px;
 	margin: auto;
 }
 
