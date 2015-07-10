@@ -17,7 +17,7 @@ $(function(){
         scroller = $('#scroller'),
         location = $('p.location');
     	day = $('p.day');
-    	wt_exp = $('#wt_exp');
+    	wt_exp = $('#weather_msg');
 
     // Does this browser support geolocation?
     if (navigator.geolocation) {
@@ -101,7 +101,7 @@ $(function(){
     function addWeather(icon, day, condition){
 
         var markup = '<li>'+
-            '<img src="/sm67/module/weather/assets/img/icons/'+ icon +'.png"/>'+
+            '<img src="/sm67/module/weather/assets/img/icons/'+ icon +'.png" class="wt_img"/>'+
             ' <p class="day">'+ day +'</p> <p class="cond">'+ condition +
             '</p></li>';
 
