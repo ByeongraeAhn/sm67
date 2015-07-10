@@ -1,11 +1,10 @@
 $(function(){
 
     /* Configuration */
-	var clear = '오늘은 날씨가 매우 좋습니다 <br> 야외활동 하기 딱 좋은 날씨네요 <br> 자외선에 주의하세요 ';
-	var clouds = '오늘은 구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다. <br> 자외선에 주의하세요';
-	var rain = '오늘은 비가오고 있습니다 <br> 우산을 꼭 준비해서 나가세요. <br> 운전하실 때 주의해서 안전운행 하세요  ';
-	var snow = '오늘은 눈이 오네요 <br> 운전하실 때 주의해서 안전운행 하세요';
-
+	var clear = '날씨가 매우 좋습니다.<br>야외활동 하기 딱 좋은 날씨네요.<br>자외선에 주의하세요.<br>';
+	var clouds = '구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다.<br>자외선에 주의하세요.<br>';
+	var rain = '비가 올 예정입니다.<br>우산을 꼭 준비해서 나가세요.<br>운전하실 때 주의해서 안전운행 하세요.<br>';
+	var snow = '눈이 올 예정입니다.<br>옷을 두껍게 입고 나가세요.<br> 운전하실 때 빙판에 주의해서 안전운행 하세요.<br>';
     var DEG = 'c';  // c for celsius, f for fahrenheit
 
     var weatherDiv = $('#weather'),
@@ -57,9 +56,15 @@ $(function(){
                     );
                     console.log(this.weather[0].main);
                     if (cnt==1) {
-                    	wt_exp.html(weatherExp(this.weather[0].main));
-                    	
-                    	
+                    	var tday_ex = '오늘 날씨를 알려드리겠습니다<br>오늘은 '+weatherExp(this.weather[0].main)+
+                    	'오늘의 평균기온은 '+ convertTemperature(this.main.temp_min) + '도 입니다.<br>';
+                    	wt_exp.append(tday_ex);
+                    }
+                    
+                    else if(cnt==9) {
+                    	var tmr_ex = '<br>내일은 '+weatherExp(this.weather[0].main)+
+                    	'내일의 평균기온은 '+ convertTemperature(this.main.temp_min) + '도 입니다.<br>';
+                    	wt_exp.append(tmr_ex);
                     }
                     cnt++;
                     
