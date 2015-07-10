@@ -1,12 +1,12 @@
 
 function logout() {
-	$.ajax('../page/loginOut.do', {
+	$.ajax('page/loginOut.do', {
 		method: 'POST',
 		dataType: 'json',
 		data: {
 		},
 		success: function(result) {
-			location.replace("../login/login.html");
+			location.replace("login/login.html");
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert('작업을 완료할 수 없습니다.\n' + 
