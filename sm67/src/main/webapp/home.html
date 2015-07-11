@@ -238,33 +238,21 @@
 <!-- 뉴스 js -->
 <script type="text/javascript">
   function test0() {
-	alert("adf");
     var iframe = document.getElementById("newsFrame");
     var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
     iframe.contentWindow.rssField(xmlAddr);
   }
 </script>
 
-<!-- window.onload시 여러개의 함수를 동시에 실행시키기 위한 js -->
+<!-- window.load시 실행할 처음 실행할 함수들 -->
 <script type="text/javascript">
-	function addLoadEvent(func){
-	    var oldonload = window.onload;
-	    if(typeof window.onload != 'function'){
-	        window.onload = func;
-	    }else{
-	        window.onload = function(){
-	            oldonload();
-	            func();
-	        };
-	    }
+window.onload = function() {
+	 getSwagVo();
+	 test0();
+	 initialize();
 	}
 </script>
 
-<!-- window.load시 실행할 처음 실행할 함수들 -->
-<script type="text/javascript">
-	addLoadEvent(getSwagVo());
-	/* addLoadEvent(test0()); */
-</script>
 
 
 <!-- <script type="text/javascript">
