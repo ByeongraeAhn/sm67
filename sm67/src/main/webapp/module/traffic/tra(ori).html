@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>교통정보 OPEN API</title>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko"></script>
+<script src="//code.jquery.com/jquery-1.11.2.js"></script>
+<script type="text/javascript">
+    window.onload = initialize;
+    var map;
+    
+    //위도(Latitude), 경도(Longitude)
+    var lat;   //위도
+    var lon;   //경도
+    $.ajax( { 
+             url: '//freegeoip.net/json/', 
+             type: 'POST', 
+             dataType: 'jsonp',
+             success: function(location) {
+             console.log(location);
+             lat = location.latitude;
+             lon = location.longitude;
+             
+             console.log('lat : ' + lat);
+             console.log('lon : ' + lon);
+             }
+          } );
+     
+    function initialize(){
+        var element = document.getElementById("map");
+        var mapOptions = {
+            zoom: 10,
+            zoomControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: new google.maps.LatLng(/*위도37.652528*/lat,/*경도127.024859*/lon)
+        											
+        };
+        map = new google.maps.Map(element, mapOptions);
+         
+        var imgMapTypeOption = {
+            getTileUrl: function(coord, zoom){
+            	/* console.log("row는  "+coord.y); // 101
+            	console.log("col은  "+coord.x); // 219 */
+                /* return "http://openapi.its.go.kr/api/wmtsTile?key=1395816212109&zoom="+zoom+"&row="+coord.y+"&col="+coord.x; */
+                return "http://openapi.its.go.kr/api/wmtsTile?key=1395816212109&zoom="+zoom+"&row="+coord.y+"&col="+coord.x;
+            },
+            tileSize: new google.maps.Size(256, 256),
+            maxZoom: 18,
+            name: "TrafficInfo",
+            opacity : 1.0
+        };
+        var myMapType = new google.maps.ImageMapType(imgMapTypeOption);
+        map.overlayMapTypes.insertAt(0, myMapType);
+    }
+</script>
+</head>
+<body>
+    <div id="map" style="width:700px; height:700px;"></div>
+</body>
+</html>

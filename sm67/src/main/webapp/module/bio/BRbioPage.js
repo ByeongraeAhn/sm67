@@ -1,4 +1,4 @@
-window.onload = getSwagVo;
+/*window.onload = getSwagVo;*/
 var userName;
 var birthToken;
 var birth_year;/// 바이오 리듬을 알아볼 사람의 생일 중의 "년" <br>

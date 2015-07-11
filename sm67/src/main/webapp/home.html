@@ -157,6 +157,18 @@
 						</div>
 						<span class="slide-title">Calendar</span>
 					</div>
+					<!-- 여섯번째 슬라이드 -->
+					<div class="slide" data-content="space-exploration-network" data-type="page">
+						<div class="img-wrap"><img src="assets/images/slides/webfire-space-exploration-network.jpg" alt="webfire-space-exploration-network"/></div>
+						<div class="slide-content">
+							<div id="testmessage">
+							</div>
+							<div id="modulecon">							
+								<div id="traf" style="width:100%;height:100%"></div>
+							</div>
+						</div>
+						<span class="slide-title">Traffic</span>
+					</div>
 					<!-- 마지막 슬라이드 -->
 					<div class="slide" data-content="contact-us" data-type="page">
 						<div class="img-wrap cover"></div>
@@ -209,19 +221,52 @@
 <script type="text/javascript" src="module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="js/logout.js"></script><!-- 로그아웃js -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko"></script> <!-- 교통정보js -->
+
+<!-- 날씨정보 load -->
 <script>
 	$("#wt").load("module/weather/weather.html");
 </script>
+<!-- 교통정보 load -->
+<script>
+	$("#traf").load("module/traffic/tra.html");
+</script>
+<!-- 캘린더 load -->
 <script>
 	$("#modulecon2").load("module/calendar/calendar.html");
 </script>
+<!-- 뉴스 js -->
 <script type="text/javascript">
   function test0() {
+	alert("adf");
     var iframe = document.getElementById("newsFrame");
     var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
     iframe.contentWindow.rssField(xmlAddr);
   }
 </script>
+
+<!-- window.onload시 여러개의 함수를 동시에 실행시키기 위한 js -->
+<script type="text/javascript">
+	function addLoadEvent(func){
+	    var oldonload = window.onload;
+	    if(typeof window.onload != 'function'){
+	        window.onload = func;
+	    }else{
+	        window.onload = function(){
+	            oldonload();
+	            func();
+	        };
+	    }
+	}
+</script>
+
+<!-- window.load시 실행할 처음 실행할 함수들 -->
+<script type="text/javascript">
+	addLoadEvent(getSwagVo());
+	/* addLoadEvent(test0()); */
+</script>
+
+
 <!-- <script type="text/javascript">
 window.onload = test0;
 </script> -->
