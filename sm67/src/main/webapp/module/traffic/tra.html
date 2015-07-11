@@ -5,6 +5,7 @@
     //위도(Latitude), 경도(Longitude)
     var lat;   //위도
     var lon;   //경도
+    var loc = "서울특별시";
     $.ajax( { 
              url: '//freegeoip.net/json/', 
              type: 'POST', 
@@ -18,7 +19,7 @@
     function initialize(){
         var element = document.getElementById("map");
         var mapOptions = {
-            zoom: 10,
+            zoom: 12,
             zoomControl: true,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             center: new google.maps.LatLng(/*위도37.652528*/lat,/*경도127.024859*/lon)
@@ -40,6 +41,15 @@
         };
         var myMapType = new google.maps.ImageMapType(imgMapTypeOption);
         map.overlayMapTypes.insertAt(0, myMapType);
+        
+        //지역 위도 경도 정보
+        if (lat > 37.7 && lon > 127.5) {
+        	loc = "춘천시"
+        } else if (lat < 36 && lon <126.9) {
+        	loc = "광주광역시"
+        }
+        	
+        $("#traffic_msg").append("현재 위치하고 계신"+"<br>"+loc+" 교통정보입니다."+"<br>"+"현재 잠실대교 방향의 강변북로 정체입니다.");
     }
 </script>
 <div id="map" style="width:700px; height:700px;"></div>
