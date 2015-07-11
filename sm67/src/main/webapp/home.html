@@ -139,7 +139,7 @@
 							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
 						</div>
 							<div id="modulecon">
-			                  <button onclick="test0()">다른 뉴스보기</button>
+			                  <button onclick="test1()">다른 뉴스보기</button>
 			                  <iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
 							</div>
 						</div>
@@ -243,6 +243,12 @@
     var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
     iframe.contentWindow.rssField(xmlAddr);
   }
+  
+  function test1() {
+    var iframe = document.getElementById("newsFrame");
+    var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";
+    iframe.contentWindow.rssField(newxmlAddr);
+  }
 </script>
 
 <!-- window.load시 실행할 처음 실행할 함수들 -->
@@ -253,6 +259,10 @@ window.onload = function() {
 	 initialize();
 	}
 </script>
+
+<!-- <script type="text/javascript">
+console.log(firstnews);
+</script> -->
 
 
 

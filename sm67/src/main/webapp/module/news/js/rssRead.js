@@ -1,5 +1,9 @@
 var gfeedfetcher_loading_image="loading" //Full URL to "loading" image. No need to config after this line!!
 
+var firstnews;
+var secondnews;
+var thirdnews;
+
 google.load("feeds", "1") //Load Google Ajax Feed API (version 1)
 
 function gfeedfetcher(divid, divClass, linktarget){
@@ -105,12 +109,16 @@ gfeedfetcher.prototype._displayresult=function(feeds) {
 		var itemdescription=/description/i.test(this.showoptions)? "<br />"+feeds[i].content : /snippet/i.test(this.showoptions)? "<br />"+feeds[i].contentSnippet  : ""
 		rssoutput+=this.itemcontainer + itemtitle + " " + itemlabel + " " + itemdate + "\n" + itemdescription + this.itemcontainer.replace("<", "</") + "\n\n"
 	}
+	
+/*	var firstnews = feeds[0].title;
+	var secondnews = feeds[1].title;
+	var thirdnews = feeds[2].title;*/
 	rssoutput+=(this.itemcontainer=="<li>")? "</ul>" : ""
 	this.feedcontainer.innerHTML=rssoutput
 	for (var i=0; i<descs.length; i++){
 		var entryindex=parseInt(descs[i].match(/\d+$/i).shift())-1
 		document.getElementById(descs[i]).innerHTML=feeds[entryindex].content
 	}
-	
 }
+
 
