@@ -112,13 +112,12 @@ public class PageController {
     responseData.put("status", "success");
     
     //DB에 저장되어 있는 inputString인지 검사한다.
-    System.out.println("checkString 전");
     try{
     	
     	ChatVo chatStr = chatDao.validationString(inputString);
-    	System.out.println(chatStr.getCount());
-    	System.out.println(chatStr);
-	    System.out.println("checkString 후");
+    	System.out.println();
+    	System.out.println("---------------------------------");
+    	System.out.println("getCount : "+chatStr.getCount());
 	    HttpHeaders headers = new HttpHeaders();
 	    headers.add("Content-Type", "text/plain;charset=UTF-8");
 	    headers.add("Access-Control-Allow-Origin", "*");
@@ -127,21 +126,24 @@ public class PageController {
 	    //    저장되어 있다면, 해당하는 outputString을 담아 리턴한다.
 	    if(chatStr.getCount() >= 1) {
 	    	//있다.
-	    	System.out.println("check -- DB에 있네요.");
-	    	System.out.println("inputString : " + inputString);
+			    	System.out.println("check -- DB에 있네요.");
+			    	System.out.println("inputString : " + inputString);
 	    	chatStr = chatDao.getString(inputString);
 	    	
-	    	System.out.println("     getString 결과");
-	    	System.out.println("inputString : " +chatStr.getInputString());
-	    	System.out.println("outputString : " +chatStr.getOutputString());
-	    	
+			    	System.out.println("     getString 결과");
+			    	System.out.println("inputString : " +chatStr.getInputString());
+			    	System.out.println("outputString : " +chatStr.getOutputString());
+			    	System.out.println();
+			    	System.out.println("---------------------------------");
 	    	responseData.put("check", true);
 	    	responseData.put("data", chatStr);
 	    	return responseData;
 	    } else {
 	    	//없다.
-	    	System.out.println("check -- DB에 없네요.");
+	    			System.out.println("check -- DB에 없네요.");
 	    	responseData.put("check", false);
+			    	System.out.println();
+			    	System.out.println("---------------------------------");
 	    	return responseData;
 	    }
 	    
