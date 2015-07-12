@@ -129,15 +129,15 @@ public class PageController {
 			    	System.out.println("check -- DB에 있네요.");
 			    	System.out.println("inputString : " + inputString);
 	    	//chatStr = chatDao.getString(inputString);
-	    	ChatVo outStr = chatDao.getString(inputString);
+	    	ChatVo retrunStr = chatDao.getString(inputString);
 	    	
 			    	System.out.println("     getString 결과");
-			    	System.out.println("inputString : " + outStr.getInputString());
-			    	System.out.println("outputString : " + outStr.getOutputString());
+			    	System.out.println("inputString : " + retrunStr.getInputString());
+			    	System.out.println("outputString : " + retrunStr.getOutputString());
 			    	System.out.println();
 			    	System.out.println("---------------------------------");
 	    	responseData.put("check", true);
-	    	responseData.put("data", outStr);
+	    	responseData.put("data", retrunStr);
 	    	return responseData;
 	    } else {
 	    	//없다.
@@ -181,7 +181,7 @@ public class PageController {
     headers.add("Content-Type", "text/plain;charset=UTF-8");
     headers.add("Access-Control-Allow-Origin", "*");
     try{
-    	chatDao.insert(sqlParams);
+    	chatDao.insertString(sqlParams);
     	
     } catch(Exception e){
     	e.printStackTrace();
