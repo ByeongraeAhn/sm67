@@ -1,8 +1,4 @@
-$(function init(){
-	$('#textField').val("SWAG : 안녕하세요? 저는 SWAG 입니다.")
-	speechText("안녕하세요? 저는 SWAG 입니다.");
 
-});
 
 
 function swagChat(){
