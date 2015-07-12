@@ -117,7 +117,6 @@ function settingMsg(){
 	
 	
 	smsg = msg.replace( /<br>/gi, " ");
-	console.log("smsg : " + smsg);
 		audio.src ='http://translate.google.com/translate_tts?tl=ko&q='+'"'+smsg+'"';
 		audio.play();
 	$("#swagMsg").html(msg)
