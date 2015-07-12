@@ -128,22 +128,23 @@ public class PageController {
 	    	//있다.
 			    	System.out.println("check -- DB에 있네요.");
 			    	System.out.println("inputString : " + inputString);
-	    	chatStr = chatDao.getString(inputString);
+	    	//chatStr = chatDao.getString(inputString);
+	    	ChatVo outStr = chatDao.getString(inputString);
 	    	
 			    	System.out.println("     getString 결과");
-			    	System.out.println("inputString : " +chatStr.getInputString());
-			    	System.out.println("outputString : " +chatStr.getOutputString());
+			    	System.out.println("inputString : " + outStr.getInputString());
+			    	System.out.println("outputString : " + outStr.getOutputString());
 			    	System.out.println();
 			    	System.out.println("---------------------------------");
 	    	responseData.put("check", true);
-	    	responseData.put("data", chatStr);
+	    	responseData.put("data", outStr);
 	    	return responseData;
 	    } else {
 	    	//없다.
 	    			System.out.println("check -- DB에 없네요.");
 	    	responseData.put("check", false);
-			    	System.out.println();
-			    	System.out.println("---------------------------------");
+	    			System.out.println();
+	    			System.out.println("---------------------------------");
 	    	return responseData;
 	    }
 	    
