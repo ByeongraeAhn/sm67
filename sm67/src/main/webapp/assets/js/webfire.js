@@ -6521,7 +6521,8 @@ function mobilecheck() {
             }
         })
     }, s.prototype._navigate = function() {
-        $(this.slides[this.current || 0]).removeClass("current"), this.current = this.dd.getStep()[0] - 1, $(this.slides[this.current]).addClass("current"), $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, ""), $("body").addClass("viewing-page-" + this.current),alert(this.current);
+    	//slide 이동
+        $(this.slides[this.current || 0]).removeClass("current"), this.current = this.dd.getStep()[0] - 1, $(this.slides[this.current]).addClass("current"), $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, ""), $("body").addClass("viewing-page-" + this.current), console.log(this.current);
         var t = this.dd.getStep()[0] - 1,
             e = null,
             s = "0%";
