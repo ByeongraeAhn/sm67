@@ -26,7 +26,6 @@
 	<link type="text/css" rel="stylesheet" href="assets/css/webfire.css">
 	<script src="assets/js/modernizr.js"></script>
 	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-	<script src="assets/js/tts.js"></script>
 	<style type="text/css">
 	#graph {
 		float :right;
@@ -222,18 +221,25 @@
     var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
     iframe.contentWindow.rssField(xmlAddr);
   }
-
-  /*
+  
+  //메인 음성 재생
   $(document).ready(function() {
 	  speechTextEnglish("Hello we are SWAG, a digital assistant, and we advice");
 	  });
-*/
 
 </script>
 
 <!-- tts-->
 <script type="text/javascript">
+function speechTextKorean(msg){
+   responsiveVoice.speak(msg,"Korean Female");
 
+}
+
+function speechTextEnglish(msg){
+	   responsiveVoice.speak(msg,"UK English Male");
+
+	}
 </script>
 <!-- <script type="text/javascript">
 window.onload = test0;
