@@ -12,9 +12,9 @@
 <body>
 
 	<H3>SWAG</H3>
-	<form name="chatForm" onsubmit="swagChat(); return false">
-		<textarea name="e_display" cols="60" rows="20">
+		<textarea id="textField" cols="60" rows="20">
 		</textarea>
+	<form name="chatForm" onsubmit="swagChat(); return false">
 		<br>
 		<input type="text" id='inputString' name="inputStr" size="50"> 
 		<input type="submit" value="&nbsp;Talk&nbsp;"> 
@@ -22,13 +22,16 @@
 
 </body>
 <script type="text/javascript">
+$(function init(){
+	$('#textField').val("SWAG : 안녕하세요? 저는 SWAG 입니다.")
+	speechText("안녕하세요? 저는 SWAG 입니다.");
+
+});
+
 
 function swagChat(){
-	
 	check($("#inputString").val());
-	
-	
-	//speechText($("#inputString").val());
+	$("#textField").append('사용자 : '+$('#inputString').val() + '\n');
 	$("#inputString").val('');
 	$("#inputString").focus();
 	
@@ -49,6 +52,7 @@ function check(msg) {
 				getOutput(msg);
 			} else {
 			//응답 output이 있다면
+				$("#textField").append('SWAG : '+ result.data.outputString + '\n');
 				speechText(result.data.outputString);
 			} 
 		},
@@ -70,7 +74,7 @@ function insertString (inputString, outputString) {
 			outputString: outputString
 		},
 		success: function(result) {
-			
+				$("#textField").append("SWAG : 알려 주셔서 감사합니다.");
 				speechText("알려 주셔서 감사합니다.");
 				
 		},
@@ -94,10 +98,10 @@ function speechText(msg){
 
 
 function getOutput(msg){
-	
+	speechText("제가 모르는 말이에요. 가르쳐 주시겠어요?");
 	swal({
 		title : "An input!",
-		text : "제가 모르는 말이에요. 가르쳐 주시 겠어요 ?",
+		text : "제가 모르는 말이에요. 가르쳐 주시겠어요?",
 		type : "input",
 		showCancelButton : true,
 		closeOnConfirm : false,
