@@ -13,7 +13,9 @@
   </insert>
   
   <select id="getString" parameterType="String" resultType="ChatVo">
-      SELECT output_string, input_string, chat_num 
+      SELECT output_string as outputString
+      		,input_string  as inputString
+      		,chat_num 
       FROM chat_bot 
       WHERE input_string=#{inputString}
   </select>
