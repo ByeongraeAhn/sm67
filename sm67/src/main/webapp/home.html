@@ -60,6 +60,11 @@
 	overflow: scroll;
 	background-color: white;
 }
+	video {
+	position:absolute;
+	width:100%;
+	overflow:hidden;
+}
 	
 	</style>
 </head>
@@ -100,11 +105,17 @@
 				
 					<!-- 첫번째 슬라이드 -->
 					<div class="slide" data-content="home" data-type="cover">
-						<div class="img-wrap cover"></div>
+							<video autoplay id="bgvid" loop>
+							<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+							<source src="./videos/vimeo.mp4" type="video/webm">
+							<source src="./videos/vimeo.mp4" type="video/mp4">
+							</video>
+						
 						<div class="slide-content inverse">
 							<h2>Hello we&rsquo;re <br>SWAG, a <br>digital assistant, <br>and we advice <br><span class="textrotator_home">바이오리듬.,캘린더., 날씨., 뉴스., 환율.</span></h2>
 						</div>
-					<span class="slide-title">Home</span>
+						<span class="slide-title">Home</span>
+						
 					</div>
 					<!-- 두번째 슬라이드 -->
 					<div class="slide" data-content="our-history" data-type="page">
@@ -191,7 +202,6 @@
 	  <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
 	  <p class="last"><a href="tel:+442070968408"><span>020 7096 8408</span></a> - <a href="mailto:&#104;&#101;&#108;&#108;&#111;&#064;&#119;&#101;&#098;&#102;&#105;&#114;&#101;&#046;&#099;&#111;&#046;&#117;&#107;"><span>&#104;&#101;&#108;&#108;&#111;&#064;&#119;&#101;&#098;&#102;&#105;&#114;&#101;&#046;&#099;&#111;&#046;&#117;&#107;</span></a></p>
 	</div>
-	<input onclick='responsiveVoice.speak("Hello we are SWAG, a digital assistant, and we advice ", "UK English Male");' id='mainAudio' type='Button' value='Play' />
 <script src="assets/js/outdatedbrowser.js"></script>
 <script>function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}addLoadEvent(outdatedBrowser({bgColor:'#D60054',color:'#ffffff',lowerThan:'transform',languagePath:''}));</script>
 	
