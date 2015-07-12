@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="swag.dao.ChatDao">
+  
+  
+  <insert id="insert" parameterType="map">
+      INSERT INTO chat_bot (input_string, output_string) 
+      VALUES (#{inputString},#{outputString})
+  </insert>
+  
+  <select id="getString" parameterType="String" resultType="ChatVo">
+      SELECT output_string 
+      		,input_string 
+      		,chat_num 
+      FROM chat_bot 
+      WHERE input_string=#{inputString}
+  </select>
+ <!-- 
+ <select id="selectOne" parameterType="String" resultType="SwagUserVo">
+      SELECT email
+      		,username
+      		,birthday
+      		,theme
+      		,language
+      		,countmod
+      FROM user 
+      WHERE email=#{email}
+  </select>
+  -->
+ <select id="validationString" parameterType="String" resultType="ChatVo">
+      SELECT count(1) as count 
+      FROM chat_bot 
+      WHERE input_string=#{inputString}
+  </select>
+</mapper>
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,5 @@
 package swag.web;
 
-import java.sql.Date;
 import java.util.HashMap;
 
 import javax.servlet.http.HttpSession;
@@ -10,7 +9,9 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import swag.dao.ChatDao;
 import swag.dao.SwagUserDao;
+import swag.domain.ChatVo;
 import swag.domain.SwagUserVo;
 
 
@@ -20,6 +21,8 @@ public class PageController {
   
   @Autowired
   SwagUserDao swagUserDao;
+  @Autowired
+  ChatDao chatDao;
   
   @RequestMapping("/login")
   public Object list(String email, String name, String birthday, HttpSession session) throws Exception {
@@ -100,6 +103,91 @@ public class PageController {
     return responseData;
   }
 
+  
+  @RequestMapping("/chatCheck")
+  public Object list(String inputString) throws Exception {
+    
+    
+    HashMap<String,Object> responseData = new HashMap<String,Object>();
+    responseData.put("status", "success");
+    
+    //DB에 저장되어 있는 inputString인지 검사한다.
+    System.out.println("checkString 전");
+    try{
+    	
+    	ChatVo chatStr = chatDao.validationString(inputString);
+    	System.out.println(chatStr.getCount());
+    	System.out.println(chatStr);
+	    System.out.println("checkString 후");
+	    HttpHeaders headers = new HttpHeaders();
+	    headers.add("Content-Type", "text/plain;charset=UTF-8");
+	    headers.add("Access-Control-Allow-Origin", "*");
+	    
+	    //DB에 저장이 되어 있지 않다면, outputString을 요청하고 
+	    //    저장되어 있다면, 해당하는 outputString을 담아 리턴한다.
+	    if(chatStr.getCount() >= 1) {
+	    	//있다.
+	    	System.out.println("check -- DB에 있네요.");
+	    	System.out.println("inputString : " + inputString);
+	    	chatStr = chatDao.getString(inputString);
+	    	
+	    	System.out.println("     getString 결과");
+	    	System.out.println("inputString : " +chatStr.getInputString());
+	    	System.out.println("outputString : " +chatStr.getOutputString());
+	    	
+	    	responseData.put("check", true);
+	    	responseData.put("data", chatStr);
+	    	return responseData;
+	    } else {
+	    	//없다.
+	    	System.out.println("check -- DB에 없네요.");
+	    	responseData.put("check", false);
+	    	return responseData;
+	    }
+	    
+//	    if(chatStr == null) {
+//	    	responseData.put("check", false);
+//	    	return responseData;
+//	    } else {
+//	    	responseData.put("check", true);
+//	    	responseData.put("data", chatStr);
+//	    	return responseData;
+//	    }
+	    
+	    
+    }catch(Exception e){
+    	System.out.println("오류 발생!");
+    	e.printStackTrace();
+    }
+	responseData.put("check", false);
+	return responseData;
+  }
+  
+  @RequestMapping("/insertString")
+  public Object list(String inputString, String outputString) throws Exception {
+    
+    HashMap<String,Object> sqlParams = new HashMap<String,Object>();
+    sqlParams.put("inputString", inputString);
+    sqlParams.put("outputString", outputString);
+    
+    HashMap<String,Object> responseData = new HashMap<String,Object>();
+    responseData.put("status", "success");
+    
+    
+    HttpHeaders headers = new HttpHeaders();
+    headers.add("Content-Type", "text/plain;charset=UTF-8");
+    headers.add("Access-Control-Allow-Origin", "*");
+    try{
+    	chatDao.insert(sqlParams);
+    	
+    } catch(Exception e){
+    	e.printStackTrace();
+    	System.out.println("insert 실패함.....");
+    }
+    return responseData;
+    	
+  }
+  
 }
 
 
