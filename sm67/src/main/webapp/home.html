@@ -38,7 +38,7 @@
 		width: 700px;
 		float: left;
 		font-size: 40px;
-		line-height: 1.2;
+		line-height: 1;
 	}
 	#modulecon {
 		margin-right: 100px;
@@ -97,7 +97,7 @@
 				<!-- 컨텐츠 -->
 				<div class="handle">
 				
-					<!-- 홈 슬라이드 -->
+					<!-- 첫번째 슬라이드 -->
 					<div class="slide" data-content="home" data-type="cover">
 						<div class="img-wrap cover"></div>
 						<div class="slide-content inverse">
@@ -105,7 +105,7 @@
 						</div>
 					<span class="slide-title">Home</span>
 					</div>
-					<!-- 바이오리듬 슬라이드 -->
+					<!-- 두번째 슬라이드 -->
 					<div class="slide" data-content="our-history" data-type="page">
 						<div class="img-wrap"><img src="assets/images/slides/webfire-history.jpg" alt="webfire-history"/></div>
 						<div class="slide-content">
@@ -118,7 +118,7 @@
 						</div>
 						<a class="slide-title">Biorhythm</a>
 					</div>
-					<!-- 날씨 슬라이드 -->
+					<!-- 세번째 슬라이드 -->
 					<div class="slide" data-content="industries-we-work-in" data-type="page">
 						<div class="img-wrap"><img src="assets/images/slides/webfire-growth.jpg" alt="webfire-growth"/></div>
 						<div class="slide-content">
@@ -131,7 +131,7 @@
 						</div>
 						<span class="slide-title">Weather</span>
 					</div>
-					<!-- 뉴스 슬라이드 -->
+					<!-- 네번째 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap"><img src="assets/images/slides/webfire-touchscreen-apps.jpg" alt="webfire-touchscreen-apps"/></div>
 						<div class="slide-content">
@@ -139,13 +139,13 @@
 							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
 						</div>
 							<div id="modulecon">
-			                  <button onclick="test1()">다른 뉴스보기</button>
+			                  <button onclick="test0()">다른 뉴스보기</button>
 			                  <iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
 							</div>
 						</div>
 						<span class="slide-title">News</span>
 					</div>
-					<!-- 캘린더 슬라이드 -->
+					<!-- 다섯 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap"><img src="assets/images/slides/webfire-cognizant.jpg" alt="webfire-touchscreen-apps"/></div>
 						<div class="slide-content">
@@ -156,19 +156,6 @@
 							</div>
 						</div>
 						<span class="slide-title">Calendar</span>
-					</div>
-					<!-- 교통정보 슬라이드 -->
-					<div class="slide" data-content="space-exploration-network" data-type="page">
-						<div class="img-wrap"><img src="assets/images/slides/webfire-space-exploration-network.jpg" alt="webfire-space-exploration-network"/></div>
-						<div class="slide-content">
-							<div id="testmessage">
-								<div id="traffic_msg"></div>
-							</div>
-							<div id="modulecon">							
-								<div id="traf" style="width:100%;height:100%"></div>
-							</div>
-						</div>
-						<span class="slide-title">Traffic</span>
 					</div>
 					<!-- 마지막 슬라이드 -->
 					<div class="slide" data-content="contact-us" data-type="page">
@@ -203,7 +190,7 @@
 	  <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update my browser now </a></p>
 	  <p class="last"><a href="tel:+442070968408"><span>020 7096 8408</span></a> - <a href="mailto:&#104;&#101;&#108;&#108;&#111;&#064;&#119;&#101;&#098;&#102;&#105;&#114;&#101;&#046;&#099;&#111;&#046;&#117;&#107;"><span>&#104;&#101;&#108;&#108;&#111;&#064;&#119;&#101;&#098;&#102;&#105;&#114;&#101;&#046;&#099;&#111;&#046;&#117;&#107;</span></a></p>
 	</div>
-	
+	<input onclick='responsiveVoice.speak("Hello we are SWAG, a digital assistant, and we advice ", "UK English Male");' id='mainAudio' type='Button' value='Play' />
 <script src="assets/js/outdatedbrowser.js"></script>
 <script>function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}addLoadEvent(outdatedBrowser({bgColor:'#D60054',color:'#ffffff',lowerThan:'transform',languagePath:''}));</script>
 	
@@ -222,21 +209,12 @@
 <script type="text/javascript" src="module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="js/logout.js"></script><!-- 로그아웃js -->
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko"></script> <!-- 교통정보js -->
-
-<!-- 날씨정보 load -->
 <script>
 	$("#wt").load("module/weather/weather.html");
 </script>
-<!-- 교통정보 load -->
-<script>
-	$("#traf").load("module/traffic/tra.html");
-</script>
-<!-- 캘린더 load -->
 <script>
 	$("#modulecon2").load("module/calendar/calendar.html");
 </script>
-<!-- 뉴스 js -->
 <script type="text/javascript">
   function test0() {
     var iframe = document.getElementById("newsFrame");
@@ -244,35 +222,25 @@
     iframe.contentWindow.rssField(xmlAddr);
   }
   
-  function test1() {
-    var iframe = document.getElementById("newsFrame");
-    var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";
-    iframe.contentWindow.rssField(newxmlAddr);
-  }
-</script>
+  //메인 음성 재생
+  $(document).ready(function() {
+	  speechTextEnglish("Hello we are SWAG, a digital assistant, and we advice");
+	  });
 
-<!-- window.load시 실행할 처음 실행할 함수들 -->
-<script type="text/javascript">
-window.onload = function() {
-	 getSwagVo();
-	 test0();
-	 initialize();
-	}
 </script>
 
 <!-- tts-->
 <script type="text/javascript">
-function speechText(msg){
+function speechTextKorean(msg){
    responsiveVoice.speak(msg,"Korean Female");
 
 }
+
+function speechTextEnglish(msg){
+	   responsiveVoice.speak(msg,"UK English Male");
+
+	}
 </script>
-<!-- <script type="text/javascript">
-console.log(firstnews);
-</script> -->
-
-
-
 <!-- <script type="text/javascript">
 window.onload = test0;
 </script> -->
