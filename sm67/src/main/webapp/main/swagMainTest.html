@@ -11,7 +11,13 @@
 	background-image: url("../images/main/img_top.png");
 	background-repeat: no-repeat;
 	height : 65px;
-	border : 1px solid black;
+	border-bottom : 3px ridge black;
+	border-bottom-width: 70%;
+}
+#sMsg {
+	float : right;
+	margin-top: 5%;
+	
 }
 
 #moduleArea {
@@ -46,22 +52,10 @@ a {
 #swagImg {
 	height :120px;
 	width : 120px;
-	
+	flaot : left;
+	margin: 3% 3% 3% 3%;
 }
 
-#simgBox {
-	height :120px;
-	width : 120px;
-	margin: 0 auto;
-}
-#swagMsg {
-	margin : 0 auto;
-	text-align: center;
-}
-
-#sMsg {
-	
-}
 
 #graph {
 	height: 80%;
@@ -69,24 +63,31 @@ a {
 	width: 80%;
 }
 
+#swagMsg {
+	border : 1px solid black;
+}
 </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
 </head>
 <body>
-	<div id ='topArea'>
+	
+	<div id ='topArea' class ='.container'>
 		<!-- swagTop.html  import area -->
 	</div>
 	
 	<div id='swagArea'>
-		<div id='simgBox'>
+		
 		<img id='swagImg' src='../images/main/swag.png'>
-		</div>
 <!-- 		<div id='sMsg'>
 		Hey bro ! what's up ?<br>
 		I don't know who you are<br>
 		but i'll find you<br>
 		and i will kill you!<br>
 		</div> -->
-		<div id="swagMsg"></div>
+		<div id="sMsg">
+			<div id="swagMsg"></div>
+		</div>
 	</div>
 
 	<div id = 'leftArea'>
@@ -94,8 +95,7 @@ a {
 	</div>
 	
 	<div id = 'moduleArea'>
-		<div id="graph"></div>
-		<div id="wt" style="width:100%;height:100%"></div>
+		<!-- <div id="graph"> -->
 	</div>
 </body>
 <script src="//code.jquery.com/jquery-1.11.2.js"></script>
@@ -142,19 +142,14 @@ $(document).ready(function() {
 <script type="text/javascript" src="../js/logout.js"></script><!-- 로그아웃js -->
 <script type="text/javascript" src="../module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="../module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
-<script>
-	$("#wt").load("../module/weather/w.html");
-</script>
-
 <script type="text/javascript">
-function biobutton() {
-	jQuery('#moduleArea').children().hide();
-	jQuery('#graph').show();  
+
+function anbr() {
+	 var newDiv=document.createElement('DIV'); // DIV 객체 생성
+	    newDiv.setAttribute('id','graph'); // id 지정
+	$("#moduleArea").append(newDiv);
 }
-function weatherbutton() {
-	jQuery('#moduleArea').children().hide();
-	jQuery('#wt').show();  
-} 
+
 </script>
 
 </html>
