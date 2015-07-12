@@ -7,7 +7,7 @@
 <mapper namespace="swag.dao.ChatDao">
   
   
-  <insert id="insert" parameterType="map">
+  <insert id="insertString" parameterType="map">
       INSERT INTO chat_bot (input_string, output_string) 
       VALUES (#{inputString},#{outputString})
   </insert>
