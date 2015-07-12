@@ -54,9 +54,8 @@ $(function(){
                         '<span id="w_con'+cnt+'">'+ transferWeatherToKor(this.weather[0].main) +'</span>'+ ' <b>' + convertTemperature(this.main.temp_min) + '°' + DEG + '</b>'
                     
                     );
-                    console.log(this.weather[0].main);
                     if (cnt==1) {
-                    	var tday_ex = '오늘 날씨를 알려드리겠습니다<br>오늘은 '+weatherExp(this.weather[0].main)+
+                    	var tday_ex = '날씨를 알려드리겠습니다<br>오늘은 '+weatherExp(this.weather[0].main)+
                     	'오늘의 평균기온은 '+ convertTemperature(this.main.temp_min) + '도 입니다.<br>';
                     	wt_exp.append(tday_ex);
                     }
@@ -179,7 +178,6 @@ $(function(){
     }
     
     function transferDayToKor(day) {
-    	console.log(day);
     	switch(day) {
     	case "Monday" :
     		return "월요일";

@@ -18,7 +18,6 @@ function getSwagVo() {
 			data: {
 			},
 			success: function(result) {
-				console.log("ajax성공");
 				userName = result.data.username;
 				birthToken = result.data.birthday.split('-');
 				birth_year = birthToken[0];/// 바이오 리듬을 알아볼 사람의 생일 중의 "년" <br>
@@ -44,9 +43,6 @@ function settingBio(){
 
 
 
-	console.log(birth_year);
-	console.log(birth_month);
-	console.log(birth_day);
 	var today_year = today.getFullYear();/// 오늘의 "년" <br>
 	var today_month = today.getMonth();/// 오늘의 "월" <br>
 	var today_day = today.getDate();/// 오늘의 "일" <br>
@@ -107,7 +103,6 @@ function settingMsg(){
 	//physical status
 	status = getStatus(physical);
 	token = setPmsg(status);
-	console.log(msg)
 
 	status = getStatus(emotional);
 	token = setEmsg(status);
