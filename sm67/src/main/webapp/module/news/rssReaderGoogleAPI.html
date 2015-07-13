@@ -71,11 +71,23 @@ function rssField(xmlAddr) {
 		newsfeed.init() //Always call this last
 	  
 	  
-		$('#btn1').on("click", function(event) {
+		var linkElement=document.getElementById('btn1');
+		if( /*@cc_on ! @*/ false ) {
+		    // IE
+		    linkElement.fireEvent("onclick");
+		} else {
+		    // Others
+		    var event = document.createEvent("MouseEvents");
+		    event.initEvent("click", false, true);
+		    linkElement.dispatchEvent(event);
+		}
+
+		
+		 $('#btn1').on("click", function(event) {
 	        console.log("첫번째 뉴스   "+newsfeed.feeds[0].title);
 	        console.log("두번째 뉴스   "+newsfeed.feeds[1].title);
 	        console.log("세번쨰 뉴스   "+newsfeed.feeds[2].title);
-	      })
+	      }) 
 	      
 	  }
 	  
