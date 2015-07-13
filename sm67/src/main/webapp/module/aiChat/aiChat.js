@@ -46,7 +46,7 @@ function insertString (inputString, outputString) {
 			outputString: outputString
 		},
 		success: function(result) {
-				$("#textField").append("SWAG : 알려 주셔서 감사합니다.");
+				$("#textField").append("SWAG : 알려 주셔서 감사합니다."+'\n');
 				speechText("알려 주셔서 감사합니다.");
 				
 		},
