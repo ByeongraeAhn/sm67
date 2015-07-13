@@ -138,6 +138,7 @@ video {
 			<section class="img-dragger img-dragger-large dragdealer">
 				<!-- 컨텐츠 -->
 				<div class="handle">
+				
 					<!-- 메인 슬라이드 -->
 					<div class="slide" data-content="home" data-type="cover">
 						<video autoplay id="bgvid" loop>
@@ -154,6 +155,7 @@ video {
 						</div>
 						<span class="slide-title">Home</span>
 					</div>
+					
 					<!-- 바이오리듬 슬라이드 -->
 					<div class="slide" data-content="our-history" data-type="page">
 						<div class="img-wrap">
@@ -161,9 +163,7 @@ video {
 						</div>
 						<div class="slide-content">
 							<div class="testmessage">
-								<h2>
-									<span id="bio_msg"></span>
-								</h2>
+								<span id="bio_msg"></span>
 							</div>
 							<div id="modulecon">
 								<div id="graph"></div>
@@ -171,6 +171,7 @@ video {
 						</div>
 						<a class="slide-title">Biorhythm</a>
 					</div>
+					
 					<!-- 날씨 슬라이드 -->
 					<div class="slide" data-content="industries-we-work-in" data-type="page">
 						<div class="img-wrap">
@@ -186,6 +187,7 @@ video {
 						</div>
 						<span class="slide-title">Weather</span>
 					</div>
+					
 					<!-- 뉴스 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap">
@@ -205,6 +207,7 @@ video {
 						</div>
 						<span class="slide-title">News</span>
 					</div>
+					
 					<!-- 캘린더 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap">
@@ -221,6 +224,7 @@ video {
 						</div>
 						<span class="slide-title">Calendar</span>
 					</div>
+					
 					<!-- 교통정보 슬라이드 -->
 					<div class="slide" data-content="space-exploration-network"
 						data-type="page"
@@ -240,6 +244,7 @@ video {
 						</div>
 						<span class="slide-title">Traffic</span>
 					</div>
+					
 					<!-- 마지막 슬라이드 -->
 					<div class="slide" data-content="contact-us" data-type="page">
 						<div class="img-wrap cover"></div>
@@ -254,6 +259,7 @@ video {
 						</div>
 						<span class="slide-title">Contact</span>
 					</div>
+					
 				</div>
 			</section>
 		</div>
@@ -319,40 +325,48 @@ video {
 			ga('create', 'UA-18540619-1', 'auto');
 			ga('send', 'pageview');
 		</script>
+		<!-- 제이쿼리 -->
 		<script src="//code.jquery.com/jquery-1.11.2.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+		
+		<!-- 바이오리듬js -->
 		<script type="text/javascript" src="module/bio/BRbioPage.js"></script>
-		<!-- 바이오리듬js -->
 		<script type="text/javascript" src="module/bio/flotr2.min.js"></script>
-		<!-- 바이오리듬js -->
-		<script type="text/javascript" src="js/logout.js"></script>
+		
 		<!-- 로그아웃js -->
-		<script type="text/javascript"
-			src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko"
-		></script>
+		<script type="text/javascript" src="js/logout.js"></script>
 		<!-- 교통정보js -->
+		<script type="text/javascript"
+			src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko">
+		</script>
+		
+		<!-- 날씨 로드 -->
 		<script>
 			$("#wt").load("module/weather/weather.html");
 		</script>
+		<!-- 교통정보 로드 -->
 		<script>
 			$("#traf").load("module/traffic/tra.html");
 		</script>
+		<!-- 캘린더 로드 -->
 		<script>
 			$("#modulecon2").load("module/calendar/calendar.html");
 		</script>
+		
+		<!-- 뉴스 선택 함수 -->
 		<script type="text/javascript">
 			function test0() {
 				var iframe = document.getElementById("newsFrame");
 				var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
 				iframe.contentWindow.rssField(xmlAddr);
 			}
-
 			function test1() {
 				var iframe = document.getElementById("newsFrame");
 				var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";
 				iframe.contentWindow.rssField(newxmlAddr);
 			}
 		</script>
+		
 		<!-- window.load시 실행할 처음 실행할 함수들 -->
 		<script type="text/javascript">
 			window.onload = function() {
