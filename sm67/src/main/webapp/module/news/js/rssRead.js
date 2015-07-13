@@ -42,7 +42,6 @@ this.itemcontainer="<"+containerstr.toLowerCase()+">"
 gfeedfetcher.prototype.init=function(){
 this.feedsfetched=0 //reset number of feeds fetched to 0 (in case init() is called more than once)
 this.feeds=[] //reset feeds[] array to empty (in case init() is called more than once)
-this.feedcontainer.innerHTML='<img src="'+gfeedfetcher_loading_image+'" /> Retrieving RSS feed(s)'
 var displayer=this
 for (var i=0; i<this.feedurls.length; i++){ //loop through the specified RSS feeds' URLs
 var feedpointer=new google.feeds.Feed(this.feedurls[i]) //create new instance of Google Ajax Feed API
