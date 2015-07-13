@@ -153,7 +153,7 @@
 							<h2>Today we&rsquo;re still focused on helping our clients achieve their goals.</h2>
 						</div>
 							<div id="modulecon">
-			                  <button onclick="test0()">다른 뉴스보기</button>
+			                  <button onclick="test1()">다른 뉴스보기</button>
 			                  <iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
 							</div>
 						</div>
@@ -170,6 +170,19 @@
 							</div>
 						</div>
 						<span class="slide-title">Calendar</span>
+					</div>
+					<!-- 교통정보 슬라이드 -->
+					<div class="slide" data-content="space-exploration-network" data-type="page">
+						<div class="img-wrap"><img src="assets/images/slides/webfire-space-exploration-network.jpg" alt="webfire-space-exploration-network"/></div>
+						<div class="slide-content">
+							<div id="testmessage">
+								<div id="traffic_msg"></div>
+							</div>
+							<div id="modulecon">							
+								<div id="traf" style="width:100%;height:100%"></div>
+							</div>
+						</div>
+						<span class="slide-title">Traffic</span>
 					</div>
 					<!-- 마지막 슬라이드 -->
 					<div class="slide" data-content="contact-us" data-type="page">
@@ -222,8 +235,13 @@
 <script type="text/javascript" src="module/bio/BRbioPage.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="module/bio/flotr2.min.js"></script><!-- 바이오리듬js -->
 <script type="text/javascript" src="js/logout.js"></script><!-- 로그아웃js -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&language=ko"></script> <!-- 교통정보js -->
+
 <script>
 	$("#wt").load("module/weather/weather.html");
+</script>
+<script>
+	$("#traf").load("module/traffic/tra.html");
 </script>
 <script>
 	$("#modulecon2").load("module/calendar/calendar.html");
@@ -235,7 +253,20 @@
     iframe.contentWindow.rssField(xmlAddr);
   }
   
+  function test1() {
+    var iframe = document.getElementById("newsFrame");
+    var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";
+    iframe.contentWindow.rssField(newxmlAddr);
+  }
+</script>
 
+<!-- window.load시 실행할 처음 실행할 함수들 -->
+<script type="text/javascript">
+window.onload = function() {
+	 getSwagVo();
+	 test0();
+	 initialize();
+	}
 </script>
 
 
