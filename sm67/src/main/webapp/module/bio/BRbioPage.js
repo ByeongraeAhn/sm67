@@ -113,7 +113,7 @@ function settingMsg(){
 	
 	
 	smsg = msg.replace( /<br>/gi, " ");
-	$("#swagMsg").html(msg)
+	$("#bio_msg").html(msg)
 	
 	
 	
