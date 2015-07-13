@@ -1,4 +1,18 @@
-@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfkljOGVJb3RMR200clRfUTVVdXlaRElPRTV3VGlNZVZ3ay1EYjdiZjJockk/notokr-regular.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfndGUGZVNzBEbVdkZGg0M0R1OElFeXcteXFVNUFOYlQ4TUdNWHZVQlJHaXM/notokr-black.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfnV0d3J5S21BSFdGUXctekQ1eHJoczF2OUcyTGZna3laMlg2MWR6cWoyV1E/notokr-bold.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfnVVTFJoaHQ2R0xQNURCSmp0M1BrWVQ5SVFKN05uaTRabC1XeFRpUm51T2c/notokr-demilight.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfk5lRk1WVjhQWVRHRldCVEw0TU1qMHhvNEdfM1E0cjZ1Z2ZHRDFfcWRVSDA/notokr-light.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCfmN1U19nTHpWVFd2NHA2dXJ4c0FvOEdVcF9mc3ZfcWNyZjRDZ2plMy12SzQ/notokr-medium.css"); 
+@import url("https://googledrive.com/host/0BxmAw3HA4YGCflRiaUxHOFVCcXVfWmpqeERVZ3AzcDAtM2FRV25XclJDRnVrTVVqamZJcEE/notokr-thin.css");
+
+.notokr-regular { font-family:notokr-regular !important; } 
+.notokr-black { font-family:notokr-black !important; } 
+.notokr-bold { font-family:notokr-bold !important; } 
+.notokr-demilight { font-family:notokr-demilight !important; } 
+.notokr-light { font-family:notokr-light !important; } 
+.notokr-medium { font-family:notokr-medium !important; } 
+.notokr-thin { font-family:notokr-thin !important; }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
 	display:block;
@@ -210,7 +224,7 @@ a:focus {
 
 h1, h2, h3, h4, h5, h6 {
 	margin:0;
-	font-family: Noto Sans, 돋움, Dotum, Baekmuk Dotum, Undotum, Apple Gothic, Latin font, Sans-Serif, HelveticaNeueW02-75Bold, Helvetica, Arial;
+	font-family: notokr-thin, 돋움, Dotum, Baekmuk Dotum, Undotum, Apple Gothic, Latin font, Sans-Serif, HelveticaNeueW02-75Bold, Helvetica, Arial;
 	font-weight: 100;
 	color:#fff;
 }
@@ -221,7 +235,7 @@ h1 {
 }
 
 h2 {
-	font-size:50px;
+	font-size:30px;
 	line-height:1;
 	padding-top:.25em;
 	margin-bottom:.5em;
@@ -1427,7 +1441,7 @@ dl, ol, p, ul {
 }@media (min-width:1910px) {
 	.slide-content.inverse h2 {
 	letter-spacing:-5px;
-	font-size:174px;
+	font-size:140px;
 	line-height:158px;
 }
 
