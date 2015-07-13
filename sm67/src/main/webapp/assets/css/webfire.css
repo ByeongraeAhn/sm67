@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans);
+
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary {
 	display:block;
 }
@@ -208,8 +210,8 @@ a:focus {
 
 h1, h2, h3, h4, h5, h6 {
 	margin:0;
-	font-family: 돋움, Dotum, Baekmuk Dotum, Undotum, Apple Gothic, Latin font, Sans-Serif, HelveticaNeueW02-75Bold, Helvetica, Arial;
-	font-weight:100;
+	font-family: Noto Sans, 돋움, Dotum, Baekmuk Dotum, Undotum, Apple Gothic, Latin font, Sans-Serif, HelveticaNeueW02-75Bold, Helvetica, Arial;
+	font-weight: 100;
 	color:#fff;
 }
 
@@ -219,7 +221,7 @@ h1 {
 }
 
 h2 {
-	font-size:2em;
+	font-size:50px;
 	line-height:1;
 	padding-top:.25em;
 	margin-bottom:.5em;
@@ -1484,7 +1486,7 @@ dl, ol, p, ul {
 }.img-dragger-small .slide .slide-content.inverse h2 {
 	margin-top:-2px;
 	font-size:12px;
-	line-height:1;
+	`:1;
 	letter-spacing:-1px;
 }
 
