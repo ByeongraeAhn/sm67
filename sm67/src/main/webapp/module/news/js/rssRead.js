@@ -117,7 +117,7 @@ gfeedfetcher.prototype._displayresult=function(feeds) {
 	this.feedcontainer.innerHTML=rssoutput
 	for (var i=0; i<descs.length; i++){
 		var entryindex=parseInt(descs[i].match(/\d+$/i).shift())-1
-		document.getElementById(descs[i]).innerHTML=feeds[entryindex].content
+		//document.getElementById(descs[i]).innerHTML=feeds[entryindex].content
 	}
 }
 
