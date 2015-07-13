@@ -56,13 +56,13 @@ $(function(){
                     );
                     if (cnt==1) {
                     	var tday_ex = '날씨를 알려드리겠습니다<br>오늘은 '+weatherExp(this.weather[0].main)+
-                    	'오늘의 평균기온은 '+ convertTemperature(this.main.temp_min) + '도 입니다.<br>';
+                    	'오늘의 평균기온은 '+ convertTemperature(this.main.temp_min) + ' 도 입니다.<br>';
                     	wt_exp.append(tday_ex);
                     }
                     
                     else if(cnt==9) {
                     	var tmr_ex = '<br>내일은 '+weatherExp(this.weather[0].main)+
-                    	'내일의 평균기온은 '+ convertTemperature(this.main.temp_min) + '도 입니다.<br>';
+                    	'내일의 평균기온은 '+ convertTemperature(this.main.temp_min) + ' 도 입니다.<br>';
                     	wt_exp.append(tmr_ex);
                     }
                     cnt++;
