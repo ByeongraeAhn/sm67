@@ -57,7 +57,6 @@
 <script src="assets/js/modernizr.js"></script>
 <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 <script src="assets/js/tts.js"></script>
-<script src="//code.jquery.com/jquery-1.11.2.js"></script>
 <style type="text/css">
 #graph {
 	float: right;
@@ -139,7 +138,7 @@ video {
 			<section class="img-dragger img-dragger-large dragdealer">
 				<!-- 컨텐츠 -->
 				<div class="handle">
-					<!-- 첫번째 슬라이드 -->
+					<!-- 메인 슬라이드 -->
 					<div class="slide" data-content="home" data-type="cover">
 						<video autoplay id="bgvid" loop>
 							<!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
@@ -155,7 +154,7 @@ video {
 						</div>
 						<span class="slide-title">Home</span>
 					</div>
-					<!-- 두번째 슬라이드 -->
+					<!-- 바이오리듬 슬라이드 -->
 					<div class="slide" data-content="our-history" data-type="page">
 						<div class="img-wrap">
 							<img src="assets/images/slides/webfire-history.jpg" alt="webfire-history" />
@@ -172,7 +171,7 @@ video {
 						</div>
 						<a class="slide-title">Biorhythm</a>
 					</div>
-					<!-- 세번째 슬라이드 -->
+					<!-- 날씨 슬라이드 -->
 					<div class="slide" data-content="industries-we-work-in" data-type="page">
 						<div class="img-wrap">
 							<img src="assets/images/slides/webfire-growth.jpg" alt="webfire-growth" />
@@ -187,7 +186,7 @@ video {
 						</div>
 						<span class="slide-title">Weather</span>
 					</div>
-					<!-- 네번째 슬라이드 -->
+					<!-- 뉴스 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap">
 							<img src="assets/images/slides/webfire-touchscreen-apps.jpg"
@@ -196,13 +195,8 @@ video {
 						</div>
 						<div class="slide-content">
 							<div class="testmessage">
-								<div id="newstext">
-									<!-- <script>
-									console.log($('.titlefield').text());
-									
-									
-									</script> -->
-								</div>
+								<h2>Today we&rsquo;re still focused on helping our clients achieve
+									their goals.</h2>
 							</div>
 							<div id="modulecon">
 								<button onclick="test1()">다른 뉴스보기</button>
@@ -211,7 +205,7 @@ video {
 						</div>
 						<span class="slide-title">News</span>
 					</div>
-					<!-- 다섯 슬라이드 -->
+					<!-- 캘린더 슬라이드 -->
 					<div class="slide" data-type="cover">
 						<div class="img-wrap">
 							<img src="assets/images/slides/webfire-cognizant.jpg"
@@ -325,7 +319,7 @@ video {
 			ga('create', 'UA-18540619-1', 'auto');
 			ga('send', 'pageview');
 		</script>
-		
+		<script src="//code.jquery.com/jquery-1.11.2.js"></script>
 		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script type="text/javascript" src="module/bio/BRbioPage.js"></script>
 		<!-- 바이오리듬js -->
@@ -362,13 +356,10 @@ video {
 		<!-- window.load시 실행할 처음 실행할 함수들 -->
 		<script type="text/javascript">
 			window.onload = function() {
-				getSwagVo();
-				test0();
-				initialize();
+				getSwagVo(); //바이오리듬
+				test0(); //뉴스
+				initialize(); //교통정보
 			}
 		</script>
-		<!-- <script type="text/javascript">
-window.onload = test0;
-</script> -->
 </body>
 </html>

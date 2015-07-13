@@ -71,16 +71,16 @@ function rssField(xmlAddr) {
 		newsfeed.init() //Always call this last
 	  
 	  
-		var linkElement=document.getElementById('btn1'); 
-		if( /*@cc_on ! @*/ false ) {
+		/* var linkElement=document.getElementById('btn1'); 
+		if( false ) {
 		    // IE
 		    linkElement.fireEvent("onclick");
 		} else {
 		    // Others
 		    var event = document.createEvent("MouseEvents");
 		    event.initEvent("click", false, true);
-		    //linkElement.dispatchEvent(event);
-		}
+		    linkElement.dispatchEvent(event);
+		} */
 
 		
 		 $('#btn1').on("click", function(event) {
