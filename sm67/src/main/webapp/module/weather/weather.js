@@ -3,8 +3,8 @@ $(function(){
     /* Configuration */
 	var clear = '날씨가 매우 좋습니다.<br>야외활동 하기 딱 좋은 날씨네요.<br>자외선에 주의하세요.<br>';
 	var clouds = '구름이 살짝 껴서 야외활동 하기 좋은 날씨입니다.<br>자외선에 주의하세요.<br>';
-	var rain = '비가 올 예정입니다.<br>우산을 꼭 준비해서 나가세요.<br>운전하실 때 주의해서 안전운행 하세요.<br>';
-	var snow = '눈이 올 예정입니다.<br>옷을 두껍게 입고 나가세요.<br> 운전하실 때 빙판에 주의해서 안전운행 하세요.<br>';
+	var rain = '비가 올 예정입니다.<br>우산을 꼭 준비해서 나가세요.<br>운전하실 때 안전 운행 하세요.<br>';
+	var snow = '눈이 올 예정입니다.<br>옷을 두껍게 입고 나가세요.<br> 운전하실 때 빙판에 주의 해서 안전운행 하세요.<br>';
     var DEG = 'c';  // c for celsius, f for fahrenheit
 
     var weatherDiv = $('#weather'),
