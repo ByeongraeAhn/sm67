@@ -208,8 +208,8 @@ a:focus {
 
 h1, h2, h3, h4, h5, h6 {
 	margin:0;
-	font-family:HelveticaNeueW02-75Bold, Helvetica, Arial, Sans-Serif;
-	font-weight:400;
+	font-family: 돋움, Dotum, Baekmuk Dotum, Undotum, Apple Gothic, Latin font, Sans-Serif, HelveticaNeueW02-75Bold, Helvetica, Arial;
+	font-weight:100;
 	color:#fff;
 }
 

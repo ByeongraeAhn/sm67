@@ -11,6 +11,10 @@
     <select id="first" style="width:70px;" onchange="itemChange(this.form);" ></select>
     <select id="second" style="width:70px;" ></select>
   </form>
+  <div>
+  	<button id="btn1">button</button>
+  	
+  </div>
 </body>
 
 
@@ -54,6 +58,7 @@
 -->
 
 <script type="text/javascript">
+rssField("http://www.chosun.com/site/data/rss/rss.xml");
 function rssField(xmlAddr) {
 	 var parentXmlAddr = xmlAddr;
 	  setInterval(function(){ newsfeed.init() }, 5000000); // page reroad
@@ -65,11 +70,13 @@ function rssField(xmlAddr) {
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
 	  
-	  /*
+	  
 		$('#btn1').on("click", function(event) {
-	        console.log(newsfeed.feeds[0]);
+	        console.log("첫번째 뉴스   "+newsfeed.feeds[0].title);
+	        console.log("두번째 뉴스   "+newsfeed.feeds[1].title);
+	        console.log("세번쨰 뉴스   "+newsfeed.feeds[2].title);
 	      })
-	      */
+	      
 	  }
 	  
 	  //parent.callRssField = rssFiled;
