@@ -216,7 +216,16 @@ video {
 								</div>
 							</div>
 							<div id="modulecon">
-								<button onclick="test1()">다른 뉴스보기</button>
+							
+								<button id="news_button" onclick="test1('http://www.chosun.com/site/data/rss/rss.xml')">다른 뉴스보기</button>
+								<div id="news_selector" style="display:none;">
+								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml")'><img src="./module/news/img/cs.png"></a>
+								<a href='javascript:test1("1")'><img src="./module/news/img/ja.gif"></a>
+								<a href='javascript:test1("2")'><img src="./module/news/img/da.gif"></a>
+								<a href='javascript:test1("3")'><img src="./module/news/img/hgr.gif"></a>
+								<a href='javascript:test1("4")'><img src="./module/news/img/km.gif"></a>
+								<a href='javascript:test1("5")'><img src="./module/news/img/nd.gif"></a>
+								</div>
 								<iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
 							</div>
 						</div>
@@ -367,7 +376,11 @@ video {
 		<script>
 			$("#modulecon2").load("module/calendar/calendar.html");
 		</script>
-		
+		<script>
+			$("#news_button").click(function() {
+				$("#news_selector").css("display","block");
+			});
+		</script>
 		<!-- 뉴스 선택 함수 -->
 		<script type="text/javascript">
 			function test0() {
@@ -375,10 +388,11 @@ video {
 				var xmlAddr = "http://www.chosun.com/site/data/rss/rss.xml";
 				iframe.contentWindow.rssField(xmlAddr);
 			}
-			function test1() {
+			function test1(newsUrl) {
+				console.log(newsUrl);
 				var iframe = document.getElementById("newsFrame");
-				var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";
-				iframe.contentWindow.rssField(newxmlAddr);
+				/*var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";*/
+				iframe.contentWindow.rssField(newsUrl);
 			}
 		</script>
 		
