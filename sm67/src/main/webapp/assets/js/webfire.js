@@ -6581,7 +6581,7 @@ function mobilecheck() {
 ! function(t) {
     t.fx.step.textShadowBlurHome = function(e) {
         t(e.elem).prop("textShadowBlurHome", e.now).css({
-            textShadow: "0 0 " + Math.floor(e.now) + "px rgb(214,0,84)"
+            textShadow: "0 0 " + Math.floor(e.now) + "px rgb(255,255,255)"
         })
     }, t.fn.textrotatorHome = function() {
         return this.each(function() {
