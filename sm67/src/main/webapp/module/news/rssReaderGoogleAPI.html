@@ -11,10 +11,6 @@
     <select id="first" style="width:70px;" onchange="itemChange(this.form);" ></select>
     <select id="second" style="width:70px;" ></select>
   </form>
-  <div>
-  	<button id="btn1">button</button>
-  	
-  </div>
 </body>
 
 
@@ -69,26 +65,6 @@ function rssField(xmlAddr) {
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
-	  
-	  
-		/* var linkElement=document.getElementById('btn1'); 
-		if( false ) {
-		    // IE
-		    linkElement.fireEvent("onclick");
-		} else {
-		    // Others
-		    var event = document.createEvent("MouseEvents");
-		    event.initEvent("click", false, true);
-		    linkElement.dispatchEvent(event);
-		} */
-
-		
-		 $('#btn1').on("click", function(event) {
-	        console.log("첫번째 뉴스   "+newsfeed.feeds[0].title);
-	        console.log("두번째 뉴스   "+newsfeed.feeds[1].title);
-	        console.log("세번쨰 뉴스   "+newsfeed.feeds[2].title);
-	        anbr = 
-	      }) 
 	      
 	  }
 	  
