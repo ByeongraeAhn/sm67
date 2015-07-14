@@ -7,7 +7,7 @@
 	height: 200px;
 	padding: 0;
 	margin: 0 auto;
-	background-color: #1b8eb6;
+	background:rgba(27,142,182,0.3);
 }
 
 #weather {
@@ -15,7 +15,7 @@
 	height: 500px;
 	padding: 0;
 	margin: 0 auto;
-	background-color: #1b8eb6;
+	background:rgba(27,142,182,0.3);
 	color: white;
 }
 
@@ -26,7 +26,7 @@
 	margin: 0;
 	list-style-type: none;
 	float: left;
-	background-color: #1b8eb6;
+	background:rgba(27,142,182,0.3);
 }
 
 #scroller li {
@@ -36,7 +36,7 @@
 	height: 200px;
 	float: left;
 	display: none;
-	background-color: #1b8eb6;
+	background:rgba(27,142,182,0.3);
 }
 
 #scroller li:first-child {
