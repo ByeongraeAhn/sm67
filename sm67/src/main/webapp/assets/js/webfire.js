@@ -6527,7 +6527,7 @@ function mobilecheck() {
             e = null,
             s = "0%";
         0 === t ? (s = "0%", history.pushState(null, "0", ""),speechTextKorean("")
-        		) : 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#bio_msg').text())) : 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text()) ) : 3 === t ? (s = "30%", history.pushState(null, "3", ""),speechTextKorean($('#news_msg').text())) : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean("")) : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#traffic_msg').text())) : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("")) : 7 === t ? (e = "7", s = "70%", history.pushState(null, "7", "")) : 8 === t ? (e = "8", s = "80%", history.pushState(null, "8", "")) : 9 === t ? (e = "9", s = "90%", history.pushState(null, "App Agency London | The Future", "")) : 10 === t && (s = "100%", history.pushState(null, "App Agency London | Contact Us", "")), $(".stage").stop().animate({
+        		) : 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#bio_msg').text())) : 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text()) ) : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#news_msg').text()) ) : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean("")) : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#traffic_msg').text())) : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("")) : 7 === t ? (e = "7", s = "70%", history.pushState(null, "7", "")) : 8 === t ? (e = "8", s = "80%", history.pushState(null, "8", "")) : 9 === t ? (e = "9", s = "90%", history.pushState(null, "App Agency London | The Future", "")) : 10 === t && (s = "100%", history.pushState(null, "App Agency London | Contact Us", "")), $(".stage").stop().animate({
             width: s
         })
     }, s.prototype.toggle = function() {
@@ -6745,4 +6745,16 @@ function regexpTts(msg) {
 	return ttsMsg;
 }
 
+function newsAppend() {
+	var newsMsg = $('#news_msg');
+	newsMsg.html("");
+	newsMsg.append("오늘의 뉴스를 알려드리겠습니다.<br>");
+	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(1)>a').text());
+	newsMsg.append("<br>");
+	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(2)>a').text());
+	newsMsg.append("<br>");
+	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(3)>a').text());
+	newsMsg.append("<br>");
+	newsMsg.append(" 같은 주요 뉴스가 있습니다.");
+}
 
