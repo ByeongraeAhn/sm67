@@ -9,9 +9,9 @@
         </caption>
         <tbody class="cal-body">
           <tr>
-            <td class="cal-off"><a href="index1.html">30</a></td>
-            <td><a href="index2.html">1</a></td>
-            <td><a href="index3.html">2</a></td>
+            <td class="cal-off"><a href="index.html">30</a></td>
+            <td><a href='javascript:getSchedule()'>1</a></td>
+            <td><a href='javascript:qgg()'>2</a></td>
             <td class="cal-today"><a href="index.html">3</a></td>
             <td><a href="index.html">4</a></td>
             <td><a href="index.html">5</a></td>
@@ -56,3 +56,30 @@
         </tbody>
       </table>
     </div>
+    
+    <script type="text/javascript">
+    function getSchedule() {
+    	swal({
+    		title: "Welcome!",
+    		text: 'Please enter your schedule',
+    		type: 'input',
+    		showCancelButton: true,
+    		closeOnConfirm: false,
+    		animation: "slide-from-top",
+    		inputPlaceholder: "일정 입력"
+    	}, 
+    	function(inputValue){
+    		if (inputValue === false) return false;
+
+    		if (inputValue === "") {
+    			swal.showInputError("You need to write schedule!");
+    			return false;
+    		}
+    		swal("Nice!", 'You wrote: ' + inputValue, "success");
+    	});
+    }
+    
+    function qgg() {
+    	alert("adf");
+    }
+	</script>
