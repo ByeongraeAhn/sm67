@@ -428,7 +428,8 @@ var handleCancel = function handleCancel(modal, params) {
   }
 
   if (params.closeOnCancel) {
-	  swal.showInputError("You need to write birthday!");
+	  /*swal.showInputError("You need to write birthday!");*/
+	  sweetAlert.close();
   }
 };
 
