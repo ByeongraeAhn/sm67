@@ -30,6 +30,8 @@
   margin-bottom: 2px;
 }
 
-#news_button:active {
-	
+ul { /*CSS specific to demo 3*/
+	list-style-type: none;
 }
+
+
