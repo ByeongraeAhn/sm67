@@ -2,11 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-    <link rel="stylesheet" href="../../css/sweetalert.css"><!-- 생일 받아오는 다이아로그의css -->
+    <link rel="stylesheet" href="./aiChat.css">
+    <link rel="stylesheet" href="../../css/sweetalert.css">
 	<script src="../../js/sweetalert-dev.js"></script><!-- 생일 받아오는 다이아로그js -->
 	<script src="aiChat.js"></script>
 <body>
@@ -15,8 +15,10 @@
 		<textarea id="textField" cols="60" rows="20"></textarea>
 	<form name="chatForm" onsubmit="swagChat(); return false">
 		<br>
-		<input type="text" id='inputString' name="inputStr" size="50"> 
-		<input type="submit" value="&nbsp;Talk&nbsp;"> 
+		<div class="inputLine">
+			<input type="text" id='inputString' name="inputStr" size="50" placeholder="SWAG와 대화 해보세요."> 
+			<input type="submit" class="talk" value="&nbsp;Talk&nbsp;"> 
+		</div>
 	</form>
 
 </body>

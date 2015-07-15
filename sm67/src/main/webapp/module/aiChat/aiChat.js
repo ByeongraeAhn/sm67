@@ -83,7 +83,7 @@ function getOutput(msg){
 		if (inputValue === false)
 			return false;
 		if (inputValue === "") {
-			swal.showInputError("You need to write something!");
+			speechText("아무 말도 입력하지 않으셨어요.");
 			return false
 		}
 		swal("Nice!", "You wrote: " + inputValue, "success");
