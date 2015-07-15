@@ -163,8 +163,9 @@ video {
 						</div>
 						<div class="slide-content inverse">
 							<h2>
-								안녕하세요<br>
-								똑똑한 도우미<br>
+								안녕하세요 
+								<span class="mainText"></span>
+								스마트한 도우미<br>
 								SWAG 입니다<br>
 								저는 <span class="textrotator_home">바이오리듬,날씨,뉴스,일정관리,교통정보</span><br>
 								를 제공합니다
@@ -404,7 +405,49 @@ video {
 				getSwagVo(); //바이오리듬
 				test0(); //뉴스
 				initialize(); //교통정보
+				speechWelcome();
+				setMainMsg();
+				
 			}
+			
+			
+			function setMainMsg(){
+				$.ajax('page/getSwagVo.do', {
+					method: 'POST',
+					dataType: 'json',
+					data: {
+					},
+					success: function(result) {
+						userName = result.data.username;
+						$(".mainText").append(userName + "님 <br>");
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						alert('.');
+					}
+				});
+			
+			}
+			
+			function speechWelcome() {
+				$.ajax('page/getSwagVo.do', {
+					method: 'POST',
+					dataType: 'json',
+					data: {
+					},
+					success: function(result) {
+						userName = result.data.username;
+						var voiceMsg;
+						voiceMsg = "안녕 하세요. " + userName + " 님 반갑 습니다.";
+						console.log(voiceMsg);
+						speechTextKorean(voiceMsg);
+					},
+					error: function(xhr, textStatus, errorThrown) {
+						alert('.');
+					}
+				});
+			}
+
+
 		</script>
 </body>
 </html>
