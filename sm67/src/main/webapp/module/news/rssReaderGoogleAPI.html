@@ -1,11 +1,13 @@
-<link href='../../css/news.css' rel='stylesheet' type='text/css'>
-<script
+<html>
+<head>
+
+<link type="text/css" rel="Stylesheet" href="/sm67/css/news.css" /><script
 	src="http://www.google.com/jsapi?key=ABQIAAAAdV0OihhLfo4ru8N1BXzlWxSJ87f2VNqmObhB7kj4DJwDOGkiiBR3Nh79Pxxmk0DgEb3TTwZHI-Fp1g"></script>
 <script src="../../js/jquery-1.11.2.js"></script>
 <script type='text/javascript' src='./js/timeago.js'></script>
 <script src="./js/rssRead.js"></script>
 
-
+</head>
 <body onload = "init(this.form);">  
   <form name="form">
     <select id="first" style="width:70px;" onchange="itemChange(this.form);" ></select>
@@ -65,7 +67,7 @@ function rssField(xmlAddr,whatnews, cb) {
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
-		setTimeout(cb, 300);
+		setTimeout(cb, 500);
 		
 	      
 	  }
@@ -136,3 +138,4 @@ RSS Entry:
 <div id="desc3">
 	<a name="desc3"></a>
 </div>
+</html>
