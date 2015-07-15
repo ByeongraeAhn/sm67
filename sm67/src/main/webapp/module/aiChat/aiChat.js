@@ -3,10 +3,11 @@
 
 function swagChat(){
 	check($("#inputString").val());
+	$("#textField").focus();
 	$("#textField").append('사용자 : '+$('#inputString').val() + '\n');
 	$("#inputString").val('');
+	$('#textField')[0].scrollIntoView(true);
 	$("#inputString").focus();
-	
 }
 
 
@@ -24,8 +25,11 @@ function check(msg) {
 				getOutput(msg);
 			} else {
 			//응답 output이 있다면
+				$("#textField").focus();
 				$("#textField").append('SWAG : '+ result.data.outputString + '\n');
+				$("#inputString").focus();
 				speechText(result.data.outputString);
+				$('#textField')[0].scrollIntoView(true);
 			} 
 		},
 		error: function(xhr, textStatus, errorThrown) {
@@ -48,7 +52,7 @@ function insertString (inputString, outputString) {
 		success: function(result) {
 				$("#textField").append("SWAG : 알려 주셔서 감사합니다."+'\n');
 				speechText("알려 주셔서 감사합니다.");
-				
+				$('#textField')[0].scrollIntoView(true);
 		},
 		error: function(xhr, textStatus, errorThrown) {
 			alert('작업을 완료할 수 없습니다.\n' + 
@@ -92,5 +96,8 @@ function getOutput(msg){
 		var outputString = inputValue;
 		//DB에 insert하는 함수
 		insertString(inputString, outputString);
+		
+		$("#inputString").focus();
+		$('#textField')[0].scrollIntoView(true);
 	});
 }
