@@ -7,3 +7,5 @@ function speechTextEnglish(msg) {
 	responsiveVoice.speak(msg, "UK English Male");
 
 }
+
+

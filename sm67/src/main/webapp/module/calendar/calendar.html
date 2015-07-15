@@ -1,32 +1,58 @@
 
-<style type="text/css">
-#calen {
-	width: 100%;
-	height: 100%;
-}
-</style>
-<script language="JavaScript"> 
-function showCalendar(y, m) { 
-    var text = '<table id="calen">\n<tr><td colspan=7 style="text-align:center">'; 
-    text += '<span onclick="showCalendar('+(y-1)+','+m+')"> Y- </span>'; 
-    text += '<span onclick="showCalendar('+(m==1?(y-1)+','+12:y+','+(m-1))+')"> M- </span>'; 
-    text += '[' + y + '/' + ((m < 10) ? ('0' + m) : m) + ']'; 
-    text += '<span onclick="showCalendar('+(m==12?(y+1)+','+1:y+','+(m+1))+')"> M+ </span>'; 
-    text += '<span onclick="showCalendar('+(y+1)+','+m+')"> Y+ </span>'; 
-    text += '</td>'; 
-
-    var d1 = (y+(y-y%4)/4-(y-y%100)/100+(y-y%400)/400 
-          +m*2+(m*5-m*5%9)/9-(m<3?y%4||y%100==0&&y%400?2:3:4))%7; 
-    for (i = 0; i < 42; i++) { 
-        if (i%7==0) text += '</tr>\n<tr>'; 
-        if (i < d1 || i >= d1+(m*9-m*9%8)/8%2+(m==2?y%4||y%100==0&&y%400?28:29:30)) 
-            text += '<td> </td>'; 
-        else 
-            text += '<td' + (i%7 ? '' : ' style="color:red;"') + '>' + (i+1-d1) + '</td>'; 
-    } 
-    document.getElementById('calendarDiv').innerHTML = text + '</tr>\n</table>'; 
-}
-
-showCalendar(2015,7);
-</script> 
-<div id="calendarDiv" style="font-family:Gulim;font-size:9pt;"></div> 
+  <link rel="stylesheet" href="/sm67/module/calendar/calendar.css" />
+    <div class="cal"">
+      <table class="cal-table">
+        <caption class="cal-caption">
+          <a href="index.html" class="prev">&laquo;</a>
+          <a href="index.html" class="next">&raquo;</a>
+          July 2015
+        </caption>
+        <tbody class="cal-body">
+          <tr>
+            <td class="cal-off"><a href="index1.html">30</a></td>
+            <td><a href="index2.html">1</a></td>
+            <td><a href="index3.html">2</a></td>
+            <td class="cal-today"><a href="index.html">3</a></td>
+            <td><a href="index.html">4</a></td>
+            <td><a href="index.html">5</a></td>
+            <td><a href="index.html">6</a></td>
+          </tr>
+          <tr>
+            <td><a href="index.html">7</a></td>
+            <td class="cal-selected"><a href="index.html">8</a></td>
+            <td><a href="index.html">9</a></td>
+            <td><a href="index.html">10</a></td>
+            <td><a href="index.html">11</a></td>
+            <td class="cal-check"><a href="index.html">12</a></td>
+            <td><a href="index.html">13</a></td>
+          </tr>
+          <tr>
+            <td><a href="index.html">14</a></td>
+            <td><a href="index.html">15</a></td>
+            <td><a href="index.html">16</a></td>
+            <td class="cal-check"><a href="index.html">17</a></td>
+            <td><a href="index.html">18</a></td>
+            <td><a href="index.html">19</a></td>
+            <td><a href="index.html">20</a></td>
+          </tr>
+          <tr>
+            <td><a href="index.html">21</a></td>
+            <td><a href="index.html">22</a></td>
+            <td><a href="index.html">23</a></td>
+            <td><a href="index.html">24</a></td>
+            <td><a href="index.html">25</a></td>
+            <td><a href="index.html">26</a></td>
+            <td><a href="index.html">27</a></td>
+          </tr>
+          <tr>
+            <td><a href="index.html">28</a></td>
+            <td><a href="index.html">29</a></td>
+            <td><a href="index.html">30</a></td>
+            <td><a href="index.html">31</a></td>
+            <td class="cal-off"><a href="index.html">1</a></td>
+            <td class="cal-off"><a href="index.html">2</a></td>
+            <td class="cal-off"><a href="index.html">3</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
