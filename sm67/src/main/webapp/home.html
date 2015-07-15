@@ -410,7 +410,7 @@ video {
 				
 			}
 			
-			
+			//메인 메세지 세팅
 			function setMainMsg(){
 				$.ajax('page/getSwagVo.do', {
 					method: 'POST',
@@ -428,6 +428,7 @@ video {
 			
 			}
 			
+			//메인 메세지 TTS
 			function speechWelcome() {
 				$.ajax('page/getSwagVo.do', {
 					method: 'POST',
@@ -438,7 +439,6 @@ video {
 						userName = result.data.username;
 						var voiceMsg;
 						voiceMsg = "안녕 하세요. " + userName + " 님 반갑 습니다.";
-						console.log(voiceMsg);
 						speechTextKorean(voiceMsg);
 					},
 					error: function(xhr, textStatus, errorThrown) {
