@@ -395,10 +395,25 @@ video {
 			function test1(newsUrl,whatnews) {
 				var iframe = document.getElementById("newsFrame");
 				/*var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";*/
-				iframe.contentWindow.rssField(newsUrl,whatnews);
+				iframe.contentWindow.rssField(newsUrl,whatnews, addNewsDiv);
 			}
+						
+			var addNewsDiv = function() {
+				console.log("addNewsDiv Start");
+				var newsMsg = $('#news_msg');
+				newsMsg.html("");
+				newsMsg.append("오늘의 뉴스를 알려드리겠습니다.<br>");
+				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(1)>a').text());
+				newsMsg.append("<br>");
+				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(2)>a').text());
+				newsMsg.append("<br>");
+				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(3)>a').text());
+				newsMsg.append("<br>");
+				newsMsg.append(" 같은 주요 뉴스가 있습니다.");
+			};
+
 		</script>
-		
+
 		<!-- window.load시 실행할 처음 실행할 함수들 -->
 		<script type="text/javascript">
 			window.onload = function() {
