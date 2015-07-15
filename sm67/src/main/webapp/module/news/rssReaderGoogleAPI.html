@@ -55,12 +55,12 @@
 
 <script type="text/javascript">
 rssField("http://www.chosun.com/site/data/rss/rss.xml"); 
-function rssField(xmlAddr) {
+function rssField(xmlAddr,whatnews) {
 	 var parentXmlAddr = xmlAddr;
 	  setInterval(function(){ newsfeed.init() }, 5000000); // page reroad
 		  
 		var newsfeed = new gfeedfetcher("example3", "example3class", "_new")
-			newsfeed.addFeed("조선일보-속보", parentXmlAddr);
+			newsfeed.addFeed(whatnews, parentXmlAddr);
 		newsfeed.displayoptions("label datetime snippet") //show the specified additional fields
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
