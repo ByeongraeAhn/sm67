@@ -230,7 +230,7 @@ video {
 							<div id="modulecon">
 								<button id="news_button" class="talk" style="height:30px">다른 뉴스보기</button>
 								<div id="news_selector" style="display:none;">
-								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml","조선일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/cs.png"></a><!-- 조선 -->
+								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml","조선일보")'><img src="./module/news/img/cs.png"></a><!-- 조선 -->
 								<a href='javascript:test1("http://rss.joinsmsn.com/joins_news_list.xml","중앙일보")'><img src="./module/news/img/ja.gif"></a><!-- 중앙 -->
 								<a href='javascript:test1("http://rss.donga.com/total.xml","동아일보")'><img src="./module/news/img/da.gif"></a><!-- 동아 -->
 								<a href='javascript:test1("http://www.hani.co.kr/rss/","한겨례")'><img src="./module/news/img/hgr.gif"></a><!-- 한겨례 -->
@@ -399,7 +399,7 @@ video {
 				iframe.contentWindow.rssField(newsUrl,whatnews, addNewsDiv);
 			}
 						
-			var addNewsDiv = function() {
+			var addNewsDiv = function(whatsnews) {
 				console.log("addNewsDiv Start");
 				var newsMsg = $('#news_msg');
 				newsMsg.html("");
