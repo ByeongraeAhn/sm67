@@ -231,11 +231,11 @@ video {
 								<button id="news_button" class="talk" style="height:30px">다른 뉴스보기</button>
 								<div id="news_selector" style="display:none;">
 								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml","조선일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/cs.png"></a><!-- 조선 -->
-								<a href='javascript:test1("http://rss.joinsmsn.com/joins_news_list.xml","중앙일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/ja.gif"></a><!-- 중앙 -->
-								<a href='javascript:test1("http://rss.donga.com/total.xml","동아일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/da.gif"></a><!-- 동아 -->
-								<a href='javascript:test1("http://www.hani.co.kr/rss/","한겨례"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/hgr.gif"></a><!-- 한겨례 -->
-								<a href='javascript:test1("http://rss.kmib.co.kr/data/kmibRssAll.xml","국민일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/km.gif"></a><!-- 국민 -->
-								<a href='javascript:test1("http://www.khan.co.kr/rss/rssdata/total_news.xml","뉴데일리"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/nd.gif"></a><!-- 뉴데일리 -->
+								<a href='javascript:test1("http://rss.joinsmsn.com/joins_news_list.xml","중앙일보")'><img src="./module/news/img/ja.gif"></a><!-- 중앙 -->
+								<a href='javascript:test1("http://rss.donga.com/total.xml","동아일보")'><img src="./module/news/img/da.gif"></a><!-- 동아 -->
+								<a href='javascript:test1("http://www.hani.co.kr/rss/","한겨례")'><img src="./module/news/img/hgr.gif"></a><!-- 한겨례 -->
+								<a href='javascript:test1("http://rss.kmib.co.kr/data/kmibRssAll.xml","국민일보")'><img src="./module/news/img/km.gif"></a><!-- 국민 -->
+								<a href='javascript:test1("http://www.khan.co.kr/rss/rssdata/total_news.xml","뉴데일리")'><img src="./module/news/img/nd.gif"></a><!-- 뉴데일리 -->
 								</div>
 								<iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html" marginwidth="0" marginheight="0"></iframe>
 							</div>
@@ -411,6 +411,7 @@ video {
 				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(3)>a').text());
 				newsMsg.append("<br>");
 				newsMsg.append(" 같은 주요 뉴스가 있습니다.");
+				speechTextKorean($("#news_msg").text());
 			};
 
 		</script>

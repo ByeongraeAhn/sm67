@@ -62,7 +62,7 @@ function rssField(xmlAddr,whatnews, cb) {
 		newsfeed.setentrycontainer("li") //Display each entry as a paragraph
 		newsfeed.filterfeed(100, "date") //Show 8 entries, sort by date
 		newsfeed.init() //Always call this last
-		setTimeout(cb, 500);
+		setTimeout(cb, 1000);
 		
 	      
 	  }
