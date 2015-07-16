@@ -67,14 +67,13 @@
 }
 
 .testmessage {
-  margin-right: 130px;
+	margin-right: 130px;
 	height: 700px;
 	width: 700px;
 	float: right;
 	font-size: 30px;
 	line-height: 1.3em;
-  padding-top: 5em;
-	
+	padding-top: 5em;
 }
 
 #modulecon {
@@ -82,11 +81,11 @@
 	float: left;
 	height: 700px;
 	width: 700px;
-	background:rgba(255,255,255,0.2);
-  border-top: solid;
-  border-left: solid;
-  border-color: white;
-  border-width: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	border-top: solid;
+	border-left: solid;
+	border-color: white;
+	border-width: 1px;
 }
 
 #modulecon2 {
@@ -94,11 +93,11 @@
 	float: left;
 	height: 700px;
 	width: 700px;
-	 background:rgba(255,255,255,0.2);
-  border-top: solid;
-  border-left: solid;
-  border-color: white;
-  border-width: 1px;
+	background: rgba(255, 255, 255, 0.2);
+	border-top: solid;
+	border-left: solid;
+	border-color: white;
+	border-width: 1px;
 }
 
 #newsFrame {
@@ -113,6 +112,7 @@ video {
 	width: 100%;
 	overflow: hidden;
 }
+
 </style>
 </head>
 <body>
@@ -228,16 +228,16 @@ video {
 								</div>
 							</div>
 							<div id="modulecon">
-								<button id="news_button">다른 뉴스보기</button>
+								<button id="news_button" class="talk" style="height:30px">다른 뉴스보기</button>
 								<div id="news_selector" style="display:none;">
-								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml","조선일보")'><img src="./module/news/img/cs.png"></a><!-- 조선 -->
-								<a href='javascript:test1("http://rss.joinsmsn.com/joins_news_list.xml","중앙일보")'><img src="./module/news/img/ja.gif"></a><!-- 중앙 -->
-								<a href='javascript:test1("http://rss.donga.com/total.xml","동아일보")'><img src="./module/news/img/da.gif"></a><!-- 동아 -->
-								<a href='javascript:test1("http://www.hani.co.kr/rss/","한겨례")'><img src="./module/news/img/hgr.gif"></a><!-- 한겨례 -->
-								<a href='javascript:test1("http://rss.kmib.co.kr/data/kmibRssAll.xml","국민일보")'><img src="./module/news/img/km.gif"></a><!-- 국민 -->
-								<a href='javascript:test1("http://www.khan.co.kr/rss/rssdata/total_news.xml","뉴데일리")'><img src="./module/news/img/nd.gif"></a><!-- 뉴데일리 -->
+								<a href='javascript:test1("http://www.chosun.com/site/data/rss/rss.xml","조선일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/cs.png"></a><!-- 조선 -->
+								<a href='javascript:test1("http://rss.joinsmsn.com/joins_news_list.xml","중앙일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/ja.gif"></a><!-- 중앙 -->
+								<a href='javascript:test1("http://rss.donga.com/total.xml","동아일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/da.gif"></a><!-- 동아 -->
+								<a href='javascript:test1("http://www.hani.co.kr/rss/","한겨례"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/hgr.gif"></a><!-- 한겨례 -->
+								<a href='javascript:test1("http://rss.kmib.co.kr/data/kmibRssAll.xml","국민일보"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/km.gif"></a><!-- 국민 -->
+								<a href='javascript:test1("http://www.khan.co.kr/rss/rssdata/total_news.xml","뉴데일리"),speechTextKorean($("#news_msg").text())'><img src="./module/news/img/nd.gif"></a><!-- 뉴데일리 -->
 								</div>
-								<iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html"></iframe>
+								<iframe id="newsFrame" src="./module/news/rssReaderGoogleAPI.html" marginwidth="0" marginheight="0"></iframe>
 							</div>
 						</div>
 						<span class="slide-title">News</span>
@@ -423,6 +423,7 @@ video {
 				initialize(); //교통정보
 				speechWelcome();
 				setMainMsg();
+				deleteBioR();
 				
 			}
 			
@@ -462,8 +463,12 @@ video {
 					}
 				});
 			}
-
-
+			
+			function deleteBioR() {
+				$(".flotr-legend").remove();
+				$(".flotr-legend-bg").remove();
+			}
+			
 		</script>
 		<script src="assets/js/swagChat.js"></script>
 </body>

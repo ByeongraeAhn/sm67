@@ -9,6 +9,8 @@
             n = Z.type(e);
         return "function" === n || Z.isWindow(e) ? !1 : 1 === e.nodeType && t ? !0 : "array" === n || 0 === t || "number" == typeof t && t > 0 && t - 1 in e
     }
+    
+    
 
     function r(e, t, n) {
         if (Z.isFunction(t)) return Z.grep(e, function(e, r) {
@@ -6522,14 +6524,29 @@ function mobilecheck() {
         })
     }, s.prototype._navigate = function() {
     	// slide 이동
-        $(this.slides[this.current || 0]).removeClass("current"), this.current = this.dd.getStep()[0] - 1, $(this.slides[this.current]).addClass("current"), $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, ""), $("body").addClass("viewing-page-" + this.current);
+    	
+        $(this.slides[this.current || 0]).removeClass("current"), 
+        this.current = this.dd.getStep()[0] - 1,
+        $(this.slides[this.current]).addClass("current"), 
+        $("body")[0].className = $("body")[0].className.replace(/\bviewing-page-\d.*?\b/g, ""), 
+        $("body").addClass("viewing-page-" + this.current);
         var t = this.dd.getStep()[0] - 1,
             e = null,
             s = "0%";
-        0 === t ? (s = "0%", history.pushState(null, "0", ""),speechTextKorean("")
-        		) : 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#bio_msg').text())) : 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text()) ) : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#news_msg').text()) ) : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean($('#cal_msg').text())) : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#traffic_msg').text())) : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("")) : 7 === t ? (e = "7", s = "70%", history.pushState(null, "7", "")) : 8 === t ? (e = "8", s = "80%", history.pushState(null, "8", "")) : 9 === t ? (e = "9", s = "90%", history.pushState(null, "App Agency London | The Future", "")) : 10 === t && (s = "100%", history.pushState(null, "App Agency London | Contact Us", "")), $(".stage").stop().animate({
+        0 === t ? (s = "0%", history.pushState(null, "0", ""),speechTextKorean("", this.current) ) 
+		: 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#bio_msg').text(), this.current), deleteBioR() ) 
+		: 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text(), this.current) ) 
+	    : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#news_msg').text(), this.current) ) 
+	    : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean($('#cal_msg').text(), this.current)) 
+	    : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#traffic_msg').text(), this.current)) 
+	    : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("", this.current)) 
+	    : 7 === t ? (e = "7", s = "70%", history.pushState(null, "7", "")) 
+	    : 8 === t ? (e = "8", s = "80%", history.pushState(null, "8", "")) 
+	    : 9 === t ? (e = "9", s = "90%", history.pushState(null, "App Agency London | The Future", "")) 
+	    : 10 === t && (s = "100%", history.pushState(null, "App Agency London | Contact Us", "")), $(".stage").stop().animate({
             width: s
         })
+        window.currentSlideNo = this.current;
     }, s.prototype.toggle = function() {
         if (this.isAnimating) return !1;
         this.isAnimating = !0, this.options.onToggle(), $(this.el).removeClass(this.isFullscreen ? "switch-max" : "switch-min"), $(this.el).addClass(this.isFullscreen ? "switch-min" : "switch-max");
@@ -6757,4 +6774,12 @@ function newsAppend() {
 	newsMsg.append("<br>");
 	newsMsg.append(" 같은 주요 뉴스가 있습니다.");
 }
+
+
+
+
+
+
+
+
 

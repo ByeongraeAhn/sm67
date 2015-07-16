@@ -1,6 +1,7 @@
-function speechTextKorean(msg) {
-	responsiveVoice.speak(msg, "Korean Female");
-
+function speechTextKorean(msg, currentSlideNo) {
+	if (window.currentSlideNo != currentSlideNo) {
+		responsiveVoice.speak(msg, "Korean Female");
+	}
 }
 
 function speechTextEnglish(msg) {
