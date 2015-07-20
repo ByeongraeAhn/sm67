@@ -6534,11 +6534,11 @@ function mobilecheck() {
             e = null,
             s = "0%";
         0 === t ? (s = "0%", history.pushState(null, "0", ""),speechTextKorean("", this.current) ) 
-		: 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#bio_msg').text(), this.current), deleteBioR() ) 
+		: 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#cal_msg').text(), this.current) ) 
 		: 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text(), this.current) ) 
-	    : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#news_msg').text(), this.current) ) 
-	    : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean($('#cal_msg').text(), this.current)) 
-	    : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#traffic_msg').text(), this.current)) 
+	    : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#traffic_msg').text(), this.current) ) 
+	    : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean($('#news_msg').text(), this.current)) 
+	    : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#bio_msg').text(), this.current), deleteBioR()) 
 	    : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("", this.current)) 
 	    : 7 === t ? (e = "7", s = "70%", history.pushState(null, "7", "")) 
 	    : 8 === t ? (e = "8", s = "80%", history.pushState(null, "8", "")) 
