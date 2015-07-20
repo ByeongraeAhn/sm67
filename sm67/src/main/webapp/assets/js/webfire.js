@@ -6536,7 +6536,7 @@ function mobilecheck() {
         0 === t ? (s = "0%", history.pushState(null, "0", ""),speechTextKorean("", this.current) ) 
 		: 1 === t ? (s = "10%", history.pushState(null, "1", ""),speechTextKorean($('#cal_msg').text(), this.current) ) 
 		: 2 === t ? (s = "20%", history.pushState(null, "2", ""), speechTextKorean($('#weather_msg').text(), this.current) ) 
-	    : 3 === t ? (s = "30%", history.pushState(null, "3", ""),newsAppend(),speechTextKorean($('#traffic_msg').text(), this.current) ) 
+	    : 3 === t ? (s = "30%", history.pushState(null, "3", ""),addNewsDiv(),speechTextKorean($('#traffic_msg').text(), this.current) ) 
 	    : 4 === t ? (s = "40%", history.pushState(null, "4", ""),speechTextKorean($('#news_msg').text(), this.current)) 
 	    : 5 === t ? (s = "50%", history.pushState(null, "5", ""),speechTextKorean($('#bio_msg').text(), this.current), deleteBioR()) 
 	    : 6 === t ? (s = "60%", history.pushState(null, "6", ""),speechTextKorean("", this.current)) 
@@ -6760,19 +6760,6 @@ function mobilecheck() {
 function regexpTts(msg) {
 	var ttsMsg = msg.replace( /<br>/gi, " ");
 	return ttsMsg;
-}
-
-function newsAppend() {
-	var newsMsg = $('#news_msg');
-	newsMsg.html("");
-	newsMsg.append("오늘의 뉴스를 알려드리겠습니다.<br>");
-	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(1)>a').text());
-	newsMsg.append("<br>");
-	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(2)>a').text());
-	newsMsg.append("<br>");
-	newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(3)>a').text());
-	newsMsg.append("<br>");
-	newsMsg.append(" 같은 주요 뉴스가 있습니다.");
 }
 
 

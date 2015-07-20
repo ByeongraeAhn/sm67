@@ -406,18 +406,18 @@ video {
 				/*var newxmlAddr = "http://rss.joins.com/joins_news_list.xml";*/
 				iframe.contentWindow.rssField(newsUrl,whatnews, addNewsDiv);
 			}
-						
+			
 			var addNewsDiv = function(whatsnews) {
 				console.log("addNewsDiv Start");
 				var newsMsg = $('#news_msg');
 				newsMsg.html("");
 				newsMsg.append("주요 뉴스입니다.<br>");
 				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(1)>a').text());
-				newsMsg.append("<br>");
+				newsMsg.append(".<br><br>");
 				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(2)>a').text());
-				newsMsg.append("<br>");
+				newsMsg.append(".<br><br>");
 				newsMsg.append($('#newsFrame').contents().find('#example3>ul>li:nth-child(3)>a').text());
-				newsMsg.append("<br>");
+				newsMsg.append(".<br><br>");
 				newsMsg.append(" 같은 주요 뉴스가 있습니다.");
 				speechTextKorean($("#news_msg").text());
 			};
