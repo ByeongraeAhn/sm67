@@ -46,7 +46,7 @@
           <tr>
             <td class="cal-selected"><a href='javascript:getSchedule()'>28<br>가족 회식</a></td>
             <td><a href='javascript:getSchedule()'>29</a></td>
-            <td><a href='javascript:getSchedule()'>30</a></td>
+            <td class="addcla"><a class="insertschedule" href='javascript:getSchedule()'>30</a></td>
             <td><a href='javascript:getSchedule()'>31</a></td>
             <td class="cal-off"><a href='javascript:getSchedule()'>1</a></td>
             <td class="cal-off"><a href='javascript:getSchedule()'>2</a></td>
@@ -75,6 +75,8 @@
     			return false;
     		}
     		swal("Nice!", 'You wrote: ' + inputValue, "success");
+    		$(".insertschedule").append("<br>"+inputValue);
+    		$(".addcla").addClass("cal-selected");
     	});
     }
     
