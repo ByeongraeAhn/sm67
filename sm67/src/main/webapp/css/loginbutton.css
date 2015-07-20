@@ -40,6 +40,20 @@
     background: #fff;
 }
 
+/* naver button class*/
+.naverBtn{
+    background: #00ff40;
+}
+
+.naverBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+}
+
+.naverBtn:hover{
+    color: #80ff00;
+    background: #fff;
+}
+
 /* twitter button class*/
 .twitterBtn{
     background: #00ff00;
